@@ -8,19 +8,20 @@
 </head>
 <body>
 
-<h1>Sample dashboard page</h1>
+<h1>Sample level page</h1>
 
-<p>This will be replaced with the actual sign up page once everything is brought together.</p>
+<p>This will be replaced with the actual level page once everything is brought together.</p>
 
-<p>Hello, #{user}! You have #{points} points.</p>
-
-<p><a href="/levels/1">Level 1</a></p>
-<p><a href="/levels/2">Level 2</a></p>
+<form method="post">
+	<p>This is a sample level whose answer is 42.</p>
+	<input type="text" name="answer" placeholder="Your answer here">
+	<button type="submit">Check your answer</button>
+</form>
 
 <p><a href="/users/logout">Log out</a></p>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="/javascripts/signup.js"></script>
+<script src="/javascripts/level.js"></script>
 
 </body>
 </html>

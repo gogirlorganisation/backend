@@ -1,5 +1,4 @@
 var express = require('express');
-var path = require('path');
 var router = express.Router();
 
 router.get('/', function(req, res) {
@@ -14,7 +13,7 @@ router.get('/signup', function(req, res) {
 	res.render('signup');
 });
 
-router.get('/secret', function(req, res) {
+router.get('/dashboard', function(req, res) {
 	if(req.isAuthenticated()) {
 		res.render('dash', {
 			user: req.user.username,
@@ -23,7 +22,6 @@ router.get('/secret', function(req, res) {
 	} else {
 		res.redirect('/');
 	}
-})
-
+});
 
 module.exports = router;

@@ -27,6 +27,7 @@ module.exports = function(passport) {
 					newUser.username = username;
 					newUser.password = bCrypt.hashSync(password, bCrypt.genSaltSync(10), null);
 					newUser.email = req.body.email;
+					newUser.solvedLevels = {};
 					newUser.points = 0;
 
 					newUser.save(function(err) {
