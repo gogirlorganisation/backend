@@ -19,7 +19,9 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-app.use(session({ secret: auth.key }));
+app.use(session({secret: '<mysecret>', 
+                 saveUninitialized: true,
+                 resave: true}));
 app.use(passport.initialize());
 app.use(passport.session());
 mongoose.connect(auth.url);

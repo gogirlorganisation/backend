@@ -4,21 +4,37 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<title>The Girl Code Backend</title>
-	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/forms.css">
 </head>
 <body>
+	<div class="limiter">
+		<div class="container">
+			<div class="card">
+				<form action="/users/login" method="post">
+				<form class="formlogin" action="/users/login" method="post">
+					<h1 class="formtitle">Login</h1>
 
-<h1>Sample login page</h1>
+					<div class="inputtype">
+						<input class="an-input" type="text" name="email">
+						<span class="focus-an-input" data-placeholder="Email"></span>
+					</div>
 
-<p>This will be replaced with the actual login page once everything is brought together.</p>
+					<div class="inputtype">
+						<input class="an-input" type="password" name="pass">
+						<span class="focus-an-input" data-placeholder="Password"></span>
+					</div>
 
-<form action="/users/login" method="post">
-	
-	<input type="text" name="username" placeholder="Username" required>
-	<input type="password" name="password" placeholder="Password" required>
-	<button type="submit">Log yourself inwards</button>
+					<div class="formbutton">
+						<div class="form-in-button">
+							<div class="bgbutton"></div>
+							<button class="loginbutton">Login</button>
+						</div>
+					</div>
 
-</form>
+				</form>
+			</div>
+		</div>
+	</div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="/javascripts/login.js"></script>
