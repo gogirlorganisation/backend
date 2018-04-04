@@ -5,6 +5,7 @@
 1. Install
   * MongoDB Community Edition: https://docs.mongodb.com/manual/administration/install-community/
   * NodeJS https://nodejs.org
+  * Python https://python.org
 
 2. Clone this repository
 
