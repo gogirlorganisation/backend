@@ -29,6 +29,7 @@
 
         nodemon bin/www
 
+5. Site will be at localhost:3000
 
 **Prod setup:**
 
