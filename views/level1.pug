@@ -12,14 +12,28 @@
 
 <p>This will be replaced with the actual level page once everything is brought together.</p>
 
-<form method="post">
+<form method="post" class="submit">
 	<p>This is a sample level whose answer is 42.</p>
 	<input type="text" name="answer" placeholder="Your answer here">
 	<button type="submit">Check your answer</button>
 </form>
 
+<form method="post" action="/levels/compiler" class="compiler">
+	<textarea name="code"></textarea>
+	<button type="submit">Compile</button>
+	<pre>
+		<code class="stdout"></code>
+	</pre>
+	<pre>
+		<code class="stderr"></code>
+	</pre>
+</form>
+
+<input class="stdin" placeholder="Send input to program">
+
 <p><a href="/users/logout">Log out</a></p>
 
+<script src="/socket.io/socket.io.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="/javascripts/level.js"></script>
 

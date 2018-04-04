@@ -21,7 +21,7 @@ router.get('/:level', function(req, res) {
 	}
 });
 
-router.post('/:level', function(req, res) {
+router.post('/:level', function(req, res, next) {
 	if(req.isAuthenticated()) {
 		if(checkCorrect(req.params.level, req.body.answer)) {
 

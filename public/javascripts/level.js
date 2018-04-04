@@ -1,4 +1,4 @@
-$('form').on('submit', function(e) {
+$('form.submit').on('submit', function(e) {
 	e.preventDefault();
 
 	$.ajax({
@@ -23,5 +23,48 @@ $('form').on('submit', function(e) {
 			alert('see console for error');
 			console.log(err);     
 		}
+	});
+});
+
+function out(text) {
+	$('.stdout').html($('.stdout').text() + text);
+}
+
+function err(text) {
+	$('.stderr').html($('.stderr').text() + text);
+}
+
+$('form.compiler').on('submit', function(e) {
+	e.preventDefault();
+
+	var socket = io.connect('/');
+
+	$('.stdout').html('');
+	$('.stderr').html('');
+
+	socket.emit('code', $(this).find('textarea').val());
+
+	socket.on('stdout', function(data) {
+		out(data);
+	});
+
+	socket.on('stderr', function(data) {
+		err(data);
+	});
+
+	$('.stdin').on('keypress', function(e) {
+		if(e.keyCode == 13) {
+			e.preventDefault();
+			var input = $('.stdin').val();
+			socket.emit('stdin', input);
+			out(input + '\n');
+			$('.stdin').val('');
+		}
+	});
+
+	socket.on('end', function(data) {
+		err(data);
+		$('.stdin').off('keypress');
+		socket.disconnect();
 	});
 });
