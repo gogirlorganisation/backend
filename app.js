@@ -21,7 +21,7 @@ app.io = io;
 var index = require('./routes/index');
 var users = require('./routes/users')(passport);
 var levels = require('./routes/levels');
-var compiler = require('./routes/compiler')(io);
+var ide = require('./routes/ide')(io);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -45,7 +45,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 app.use('/levels', levels);
-app.use('/levels/compiler', compiler);
+app.use('/levels/ide', ide);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
