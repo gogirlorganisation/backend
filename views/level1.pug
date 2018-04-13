@@ -5,37 +5,55 @@
 	<meta name="viewport" content="width=device-width">
 	<title>The Girl Code Backend</title>
 	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/level.css">
+	<!-- Create a simple CodeMirror instance -->
+	<link rel="stylesheet" href="lib/codemirror.css">
+	<script src="lib/codemirror.js"></script>
+	<script src="lib/somescript.js"></script>
+	<script>
+	var editor = CodeMirror.fromTextArea(codeeditor, { lineNumbers: true });
+	</script>
 </head>
 <body>
+	<div class="question">
+		<form method="post" class="submit">
+			<h1 class="formtitle">Level 1</h1>
+			<p>This is a sample level whose answer is 42.</p>
+			<input type="text" name="answer" placeholder="Enter answer">
+				<button type="submit" class="loginbutton">Check</button>
+		</form>
 
-<h1>Sample level page</h1>
+		<p><a href="/users/logout">Log out</a></p>
+	</div>
 
-<p>This will be replaced with the actual level page once everything is brought together.</p>
+	<div class="coding">
+		<form method="post" action="/levels/compiler" class="compiler">
+			<textarea name="code" placeholder="Code here" class="codeeditor"></textarea>
+				<div class="formbutton">
+					<div class="form-in-button">
+						<div class="bgbutton"></div>
+						<button class="loginbutton">Compile</button>
+					</div>
+				</div>					
+				<pre>
+						<code class="stdout"></code>
+				</pre>
+				<pre>
+						<code class="stderr"></code>
+				</pre>
+		</form>
+		
+		<input class="stdin" placeholder="Send input to program">
 
-<form method="post" class="submit">
-	<p>This is a sample level whose answer is 42.</p>
-	<input type="text" name="answer" placeholder="Your answer here">
-	<button type="submit">Check your answer</button>
-</form>
-
-<form method="post" action="/levels/compiler" class="compiler">
-	<textarea name="code"></textarea>
-	<button type="submit">Compile</button>
-	<pre>
-		<code class="stdout"></code>
-	</pre>
-	<pre>
-		<code class="stderr"></code>
-	</pre>
-</form>
-
-<input class="stdin" placeholder="Send input to program">
-
-<p><a href="/users/logout">Log out</a></p>
+	</div>
 
 <script src="/socket.io/socket.io.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="/javascripts/level.js"></script>
+<script type="text/javascript">
+	var code = $(".codeeditor")[0];
+	var editor = CodeMirror.fromTextArea(code, { lineNumbers : true });
+</script>
 
 </body>
 </html>

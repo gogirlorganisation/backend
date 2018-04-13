@@ -4,16 +4,32 @@ body, html {
   display: flex;
   width: 100%;
   height: 100vh;
-  background-color: #f2f2f2
+  background-color: #f2f2f2;
 }
 
 h1,h2,h3,h4,h5,h6 {
   margin: 0px;
 }
 
+div.coding {
+  margin: 5rem 5rem 5rem 15rem;
+}
+
+div.coding form  textarea[name=code] {
+  min-height: 50vh;
+  width: 450%;
+}
+
 input {
   outline: none;
   border: none;
+}
+textarea[name=code] {
+  font-family: monospace;
+  height: 250px !important;
+  min-width: 100%;
+  padding-top: 6px;
+  padd  ing-bottom: 6px;;
 }
 
 textarea {
@@ -53,12 +69,12 @@ button:hover {
   background: #f2f2f2;  
 }
 
-.card {
-  width: 390px;
+.question {
+  width: 300px;
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
-  padding: 50px 100px;
+  padding: 25px 50px;
 
   box-shadow: 0 10px 35px 0px rgba(0, 0, 0, 0.1);
 }
@@ -72,7 +88,7 @@ button:hover {
 
 .formtitle {
   display: block;
-  font-size: 50px;
+  font-size: 70px;
   color: #333333;
   line-height: 1.2;
   text-align: center;
@@ -201,11 +217,10 @@ button:hover {
 }
 
 .loginbutton {
-  font-size: 15px;
   color: #fff;
+  font-size: 12px;
   line-height: 1.2;
   text-transform: uppercase;
-
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
