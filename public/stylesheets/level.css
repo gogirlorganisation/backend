@@ -12,7 +12,10 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 div.coding {
-  margin: 5rem 5rem 5rem 15rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
 }
 
 div.coding form  textarea[name=code] {
@@ -29,7 +32,11 @@ textarea[name=code] {
   height: 250px !important;
   min-width: 100%;
   padding-top: 6px;
-  padd  ing-bottom: 6px;;
+  padding-bottom: 6px;
+}
+
+.CodeMirror {
+  text-align: left;
 }
 
 textarea {

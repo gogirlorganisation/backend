@@ -7,12 +7,9 @@
 	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
 	<link rel="stylesheet" type="text/css" href="/stylesheets/level.css">
 	<!-- Create a simple CodeMirror instance -->
-	<link rel="stylesheet" href="lib/codemirror.css">
-	<script src="lib/codemirror.js"></script>
-	<script src="lib/somescript.js"></script>
-	<script>
-	var editor = CodeMirror.fromTextArea(codeeditor, { lineNumbers: true });
-	</script>
+	<link rel="stylesheet" href="/lib/codemirror.css">
+	<script src="/lib/codemirror.js"></script>
+	<script src="/lib/javascript.js"></script>
 </head>
 <body>
 	<div class="question">
@@ -50,10 +47,7 @@
 <script src="/socket.io/socket.io.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="/javascripts/level.js"></script>
-<script type="text/javascript">
-	var code = $(".codeeditor")[0];
-	var editor = CodeMirror.fromTextArea(code, { lineNumbers : true });
-</script>
+<script type="text/javascript">var code = $(".codeeditor")[0]; var editor = CodeMirror.fromTextArea(code, { lineNumbers : true });</script>
 
 </body>
 </html>
