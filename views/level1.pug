@@ -7,7 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
 	<link rel="stylesheet" type="text/css" href="/stylesheets/level.css">
 	<!-- Create a simple CodeMirror instance -->
-	<link rel="stylesheet" href="/lib/codemirror.css">
+	<link rel="stylesheet" href="/stylesheets/codemirror.css">
 	<script src="/lib/codemirror.js"></script>
 	<script src="/lib/javascript.js"></script>
 </head>
@@ -31,7 +31,7 @@
 						<div class="bgbutton"></div>
 						<button class="loginbutton">Compile</button>
 					</div>
-				</div>					
+				</div>
 				<pre>
 						<code class="stdout"></code>
 				</pre>
@@ -39,7 +39,7 @@
 						<code class="stderr"></code>
 				</pre>
 		</form>
-		
+
 		<input class="stdin" placeholder="Send input to program">
 
 	</div>
@@ -47,7 +47,7 @@
 <script src="/socket.io/socket.io.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="/javascripts/level.js"></script>
-<script type="text/javascript">var code = $(".codeeditor")[0]; var editor = CodeMirror.fromTextArea(code, { lineNumbers : true });</script>
-
+<script src="/mode/python/python.js"></script>
+<script src="/javascripts/compiler.js"></script>
 </body>
 </html>
