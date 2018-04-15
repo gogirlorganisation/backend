@@ -5,4 +5,7 @@ $(document).ready(function(){
     mode : 'python'
   });
 
+  editor.on('change', function() {
+    editor.save();
+  });
 });
