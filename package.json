@@ -8,6 +8,7 @@
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "~1.18.2",
+    "consolidate": "^0.15.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "^4.16.3",
@@ -15,7 +16,6 @@
     "mongoose": "^5.0.11",
     "morgan": "~1.9.0",
     "mustache": "^2.3.0",
-    "mustache-express": "^1.2.5",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "pug": "2.0.0-beta11",
