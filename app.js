@@ -10,6 +10,7 @@ var session = require('express-session');
 var fs = require('fs');
 var proc = require('child_process');
 var auth = require('./auth/init')(passport);
+var cons = require('consolidate');
 
 var app = express();
 
@@ -24,8 +25,9 @@ var levels = require('./routes/levels');
 var ide = require('./routes/ide')(io);
 
 // view engine setup
+app.engine('html', cons.mustache);
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
+app.set('view engine', 'html');
 
 app.use(session({secret: auth.key, 
                  saveUninitialized: true,

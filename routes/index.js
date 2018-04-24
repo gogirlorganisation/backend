@@ -9,6 +9,10 @@ router.get('/workshops', function(req, res) {
 	res.render('workshops');
 });
 
+router.get('/course', function(req, res) {
+	res.render('course');
+});
+
 router.get('/login', function(req, res) {
 	res.render('login');
 });
