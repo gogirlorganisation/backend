@@ -19,10 +19,9 @@ $('form').on('submit', function(e) {
 		success: function(data) {
 			if(data.message == 'success')
 				location.href = '/dashboard';
-			else alert(data.message);
+			else alert('Invalid details - try again.');
 		},
 		error: function(xhr, err) {
-			alert('see console for error');
 			console.log(err);     
 		}
 	});

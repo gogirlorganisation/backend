@@ -282,6 +282,36 @@ input.stdin {
 }
 
 
+img.hidden {
+  display: none;
+}
+
+.eve-container {
+  position: relative;
+}
+
+.bubble {
+  position: absolute;
+  top: 50px;
+  left: 55%;
+  max-width: 45%;
+  padding: 0.75rem;
+  box-sizing: border-box;
+  border-radius: 0.33rem;
+  filter: drop-shadow(0.1rem 0.15rem 0.2rem rgba(0,0,0,0.2));
+  background: white;
+}
+
+.bubble:before {
+  position: absolute;
+  bottom: -0.45rem;
+  left: 0;
+  border: 0.5rem solid white;
+  content: '';
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+}
+
 /*[ Responsive ]*/
 
 @media (max-width: 576px) {
