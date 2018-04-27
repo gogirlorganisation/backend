@@ -1,3 +1,35 @@
+var Person = function() {
+	var sad = $('.sad-eve'),
+		happy = $('.happy-eve');
+
+	this.happy = function() {
+		sad.addClass('hidden');
+		happy.removeClass('hidden');
+	};
+
+	this.sad = function() {
+		sad.removeClass('hidden');
+		happy.addClass('hidden');
+	};
+
+	this.say = function(str) {
+		var x = $('<div>');
+		x.html(str);
+		x.addClass('bubble');
+		x.insertBefore('.happy-eve');
+		setTimeout(function() {
+			x.fadeOut(300, function() {
+				x.remove();
+			});
+		}, 5500);
+		$('.question').animate({
+			scrollTop: happy.offset.top
+		}, 400);
+	}
+};
+
+var Eve = new Person();
+
 $('form.submit').on('submit', function(e) {
 	e.preventDefault();
 
@@ -9,10 +41,15 @@ $('form.submit').on('submit', function(e) {
 		},
 		success: function(data) {
 			if(data.message == 'win') {
-				alert('correct answer!');
+				Eve.say('correct answer!');
+				//Eve.happy();
 			}
 			else if(data.message == 'lose') {
-				alert('incorrect answer!');
+				Eve.say('incorrect answer!');
+				/*Eve.sad();
+				setTimeout(function() {
+					Eve.happy();
+				}, 5000);*/
 			}
 			else if(data.message == 'logout') {
 				alert('please log in again');
