@@ -4,7 +4,9 @@ $('form.submit').on('submit', function(e) {
 	$.ajax({
 		url: location.href,
 		type: $(this).attr('method'),
-		data: $(this).serialize(),
+		data: {
+			answer: $('.stdout').text()
+		},
 		success: function(data) {
 			if(data.message == 'win') {
 				alert('correct answer!');
@@ -66,5 +68,6 @@ $('form.compiler').on('submit', function(e) {
 		err(data);
 		$('.stdin').off('keypress');
 		socket.disconnect();
+		$('form.submit').submit();
 	});
 });
