@@ -10,7 +10,6 @@ $('form.submit').on('submit', function(e) {
 		success: function(data) {
 			if(data.message == 'win') {
 				alert('correct answer!');
-				location.href = '/dashboard';
 			}
 			else if(data.message == 'lose') {
 				alert('incorrect answer!');
