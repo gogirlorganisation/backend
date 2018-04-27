@@ -63,7 +63,7 @@ button:hover {
 }
 
 .container {
-  width: 100%;  
+  width: 100%;
   min-height: 100vh;
   display: -webkit-box;
   display: -webkit-flex;
@@ -73,7 +73,7 @@ button:hover {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background: #f2f2f2;  
+  background: #f2f2f2;
 }
 
 .question {
@@ -82,8 +82,8 @@ button:hover {
   border-radius: 10px;
   overflow: hidden;
   padding: 25px 50px;
-
   box-shadow: 0 10px 35px 0px rgba(0, 0, 0, 0.1);
+  text-align: left;
 }
 
 
