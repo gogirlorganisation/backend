@@ -215,7 +215,7 @@ header {
 	position: fixed;
   z-index: 1;
 	align-content: center;
-	background: #ffffff91;
+	background: #ffffffdd;
 	width: 100%;
 	height: 5rem;
 	line-height: 5rem;
@@ -228,21 +228,23 @@ header {
 	font-size: 90%;
 }
 
-header div {
+header > div {
   padding: 0 calc(50% - 512px); /* 512*2 = 1024px width */
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
-header div .logo img {
+header > div .logo img {
 	height: 3rem;
 	margin: 1rem;
 }
 
-header div nav {
+header > div nav {
 	display: flex;
-  padding: 0 calc(50% - 512px) 0 0; /* 512*2 = 1024px width */
 }
 
-header div nav a {
+header > div nav a {
 	display: inline-block;
 	padding: 0 2rem;
 	color: inherit;
@@ -251,7 +253,7 @@ header div nav a {
 	font-size: 120%;
 }
 
-header div nav a:before {
+header > div nav a:before {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -263,16 +265,32 @@ header div nav a:before {
 	transition: all 0.1s ease-in-out;
 }
 
-header div nav a:hover {
+header > div nav a:hover {
 	color: rgba(255, 51, 85, .45);
 }
 
-header div nav a:hover:before {
+header > div nav a:hover:before {
 	transform: scaleY(1);
 }
 
-header div nav a span {
+header > div nav a span {
 	position: relative;
+}
+
+.submenu {
+  position: absolute;
+  top: 5rem;
+  right: calc(50% - 512px);
+  background: #ffffffdd;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.submenu.visible {
+  pointer-events: all;
+  opacity: 1;
 }
 
 div .row {

@@ -39,24 +39,29 @@
 
 	<div class="twelve columns masthead">
 		<header>
-			<div style="display: contents" class="me">
+			<div class="me">
 				<div class="logo">
 					<img src="img/logo_trans.png">
 				</div>
 
 				<nav>
-					<a href="/login">
-						<span>Login</span>
-					</a>
-					<a href="/signup">
-						<span>Sign Up</span>
-					</a>
 					<a href="/about">
 						<span>About</span>
 					</a>
 					<a href="/workshops">
 						<span>Workshops</span>
 					</a>
+					<a href="#" class="show-submenu">
+						<span>Platform</span>
+					</a>
+					<div class="submenu">
+						<a href="/login">
+							<span>Login</span>
+						</a>
+						<a href="/signup">
+							<span>Sign Up</span>
+						</a>
+					</div>
 				</nav>
 			</div>
 		</header>
@@ -140,6 +145,9 @@
 			</div>
 		</div>
 	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="/javascripts/index.js"></script>
 
 </body>
 
