@@ -14,6 +14,10 @@
 
 <p>Hello, {{user}}! You have {{points}} points.</p>
 
+<div class="progress-bar">
+	<div class="progress" data-points="{{points}}" data-max="90"></div>
+</div>
+
 <p><a href="/levels/1">Introduction</a></p>
 <p><a href="/levels/2">Introduction to Python Syntax</a></p>
 <p><a href="/levels/3">Strings and Console Output</a></p>
@@ -26,8 +30,26 @@
 
 <p><a href="/users/logout">Log out</a></p>
 
+<style>
+	
+.progress-bar {
+	width: 600px;
+	height: 5px;
+	background: #eee;
+	margin: 2rem auto;
+}
+
+.progress-bar .progress {
+	background: #1e90ff;
+	height: 100%;
+	width: 0%;
+	transition: all 0.1s ease-in-out;
+}
+
+</style>
+
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="/javascripts/signup.js"></script>
+<script src="/javascripts/dash.js"></script>
 
 </body>
 </html>
