@@ -3,12 +3,18 @@ var router = express.Router();
 var User = require('../auth/models/User');
 
 var answers = {
-	1: '42',
-	2: 'thequickbrownfox'
+	1: function(str) {
+		return str.trim() === 'Hello World!';
+	},
+	2: function(str) {
+		// matches "Hello, my name is pqr." where pqr is any string.
+		return /Hello, my name is.*\./.test(str.trim());
+	}
 };
 
 function checkCorrect(level, answer) {
-	return answers[level] === answer;
+	console.log('Input start' + answer + 'Input end');
+	return answers[level](answer);
 }
 
 router.get('/:level', function(req, res) {
