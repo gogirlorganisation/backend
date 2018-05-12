@@ -57,6 +57,22 @@ img {
   height: auto;
 }
 
+.submenu {
+  position: absolute;
+  top: 5rem;
+  right: calc(50% - 512px);
+  background: #ffffffdd;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.submenu.visible {
+  pointer-events: all;
+  opacity: 1;
+}
+
 /* Flexbox styles */
 @media screen and (min-width: 40em) {
   .cards {
@@ -69,9 +85,7 @@ img {
   .card {
     margin-bottom: 1em;
     display: flex;
-    flex: 0 1 calc(50% - 0.5em);
     background-color: #f8f8f8;
-    /* width: calc(50% - 1em); */
   }
 } /* mq 40em*/
 
@@ -83,7 +97,5 @@ img {
   .card {
     margin-bottom: 2em;
     display: flex;
-    flex: 0 1 calc(33% - 0.5em);
-    /* width: calc(33% - 1em); */
   }
 } /* mq 60em*/
