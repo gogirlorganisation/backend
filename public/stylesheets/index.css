@@ -315,15 +315,24 @@ section#main {
 }
 
 h1#page-title {
-	font-family: Europa;
+	font-family: Europa, sans-serif;
 	font-size: 4.5rem;
 	font-weight: 600;
 	letter-spacing: -0.1rem;
 	margin: 1rem 0 0;
+  padding-bottom: 0;
+  line-height: 1.1;
+}
+
+.hero-copy-content h2 {
+  font-size: 2.8rem;
+  text-align: center;
+  font-weight: 300;
+  margin-top: 0;
 }
 
 section#main h3 {
-	font-family: Europa;
+	font-family: Europa, sans-serif;
 	font-size: 1.5rem;
 	font-weight: 200;
 	margin: -0.3rem 0 0;
@@ -371,8 +380,35 @@ blockquote, dd, div, dl, dt, form, li, ol, p, pre, td, th, ul {
 }
 
 .hero-inner {
-    height: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 0;
 }
+
+.hero-buttons {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+a.hero-button {
+    color: #EE2761;
+    padding: 0.66rem 1.75rem;
+    border: 1px solid;
+    border-color: #EE2761;
+    margin: 0.25rem;
+    display: inline-block;
+    border-radius: 0.5rem;
+}
+
+a.hero-button.highlight {
+    color: white;
+    background: #EE2761;
+}
+
+
 .row {
     max-width: 60rem;
     margin-left: auto;
@@ -384,13 +420,9 @@ blockquote, dd, div, dl, dt, form, li, ol, p, pre, td, th, ul {
 }
 
 .hero-copy {
-    position: relative;
-    bottom: -20rem;
-    color: #fff;
-    background: rgba(220, 39, 69, 0.51);
+    color: rgba(255, 51, 85, .85);
     display: inline-block;
     text-align: center;
-    border-radius: 15px;
     padding: 1rem 0;
     max-width: 100%;
     overflow: hidden;
@@ -558,7 +590,7 @@ div.wwd div.preview {
 .social li a span {
   width: 100px;
   float: left;
-  font-family: Europa;
+  font-family: Europa, sans-serif;
   text-align: center;
   color: #fff;
   margin: -30px 74px;
