@@ -200,6 +200,9 @@ body {
    	display: table;
 }
 
+::-moz-selection { background-color: rgba(255, 51, 85, .45); }
+::selection { background-color: rgba(255, 51, 85, .45); }
+
 .center {
 	text-align: center;
 }
@@ -215,7 +218,7 @@ header {
 	position: fixed;
   z-index: 1;
 	align-content: center;
-	background: #ffffffdd;
+	background: #ffffffc7;
 	width: 100%;
 	height: 5rem;
 	line-height: 5rem;
@@ -281,7 +284,7 @@ header > div nav a span {
   position: absolute;
   top: 5rem;
   right: calc(50% - 512px);
-  background: #ffffffdd;
+  background: #ffffffc7;
   display: flex;
   flex-direction: column;
   opacity: 0;
@@ -315,13 +318,13 @@ section#main {
 }
 
 h1#page-title {
-	font-family: Europa, sans-serif;
-	font-size: 4.5rem;
-	font-weight: 600;
-	letter-spacing: -0.1rem;
-	margin: 1rem 0 0;
-  padding-bottom: 0;
-  line-height: 1.1;
+    font-family: Europa, sans-serif;
+    font-size: 4.5rem;
+    font-weight: 600;
+    letter-spacing: -0.1rem;
+    margin: 1rem 0 1rem 0;
+    padding-bottom: 0;
+    line-height: 1.1;
 }
 
 .hero-copy-content h2 {
@@ -420,10 +423,12 @@ a.hero-button.highlight {
 }
 
 .hero-copy {
-    color: rgba(255, 51, 85, .85);
+    color: #fff;
+    background: #fc546fab;
     display: inline-block;
     text-align: center;
-    padding: 1rem 0;
+    padding: 1rem 0 2rem 0;
+    border-radius: 25px;
     max-width: 100%;
     overflow: hidden;
     max-height: 600px;
@@ -460,7 +465,6 @@ a.hero-button.highlight {
 	margin: 0 auto;
     text-align: center;
 	display: flow-root;
-  background: #eee;
 }
 
 .two-cols {
@@ -508,7 +512,7 @@ a.hero-button.highlight {
 
 .cwc-video {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 */
+  padding-bottom: 50.25%; /* 16:9 */
   padding-top: 25px;
   height: 0;
 }
@@ -762,7 +766,7 @@ footer .do img {
 
   .hero-copy {
       position: absolute !important;
-      bottom: 7rem !important;
+      bottom: 15rem !important;
   }
 
   ul.social {
@@ -787,6 +791,7 @@ footer .do img {
   .page-title {
       font-size: 3.0625rem;
       line-height: 1.4;
+      margin: 1rem 0 0 !important;
   }
 
   div .wwd {
