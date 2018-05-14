@@ -463,7 +463,7 @@ a.hero-button.highlight {
   background: #eee;
 }
 
-.cwc-intro {
+.two-cols {
     padding: 5rem 0;
     display: flex;
     justify-content: center;
@@ -471,30 +471,37 @@ a.hero-button.highlight {
     flex-wrap: wrap;
 }
 
-.cwc-intro > div {
+.two-cols > div {
     max-width: 512px;
     width: 100%;
 }
 
-.cwc-text-container h1 {
+.text-container h1 {
     font-size: 3.8rem;
 }
 
-.cwc-text-container .wrapper {
+.text-container .wrapper {
     width: 100%;
 }
 
-.cwc-text-container .line {
+.text-container .line {
     margin-left: 0;
     margin-bottom: 2rem;
 }
 
-.cwc-text-container .block p {
+.text-container .block p {
     font-size: 1.1rem;
     line-height: 1.6;
 }
 
-.cwc-video-container {
+.media-container img {
+  width: 80%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.two-cols > div:nth-of-type(2) {
   padding: 0 0 0 4rem;
   box-sizing: border-box;
 }
@@ -505,6 +512,7 @@ a.hero-button.highlight {
   padding-top: 25px;
   height: 0;
 }
+
 .cwc-video iframe {
   position: absolute;
   top: 0;
