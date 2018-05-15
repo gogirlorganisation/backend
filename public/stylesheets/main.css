@@ -19,6 +19,7 @@ header {
 	justify-content: space-between;
 	padding: 0 calc(50% - 512px); /* 512*2 = 1024px width */
 	color: white;
+  z-index: 9999;
 }
 
 header .logo img {

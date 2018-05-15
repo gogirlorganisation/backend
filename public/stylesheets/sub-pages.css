@@ -73,6 +73,57 @@ img {
   opacity: 1;
 }
 
+.workshops article.card,
+.workshops article.card > * {
+  position: relative;
+}
+
+.workshops article.card img {
+  display: block;
+}
+
+.workshops article.card .workshop-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  transition: all 0.1s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 1.25rem;
+  box-sizing: border-box;
+}
+
+.workshops article.card a:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.workshops article.card:hover .workshop-info {
+  background: rgba(0,0,0,0.35);
+}
+
+.workshops article.card {
+  font-style: italic;
+  font-family: 'Georgia', serif;
+  text-align: center;
+}
+
+.workshops article.card h3 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: normal;
+}
+
+.workshops article.card .date {
+  font-size: 1.33rem;
+}
+
 /* Flexbox styles */
 @media screen and (min-width: 40em) {
   .cards {
