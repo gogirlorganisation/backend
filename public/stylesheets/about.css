@@ -6,6 +6,7 @@ body {
   margin: 0;
   font-family: Europa;
   color: #333;
+  width: 100%;
 }
 
 header {
@@ -19,6 +20,7 @@ header {
   justify-content: space-between;
   padding: 0 calc(50% - 512px); /* 512*2 = 1024px width */
   color: white;
+  background: #ffffffc7;
 }
 
 header .logo img {
@@ -78,6 +80,58 @@ div .row {
 .row {
     margin-left: 15px;
     margin-right: 15px;
+}
+
+header {
+    z-index: 9999;
+}
+
+section.mast.about-mast {
+    height: 25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-content: center;
+    background-image: url(/img/five.jpg);
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+}
+
+section.mast.about-mast div.container h1 {
+    background: #fc546fab;
+    color: white;
+    display: inline-block;
+    padding: 2rem 3rem;
+    font-size: 4rem;
+    border-radius: 1rem;
+}
+
+section.description {
+    background: white;
+    padding: 5rem 0;
+}
+
+.desc-box h3 {
+    font-size: 1.66rem;
+    padding-bottom: 1.5rem;
+    font-weight: normal;
+}
+
+.desc-box p {
+    line-height: 1.5;
+}
+
+.desc-box.column-4 {
+    width: 28%;
+}
+
+.desc-box.column-4:first-of-type {
+    margin-left: 8%;
+}
+
+.desc-box.column-4:last-of-type {
+    margin-right: 8%;
 }
 
 section#main {
