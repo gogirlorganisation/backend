@@ -109,7 +109,29 @@ section.mast.about-mast div.container h1 {
 
 section.description {
     background: white;
-    padding: 5rem 0;
+    padding: 3rem 0 5rem;
+}
+
+.big-quote blockquote {
+    font-size: 2.6rem;
+    font-weight: lighter;
+}
+
+.big-quote.big-quote {
+    padding: 2rem 5rem 3rem;
+}
+
+.big-quote cite {
+    display: block;
+    text-align: right;
+    padding: 0 6rem 0 0;
+    font-size: 1.4rem;
+    font-weight: lighter;
+    font-style: normal;
+}
+
+.big-quote cite:before {
+    content: ' - ';
 }
 
 .desc-box h3 {
@@ -123,15 +145,16 @@ section.description {
 }
 
 .desc-box.column-4 {
-    width: 28%;
+    width: 28.333%;
+    margin: 0 1.5%;
 }
 
 .desc-box.column-4:first-of-type {
-    margin-left: 8%;
+    margin-left: 3%;
 }
 
 .desc-box.column-4:last-of-type {
-    margin-right: 8%;
+    margin-right: 3%;
 }
 
 section#main {
