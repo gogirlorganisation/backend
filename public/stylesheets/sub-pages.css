@@ -3,6 +3,7 @@ body{
 }
 header {
   color: #f37;
+  background: #ffffffc7;
 }
 section{
   padding: 2em 0;
@@ -16,6 +17,28 @@ section.mast h1{
   padding-left: 0.5em;
   font-size: 2rem;
 }
+
+section.mast.workshops-mast {
+    height: 25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-content: center;
+    background-image: url(/img/five.jpg);
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+}
+
+section.mast.workshops-mast div.container h1 {
+    background: #fc546fab;
+    color: white;
+    display: inline-block;
+    padding: 2rem 3rem;
+    font-size: 4rem;
+    border-radius: 1rem;
+}
+
 .card {
 	background: white;
 	margin-bottom: 2em;
@@ -79,6 +102,11 @@ img {
 
 .workshops article.card img {
   display: block;
+  transition: all 250ms cubic-bezier(0.02, 0.01, 0.47, 1);
+}
+
+.workshops article.card:hover img {
+  transform: scale(1.05);
 }
 
 .workshops article.card .workshop-info {
@@ -88,7 +116,7 @@ img {
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.5);
-  transition: all 0.1s ease-in-out;
+  transition: all 250ms cubic-bezier(0.02, 0.01, 0.47, 1);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -98,9 +126,12 @@ img {
   box-sizing: border-box;
 }
 
+.workshops article.card a {
+  box-shadow: none;
+}
+
 .workshops article.card a:hover {
   transform: none;
-  box-shadow: none;
 }
 
 .workshops article.card:hover .workshop-info {
@@ -108,19 +139,28 @@ img {
 }
 
 .workshops article.card {
-  font-style: italic;
-  font-family: 'Georgia', serif;
   text-align: center;
+  overflow: hidden;
+}
+
+.workshops article.card figure {
+  overflow: hidden;
 }
 
 .workshops article.card h3 {
   font-size: 2rem;
+  font-style: italic;
+  font-family: 'Georgia', serif;
   margin-bottom: 0.5rem;
   font-weight: normal;
 }
 
 .workshops article.card .date {
   font-size: 1.33rem;
+}
+
+footer .row.table {
+  margin: auto;
 }
 
 /* Flexbox styles */

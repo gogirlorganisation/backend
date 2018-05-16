@@ -115,6 +115,7 @@ section.description {
 .big-quote blockquote {
     font-size: 2.6rem;
     font-weight: lighter;
+    text-align: center;
 }
 
 .big-quote.big-quote {
@@ -128,6 +129,8 @@ section.description {
     font-size: 1.4rem;
     font-weight: lighter;
     font-style: normal;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .big-quote cite:before {

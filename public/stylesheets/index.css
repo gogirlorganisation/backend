@@ -724,7 +724,18 @@ div.wwd div.preview {
   color: white;
 }
 
+section.what-we-do {
+    padding: 3rem 0;
+}
 
+.what-we-do img {
+    width: 100%;
+}
+
+.what-we-do h4 {
+    font-size: 2rem;
+    text-align: center;
+}
 
 footer {
 	background: #d63550d9;
