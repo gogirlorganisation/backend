@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=EB+Garamond:400,400i,500,500i');
-@import url('https://fonts.googleapis.com/css?family=Montserrat:200');
+
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+
 
 /*
 * Skeleton V2.0.4
@@ -249,11 +250,11 @@ header > div nav {
 
 header > div nav a {
 	display: inline-block;
-	padding: 0 2rem;
+	padding: 0 2.5rem;
 	color: inherit;
 	text-decoration: none;
 	position: relative;
-	font-size: 120%;
+	font-size: 100%;
 }
 
 header > div nav a:before {
@@ -512,17 +513,19 @@ a.hero-button.highlight {
 
 .cwc-video {
   position: relative;
-  padding-bottom: 50.25%; /* 16:9 */
+  padding-bottom: 40.25%; /* 16:9 */
   padding-top: 25px;
   height: 0;
+  text-align: center;
 }
 
 .cwc-video iframe {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  width: 60%;
+  height: 80.5%;
+  margin-top: 3rem;
+  left: 20%;
+  box-shadow: 0 40px 40px rgba(0, 0, 0, 0.20);
 }
 
 .missionheader {
@@ -629,6 +632,7 @@ div.wwd div.preview {
   position: fixed;
   margin-top: 300px;
   perspective: 1000px;
+  z-index: 1;
 }
 
 .social li a {
@@ -735,6 +739,7 @@ section.what-we-do {
 .what-we-do h4 {
     font-size: 2rem;
     text-align: center;
+    font-weight: 400;
 }
 
 footer {

@@ -11,6 +11,7 @@ body {
 
 header {
   position: fixed;
+  border-bottom: 1px solid #eee;
   top: 0;
   left: 0;
   width: 100%;
@@ -109,7 +110,8 @@ section.mast.about-mast div.container h1 {
 
 section.description {
     background: white;
-    padding: 3rem 0 5rem;
+    padding: 10rem 0 5rem;
+    border-bottom: 2px solid #eee;
 }
 
 .big-quote blockquote {
@@ -119,7 +121,7 @@ section.description {
 }
 
 .big-quote.big-quote {
-    padding: 2rem 5rem 3rem;
+  padding: 0 5rem 3rem 5rem;
 }
 
 .big-quote cite {

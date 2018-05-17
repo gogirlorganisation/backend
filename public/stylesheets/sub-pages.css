@@ -1,12 +1,13 @@
 body{
-  background: #f8f8f8;
+  background: #fff;
 }
 header {
   color: #f37;
   background: #ffffffc7;
+  border-bottom: 1px solid #eee;
 }
 section{
-  padding: 2em 0;
+  padding: 6em 0 0 0;
   width: 100%;
 }
 section.mast{
@@ -116,7 +117,7 @@ img {
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.5);
-  transition: all 250ms cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 150ms cubic-bezier(0.02, 0.01, 0.47, 1);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -132,6 +133,7 @@ img {
 
 .workshops article.card a:hover {
   transform: none;
+  filter: brightness(200%);
 }
 
 .workshops article.card:hover .workshop-info {
@@ -175,7 +177,6 @@ footer .row.table {
   .card {
     margin-bottom: 1em;
     display: flex;
-    background-color: #f8f8f8;
   }
 } /* mq 40em*/
 
