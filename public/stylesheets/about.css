@@ -267,8 +267,8 @@ img {
 
 @media only screen and (min-width: 30em) {
   .container {
-    width: 95%;
-    max-width: 70em;
+    width: 100%;
+    max-width: 80em;
   }
   .column-1 {
     width: 8.33333%;
