@@ -133,6 +133,9 @@ img {
 
 .workshops article.card a:hover {
   transform: none;
+}
+
+.workshops article.card a:hover figure {
   filter: brightness(200%);
 }
 

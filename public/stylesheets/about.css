@@ -143,6 +143,7 @@ section.description {
     font-size: 1.66rem;
     padding-bottom: 1.5rem;
     font-weight: normal;
+    text-align: center;
 }
 
 .desc-box p {
@@ -161,6 +162,91 @@ section.description {
 .desc-box.column-4:last-of-type {
     margin-right: 3%;
 }
+
+section.timeline {
+    background: #ff1151;
+    color: white;
+    padding-bottom: 6em;
+}
+
+.timeline-items-container {
+    height: 15rem;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding: 0 7.5%;
+}
+
+.timeline-items-container:before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 1px;
+    margin: auto;
+    width: 90%;
+    background: white;
+    content: '';
+}
+
+.timeline-item {
+    flex: 1;
+    text-align: center;
+    height: 50%;
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+}
+
+.timeline-item:nth-child(even) {
+    align-self: flex-end;
+    justify-content: flex-start;
+}
+
+.timeline-item:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.375rem;
+    height: 0.75rem;
+    width: 0.75rem;
+    border-radius: 50%;
+    border: 0.125rem solid white;
+    margin: auto;
+    background-color: #ff1151;
+    display: block;
+    z-index: 2;
+}
+
+.timeline-item:nth-child(even):before {
+    bottom: auto;
+    top: -0.375rem;
+}
+
+.timeline-item:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 2.25rem;
+    width: 1px;
+    background: white;
+}
+
+.timeline-item:nth-child(odd):after {
+    bottom: 0;
+}
+
+.timeline-item:nth-child(even):after {
+    top: 0;
+}
+
+span.date {
+    font-size: 1.25rem;
+}
+
 
 section#main {
   background: linear-gradient(150deg, #f37 10%, #ff3377db 20%, #ff334485 70%);
@@ -367,4 +453,46 @@ article img {
 .submenu.visible {
   pointer-events: all;
   opacity: 1;
+}
+
+@media(max-width: 864px) {
+  .timeline-items-container {
+      height: auto;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0;
+      max-width: 25rem;
+      margin: auto;
+  }
+
+  .timeline-items-container:before {
+      height: 100%;
+      width: 1px;
+      left: 0;
+  }
+
+  .timeline-item {
+      text-align: left;
+      padding: 3.5rem 0 2rem 3.5rem;
+  }
+
+  .timeline-item:nth-child(even) {
+      align-self: flex-start;
+  }
+
+  .timeline-item:before {
+      top: 0 !important;
+      bottom: 0 !important;
+      left: -0.375rem;
+      right: auto;
+  }
+
+  .timeline-item:after {
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: auto;
+      width: 2rem;
+      height: 1px;
+  }
 }
