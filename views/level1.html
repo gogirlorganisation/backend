@@ -17,21 +17,75 @@
 		<br><br>
 		<form method="post" class="submit">
 			<h1>Introduction</h1>
-			<p>Ever heard the phrase “Work smart, not hard”? Well computers don’t do that at all. It’s best to think of a computer as a really dumb but hard working human being. It can do great things with good guidance, like running Facebook. But without good guidance, it’s just a hunk of metal. That’s where you come in, with your guidance and support you can make a computer do great things. You can make computers great again. :)</p>
-			<p>Before we go any further and make cool stuff like the next Google, lets figure out how to talk to these computers. We talk to computers through something called Programming and there are many Programming languages to choose from, for the purpose of this course we’ll choose the most popular language, Python! :D</p>
-			<h2>Introduction to Python Syntax</h2>
-			<p>If programming is the act of teaching a computer to have a conversation with a user, it would be most useful to first teach the computer how to speak. In Python, this is accomplished with the print statement.</p>
+			<p>Ever heard the phrase “Work smart, not hard”?  Well, computers don’t do that at all. It’s best to think of a computer as a really dumb but hard working human being. It can do great things with good guidance, like running Facebook. But without that guidance, it’s just a hunk of metal. That’s where you come in: with your guidance and support, you can make a computer do great things.</p>
+
+			<p>Before we go any further and make cool stuff like the next Google, let’s figure out how to talk to these computers. </p>
+
+			<p> Computers can only understand programming languages. This means that they cannot understand human languages. So, humans have developed some languages which help the computer understand what we want it to do. A program is an algorithm written in one of these languages.</p>
+
+			<p>This course is covering one of the most popular programming languages, Python 3.5.</p>
+
+			<p> In this tutorial some words will be underlined and can be clicked upon for explanation like this <a id="w1" href="#" onclick="return false;"><b>like this.</b></a><span id="p1" class="hidden"> Good job! You’ve opened up an explanation for ‘like this’ and you can do it <b> <a id="w4" href="#" onclick="return false;">again.</span></b></a><span id="p4" class="hidden"> Wow! You are terrific at this!! </span></p>
+
+
+			<h2>Syntax and Printing</h2>
 			<p>
+				While writing a program we’ll be using two tools:<br> <br>
+
+				Text Editor: The place where you tell a program what to do.
+				Console: The place where the computer returns information after processing what you asked it to do.
+			</p>
+
+			<p> 
+				You’ll be spending a huge portion of your time writing your programs and code using a text editor, before running the code via a console.
+			</p>
+
+			<p>
+				As a budding programmer like yourself, you’ll have to write lots and lots of code. How you write the code is very important - you need to follow some rules when you write this code. Otherwise, the computer can’t understand what you’re writing at all, and your code won’t run! This is what we call ‘Syntax’. It is the arrangement of words to create sentences in a language. Just like we how we need to follow proper grammar rules in any language (like Hindi and English), we do the same in Python. We will cover the rules of writing any code in Python as we go along talking about what you can do using this programming language.
+
+			<p>
+
+			<p>
+				So, let’s get started with talking to a computer in Python!<br><br>
+
+				We’ll start off with the tool in programming that you’ll use the most; printing. It basically returns whatever you give it.<br><br>
+
+				Let’s take the following as an example:<br> <br>
+			</p>
+
 				<code>
-					print "Hello, world!"
-					<br>
-					print "I'm a programmer at The Girl Code! :)"
+					print(“Hi, My Name is Eve!”)
 				</code>
 			</p>
-			<p>A print statement is the easiest way to get your Python program to communicate with you. Being able to command this communication will be one of the most valuable tools in your programming toolbox.</p>
-			<h2>Instructions</h2>
+
+			<br> <br>
+
+			<p>
+				There are two important parts to this:
+				<b>“Hi, My Name is Eve!”</b>: This is called a string. For now think of it as a chain of letters, numbers or anything you can type on your keyboard.
+
+				<br> <br>
+				<b>print()</b>: Anything you put in between the brackets is returned by the computer into the console.
+
+				<br><br>
+
+				Let’s test this out! Print out your name and press the compile button.
+
+			</p>
+
+			<p>
+				During the course of this tutorial, you will come across many statements starting with a hashtag(#). These are known as comments and are used to explain to code to people who read it - these are not run by the computer.
+			</p>
+
+			<code>
+				print("Hello") <br>
+				#Hello is printed on the screen whereas this comment is not.
+			</code>
+
+
+			<h2>Question</h2>
 			<ol>
-				<li>Using a print statement, output `Hello, my name is {your name}.` message of your choosing to the terminal.</li>
+				<li>Eve wants the computer to know the address to her family bakery (Eve’s Family Bakery, 155 Main St, Bihar 84101, INDIA). Print the address to let the computer know!</li>
 			</ol>
 		</form>
 		<div class="eve-container">
@@ -64,5 +118,18 @@
 <script src="/javascripts/level.js"></script>
 <script src="/mode/python/python.js"></script>
 <script src="/javascripts/compiler.js"></script>
+  <script type="text/javascript">
+      $(document).ready(function () {
+      var MastStory = function () {
+        $('#w1').click(function(){ $('#p1').removeClass('hidden'); });
+        $('#w2').click(function(){ $('#p2').removeClass('hidden'); });
+        $('#w3').click(function(){ $('#p3').removeClass('hidden'); });
+        $('#w4').click(function(){ $('#p4').removeClass('hidden'); });
+        $('#w5').click(function(){ $('#p5').removeClass('hidden'); });
+        $('#clr').click(function(){ $('#p1').addClass('hidden'); });
+      };
+      MastStory();
+      });
+  </script>
 </body>
 </html>
