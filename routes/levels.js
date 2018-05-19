@@ -80,11 +80,7 @@ function checkCorrect(level, answer) {
 
 router.get('/:level', function(req, res) {
 	if(req.isAuthenticated()) {
-		res.render('level' + req.params.level, {
-			user: req.user.username
-		}, function(err) {
-			res.status(404).send('404');
-		});
+		res.render('level' + req.params.level);
 	} else {
 		res.redirect('/');
 	}
