@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>The Girl Code Backend</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/level.css">
+	<!-- Create a simple CodeMirror instance -->
+	<link rel="stylesheet" href="/stylesheets/codemirror.css">
+	<script src="/lib/codemirror.js"></script>
+	<script src="/lib/javascript.js"></script>
+	<script   src="https://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="question">
+		<a href='/dashboard'>&larr; Back to the dashboard</a>
+		<br><br>
+		<form method="post" class="submit">
+			
+			<h1>Conditionals - True and False</h1>
+			<p>
+				You’ve probably heard that Math and programming have a lot in common. It’s quite true since programming is based on Mathematics the same way Physics is. It shouldn’t be much of a surprise to see a lot of Mathematics in programming. <br><br>
+
+				Till now, we’ve seen strings being assigned to variables; but, just like in maths we can assign integers to variables and do mathematical operations on them.<br> <br>
+
+				A computer in its simplest form is a calculator and it can do everything that a basic calculator(+, -, ×, ÷) can do (and it can do it really well). The only difference between your calculator and Python is that we use * for multiplication (×) and / for division (÷).<br><br>
+
+				<b>Note:</b> Computers do follow BODMAS. <br><br>
+
+				Let’s look at some examples:<br>
+
+				<code>
+				x = 10 #Assign the variable x to the int 10!<br>
+				print( (x+10) / 2 )                  #Output:10 <br>
+				print( (x+10)*2 )                    #Output:40 <br>
+				print( x + 10 - 5 )                  #Output:15 <br>
+				</code>
+
+
+			</p>
+
+
+			<p> 
+				We have one more function in programming called modulus, it is represented with %. It gives the remainder when you are dividing two numbers. <br> <br>
+
+				<code>
+					print(5%2)                    #Output: 1; (5÷2 = 2 remainder 1!)
+				</code>
+			</p>
+
+
+			<h2>Question</h2>
+			
+			<p>
+				
+				Eve wants to calculate the final price after a discount is applied on an order. She is told that the total price is $150 and the amount of discount given is 25%. Calculate the price after the 25% discount and print this discounted price.
+
+			</p>
+
+		</form>
+		<div class="eve-container">
+			<img src="/img/blinky-eve.gif" alt="Eve" class="happy-eve">
+			<img src="/img/sad-eve.png" alt="Sad Eve" class="sad-eve hidden">
+		</div>
+	</div>
+
+	<div class="coding">
+		<form method="post" action="/levels/compiler" class="compiler">
+			<textarea name="code" placeholder="Code here" class="codeeditor"></textarea>
+				<div class="formbutton">
+					<div class="form-in-button">
+						<div class="bgbutton"></div>
+						<button class="loginbutton">Compile</button>
+					</div>
+				</div>
+				<div class="output-container">
+					<pre data-heading="OUTPUT"><code class="stdout"></code></pre>
+					<pre data-heading="STATUS"><code class="stderr"></code></pre>
+				</div>
+		</form>
+
+		<input class="stdin" placeholder="Send input to program...">
+
+	</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="/javascripts/level.js"></script>
+<script src="/mode/python/python.js"></script>
+<script src="/javascripts/compiler.js"></script>
+  <script type="text/javascript">
+      $(document).ready(function () {
+      var MastStory = function () {
+        $('#w1').click(function(){ $('#p1').removeClass('hidden'); });
+        $('#w2').click(function(){ $('#p2').removeClass('hidden'); });
+        $('#w3').click(function(){ $('#p3').removeClass('hidden'); });
+        $('#w4').click(function(){ $('#p4').removeClass('hidden'); });
+        $('#w5').click(function(){ $('#p5').removeClass('hidden'); });
+        $('#clr').click(function(){ $('#p1').addClass('hidden'); });
+      };
+      MastStory();
+      });
+  </script>
+</body>
+</html>

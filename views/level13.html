@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>The Girl Code Backend</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/level.css">
+	<!-- Create a simple CodeMirror instance -->
+	<link rel="stylesheet" href="/stylesheets/codemirror.css">
+	<script src="/lib/codemirror.js"></script>
+	<script src="/lib/javascript.js"></script>
+	<script   src="https://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="question">
+		<a href='/dashboard'>&larr; Back to the dashboard</a>
+		<br><br>
+		<form method="post" class="submit">
+			
+			<h1>Loops-While</h1>
+			<p>
+				Ever opened your book and seen tens of pages of the syllabus you have to read for a test? Don’t you wish there could be something more concise?<br><br>
+				That’s exactly what we want in a program – it should be as short and efficient as possible! Functions can simply defined as a method which gives an output given an input.<br><br>
+
+				But what if you want to create a function for something that doesn’t have a predefined one? There exist <b>user-defined functions</b> which you (i.e the user) have to create. The first step is to define your function, give it a name and parameter: let’s talk about Mathematics, in Trigonometry you have  functions (sin x, cos x, tan x), now they do not make sense <b>at all</b> if a value for <b>x</b> isn’t given. Here x is our <b>parameter</b> and that’s exactly what we need in coding too!<br><br>
+				So let’s define a function <i>add</i> that adds two numbers(m,n) given as parameters<br><br>
+
+				<code> def add(m, n):
+						   return m + n
+				print add(123, 77) </code>
+
+				Once you call the function (use the function in your program), the parameters provided within the brackets are used to carry it out(in this example, we carry out an addition function). The variable m will have the value of 123,  n of 77 and the function yields their sum.<br><br> 
+
+				<b>Note:</b> That colon present after the bracket is important, do not forget to add it after defining a function, else there will be an error.<br><br>
+
+				We can create a function using strings too.<br>
+
+				<code> 
+					def statement(name) 
+						   print (name + “, you’re doing amazing!”)
+				</code>
+				Can you create a few functions on your own?<br><br>
+
+				Functions mainly help us shorten our program, letting us avoid writing the same statements over and over again. Can you imagine typing the same greeting for over 100 people Now that sounds horrid! So instead of doing that, we could use functions and further reduce the load by using loops (How? That’s for you to figure out!).<br><br>
+
+				In Python, function is a group of related statements that perform a specific task.<br>
+				Functions help break our program into smaller and modular chunks. As our program grows larger and larger, functions make it more organized and manageable.<br><br>
+				Furthermore, it avoids repetition and makes code reusable.<br>
+
+				</code>
+
+			</p>
+			<br><br>
+
+			<h2>Question</h2>
+			
+			<p>
+
+				
+
+
+			</p>
+
+		</form>
+		<div class="eve-container">
+			<img src="/img/blinky-eve.gif" alt="Eve" class="happy-eve">
+			<img src="/img/sad-eve.png" alt="Sad Eve" class="sad-eve hidden">
+		</div>
+	</div>
+
+	<div class="coding">
+		<form method="post" action="/levels/compiler" class="compiler">
+			<textarea name="code" placeholder="Code here" class="codeeditor"></textarea>
+				<div class="formbutton">
+					<div class="form-in-button">
+						<div class="bgbutton"></div>
+						<button class="loginbutton">Compile</button>
+					</div>
+				</div>
+				<div class="output-container">
+					<pre data-heading="OUTPUT"><code class="stdout"></code></pre>
+					<pre data-heading="STATUS"><code class="stderr"></code></pre>
+				</div>
+		</form>
+
+		<input class="stdin" placeholder="Send input to program...">
+
+	</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="/javascripts/level.js"></script>
+<script src="/mode/python/python.js"></script>
+<script src="/javascripts/compiler.js"></script>
+  <script type="text/javascript">
+      $(document).ready(function () {
+      var MastStory = function () {
+        $('#w1').click(function(){ $('#p1').removeClass('hidden'); });
+        $('#w2').click(function(){ $('#p2').removeClass('hidden'); });
+        $('#w3').click(function(){ $('#p3').removeClass('hidden'); });
+        $('#w4').click(function(){ $('#p4').removeClass('hidden'); });
+        $('#w5').click(function(){ $('#p5').removeClass('hidden'); });
+        $('#clr').click(function(){ $('#p1').addClass('hidden'); });
+      };
+      MastStory();
+      });
+  </script>
+</body>
+</html>

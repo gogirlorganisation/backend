@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>The Girl Code Backend</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/level.css">
+	<!-- Create a simple CodeMirror instance -->
+	<link rel="stylesheet" href="/stylesheets/codemirror.css">
+	<script src="/lib/codemirror.js"></script>
+	<script src="/lib/javascript.js"></script>
+	<script   src="https://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="question">
+		<a href='/dashboard'>&larr; Back to the dashboard</a>
+		<br><br>
+		<form method="post" class="submit">
+			
+			<h1>Syntax and Printing</h1>
+			<p>
+				We’ve been talking a lot about working with numbers, so now, we’ll be talking about what are the things you can do with strings!<br><br>
+
+				<h3>Concatenation</h3> 
+				Earlier, we learnt about strings as collections of characters. Concatenation is a way of joining multiple strings together. You can easily add strings to build a complete sentence by using the addition operator - i.e. the ‘+’ sign. Crazy, right? 
+
+				<code>
+				word1 = “ginger” 
+				word2 = “bread”
+				word3 = word1 + word2
+				</code>
+
+				Now, word3 will read gingerbread. Thus, we have concatenated str01 and str02. <br> <br>
+
+				<b>Note:</b> Do not use this in your examination! We don’t want your English teacher to faint!
+
+
+			</p>
+
+			<h3>Uppercase and Lowercase</h3>
+			<p> 
+				
+				There is a handy feature in Python that helps convert the characters in a string to uppercase or lowercase. Let’s look at an example to show you how it works. <br> <br>
+
+				<code>
+					word1 = “GiNgEr”
+					word1 = word1.upper()
+					print(word1)
+					print(“BrEaD”.lower())
+				</code>
+    
+				The output looks like this:<br>
+				GINGER<br>
+				bread<br>
+
+				You can see how adding .upper() or .lower() to a variable or to a string can change its case.
+
+			</p>
+
+			<h3> Length of Variables</h3>
+			<p>
+							
+			What do you do if you want to know the length of a string? We know that the word ‘Hello’ contains 5 letters. <br> <br>
+
+			Instead of counting each letter, we can let the computer do it for you. All you need to do is use a function called len(). <br> 
+
+			<code>
+			len(“Eve likes to go shopping during the weekends”) 
+			</code>
+
+			Output: 44 <br> <br>
+
+			<b>Note:</b> len() function counts spaces too!<br> <br>
+
+			Did you notice something strange? 44 is not printed on the screen. That’s because you haven’t called the print function to do it for you! Go ahead and do it! <br> <br>
+
+			You can use it with variables too! <br> <br>
+
+			<code>
+				greetings = “Hello” 
+				Length_of_greeting = len(greetings) 
+				print(Length_of_greeting)
+			</code>
+
+
+			Output: 5
+
+			</p>
+
+			<h3> Indexing </h3>
+
+			<p>
+
+			Eve wants to print the letter at the second index position in “HELLO”. <br> 
+			Can you help her do that? For accessing specific letters in a string we have to write the following: <br> <br>
+
+			<code>
+			String[postion_of_the_letter]
+			</code>
+
+			For example:
+
+			<code>
+			word = “HELLO”
+			print(word[2]) # or just "HELLO"[2]
+			<code>
+
+			The output is… <br> 
+			L <br> <br>
+
+			That shocked you, didn’t it? Although L is the third letter in the word HELLO, it is in the <b>second index</b> position.<br> <br>
+
+			Programmers are weird like that. They like to count from 0. Look at the image attached to get a better sense. Now think about which letter you would get if you printed the fourth index position.<br> <br>
+
+			<b> PICTURE </b>
+
+			The answer is…<br>
+			O<br>
+			Yes! You did it! O is the fifth letter but has the fourth index position assigned to it.
+			</p>
+
+			<h3> Slicing </h3>
+
+			<p>
+			amazing_programmer = “Ada Lovelace” <br> <br>
+
+			Phew...that’s a <b> long </b> name! Eve wants to just print out the first name. How would she do that? <br> <br>
+
+			To get a part of a string we need to write:<br> 
+			<code>
+			Variable_name[starting_index : ending_index]
+			</code>
+
+			A is at index position 0 and the 2nd A is at index position 2. To print out “Ada”, we need to write<br> <br>
+
+			<code>
+			print(amazing_programmer[0:4])
+			</code>
+
+			You might be wondering why we used 0:4 instead of 0:3. That’s because the first index number is inclusive (includes that position) and the last index number is exclusive (doesn’t include that position). In other words, the sliced string only includes characters up to the character before the ending index.<br> <br>
+
+			Now, Eve wants to print out “Love”. Can you try to do that for her?<br> <br>
+			Done? Here’s the answer:<br> 
+
+			<code>
+			print(y[5:10]) 
+			</code>
+
+			Wondering why it isn’t 4:10? That’s because we count a space “ “ as one position too! So, L comes at the 5th index position.<br> <br>
+
+			Got it? Good!
+			</p>
+			<br><br>
+
+
+			<h2>Question</h2>
+			
+			<p>
+
+				Eve wants to improve her previous greeting program! This time she wants to greet the user in a better way. Ask the user for their name and use your newly acquired string manipulation skills to greet them in the following way:<br><br>
+
+				“Welcome to the bakery Eve! What would you like to order today?”<br><br>
+
+				Hint: Use string concatenation!
+			</p>
+
+		</form>
+		<div class="eve-container">
+			<img src="/img/blinky-eve.gif" alt="Eve" class="happy-eve">
+			<img src="/img/sad-eve.png" alt="Sad Eve" class="sad-eve hidden">
+		</div>
+	</div>
+
+	<div class="coding">
+		<form method="post" action="/levels/compiler" class="compiler">
+			<textarea name="code" placeholder="Code here" class="codeeditor"></textarea>
+				<div class="formbutton">
+					<div class="form-in-button">
+						<div class="bgbutton"></div>
+						<button class="loginbutton">Compile</button>
+					</div>
+				</div>
+				<div class="output-container">
+					<pre data-heading="OUTPUT"><code class="stdout"></code></pre>
+					<pre data-heading="STATUS"><code class="stderr"></code></pre>
+				</div>
+		</form>
+
+		<input class="stdin" placeholder="Send input to program...">
+
+	</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="/javascripts/level.js"></script>
+<script src="/mode/python/python.js"></script>
+<script src="/javascripts/compiler.js"></script>
+  <script type="text/javascript">
+      $(document).ready(function () {
+      var MastStory = function () {
+        $('#w1').click(function(){ $('#p1').removeClass('hidden'); });
+        $('#w2').click(function(){ $('#p2').removeClass('hidden'); });
+        $('#w3').click(function(){ $('#p3').removeClass('hidden'); });
+        $('#w4').click(function(){ $('#p4').removeClass('hidden'); });
+        $('#w5').click(function(){ $('#p5').removeClass('hidden'); });
+        $('#clr').click(function(){ $('#p1').addClass('hidden'); });
+      };
+      MastStory();
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>The Girl Code Backend</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/level.css">
+	<!-- Create a simple CodeMirror instance -->
+	<link rel="stylesheet" href="/stylesheets/codemirror.css">
+	<script src="/lib/codemirror.js"></script>
+	<script src="/lib/javascript.js"></script>
+	<script   src="https://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="question">
+		<a href='/dashboard'>&larr; Back to the dashboard</a>
+		<br><br>
+		<form method="post" class="submit">
+			
+			<h1>Syntax and Printing</h1>
+			<p>
+				Eve’s mom wants her to go grocery shopping for their bakery, so, she makes a list of all the items she needs. Her list contains the following items: <br> <br>
+				<ul>
+					<li>Butter</li>
+					<li>Milk</li>
+					<li>Chocolate</li> 
+					<li>Bread</li>
+				</ul>
+
+				Python offers a tool called lists to keep track of related "things," or values. To help Eve, let's make a list called shopping_list  and fill it with each of the items:<br><br>
+
+				<code>
+				shopping_list = [“Butter”, ”Milk”, ”Chocolate”, “Bread”]
+				</code>
+
+				<b>Note:</b> We use square brackets to create a list. Each item in the list is separated by a comma!<br><br>
+
+				To call and check an item in the list, we use the following format:<br>
+				<code>shopping_list[item_number]</code>
+
+				This looks familiar to indexing in strings, doesn’t it? That’s because it works the exact same way. We can call a specific item in the list by typing the name of the list, then entering the item’s position inside square brackets ([]), Now, let’s try to print the first element from the list and seeing if it prints Butter:<br><br>
+
+				<code>print(shopping_list[1])</code>
+
+				Try and run this. Did it return “Butter”? Nope, It printed Milk, didn’t it? That’s because, just like for strings, Python starts counting from 0. If we want to print the fourth item in the shopping_list (bread) we can do so like this:<br>
+
+				<code>print(shopping_list[3])</code>
+
+				Output: Bread<br>
+				Even though Bread is the 4th item, it’s index position is 3.<br><br>
+				 
+				Eve forgot to add flour to her list! Oh no, how will she bake her cake now?<br>
+				Fear not...you can add flour to her shopping list since there’s no limit for the length of the shopping list.<br><br>
+
+				The syntax for adding a new element to the end of the list is: <br><br>
+
+				list_name.append(item)
+
+				<code>
+				shopping_list.append(“flour”)
+				</code>
+
+				Now using .append(), the item can only be added to the end of the list. But do not fret, we can add the item to whichever position you like using another function <b>insert()</b><br><br>
+
+				list_name.insert(index number, item)
+
+				<code>
+				shopping_list.insert(1,”flour”)
+				</code>
+
+				Within the brackets first mention the desired  <i>index number</i>  and then the item.<br><br>
+
+				Eve realised she doesn’t need 2 packets of flour! Let’s replace the last flour with toffees!<br><br>
+
+				list_name[index] = element
+
+				<code>
+				shopping_list[5] = “Toffees”
+				</code>
+
+				Sometimes you need to remove something from the list, that can achieved by yet another function <b>remove()</b>.
+				Silly Eve forgot she already had a loaf of bread at home, so she needs our help to remove that item from the list.<br><br>
+
+				list_name.remove(element)<br>
+
+				<code>
+				shopping_list.remove(“bread”)
+				</code>
+
+
+			</p>
+			<br><br>
+
+			<h2>Question</h2>
+			
+			<p>
+
+				Eve’s shopping list has the following items:<br>
+				<ul>
+					<li>Butter</li>
+					<li>Milk</li>
+					<li>Chocolate</li> 
+					<li>Flour</li>
+					<li>Apples</li>
+				</ul>
+
+				In that specific order. Add these items to a list and print ‘Flour’ from the list.
+
+
+			</p>
+
+		</form>
+		<div class="eve-container">
+			<img src="/img/blinky-eve.gif" alt="Eve" class="happy-eve">
+			<img src="/img/sad-eve.png" alt="Sad Eve" class="sad-eve hidden">
+		</div>
+	</div>
+
+	<div class="coding">
+		<form method="post" action="/levels/compiler" class="compiler">
+			<textarea name="code" placeholder="Code here" class="codeeditor"></textarea>
+				<div class="formbutton">
+					<div class="form-in-button">
+						<div class="bgbutton"></div>
+						<button class="loginbutton">Compile</button>
+					</div>
+				</div>
+				<div class="output-container">
+					<pre data-heading="OUTPUT"><code class="stdout"></code></pre>
+					<pre data-heading="STATUS"><code class="stderr"></code></pre>
+				</div>
+		</form>
+
+		<input class="stdin" placeholder="Send input to program...">
+
+	</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="/javascripts/level.js"></script>
+<script src="/mode/python/python.js"></script>
+<script src="/javascripts/compiler.js"></script>
+  <script type="text/javascript">
+      $(document).ready(function () {
+      var MastStory = function () {
+        $('#w1').click(function(){ $('#p1').removeClass('hidden'); });
+        $('#w2').click(function(){ $('#p2').removeClass('hidden'); });
+        $('#w3').click(function(){ $('#p3').removeClass('hidden'); });
+        $('#w4').click(function(){ $('#p4').removeClass('hidden'); });
+        $('#w5').click(function(){ $('#p5').removeClass('hidden'); });
+        $('#clr').click(function(){ $('#p1').addClass('hidden'); });
+      };
+      MastStory();
+      });
+  </script>
+</body>
+</html>

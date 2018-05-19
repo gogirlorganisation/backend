@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>The Girl Code Backend</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/level.css">
+	<!-- Create a simple CodeMirror instance -->
+	<link rel="stylesheet" href="/stylesheets/codemirror.css">
+	<script src="/lib/codemirror.js"></script>
+	<script src="/lib/javascript.js"></script>
+	<script   src="https://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="question">
+		<a href='/dashboard'>&larr; Back to the dashboard</a>
+		<br><br>
+		<form method="post" class="submit">
+			
+			<h1>Syntax and Printing</h1>
+			<p>
+				The keywords ‘and’, and ‘or’ are used to join together boolean expressions. The syntax is:<br><br>
+
+				if condition1 and/or condition2:<br>
+					Statements
+				<br><br>
+				The keyword ‘not’ just changes a True condition to False and vica versa.
+
+			</p>
+
+			<h3>Or</h3>
+			<p> 
+				
+			A customer wants cakes worth either $7 or $20.<br><br>
+
+			<code>
+			If price == 7 or price== 20:
+				print(“Buy this cake!”)
+			Else:
+				print(“The cake isn't for the price you specified.”)
+			</code>
+
+			Or statements returns True if even one condition is True.
+
+			</p>
+
+			<h3>And</h3>
+			<p> 
+				
+			The customer realized this condition isn't very logical. Instead of selecting cakes at two drastically different price points, he now makes a range of values. If the cake is more than $7 and less than $20, he'll buy it. This way, he gets more options with the same amount of money!
+			<br><br>
+
+			<code>
+			if price > 7 and price < 20:
+			print(“Buy this cake!”)
+			else:
+				print(“This cake isn't within your range”)
+			</code>
+
+
+			And only returns True if both the statements are True.
+
+			</p>
+
+			<h3>Not</h3>
+			<p> 
+				
+			Another customer walks in. This one want fancy cakes and won't buy anything below $25 <br>
+
+			<code>
+			if not (price < 25):
+			print(“You can buy this cake!”)
+			else:
+				print(“This cake is below your price range”)
+			</code>
+
+			The not keyword is used to flip the boolean value. If the condition is false, the boolean is true, and vice versa.<br>
+			So, if the the price of the cake is less than 25 then the condition <code>(price < 25)</code> will return True but the condition <code>not(price < 25) </code> will return False thus the cutomer won't buy the cake and the else condition would run.
+
+
+			</p>
+
+			<br><br>
+
+			<h2>Question</h2>
+			
+			<p>
+
+				Eve needs to be at the bakery from 12:00 to 20:00, and she has asked you to write a program for her friends to check if she’s free or not.<br>So, if her friends input 8, the output would be<br><br>
+				“Eve is free at 8” or “Eve is not free at 8”<br><br>
+				Print the output for 1pm (or 13:00, input would be 13)<br><br>
+
+				<b>Note:</b> To input integer value you need to inclose the input function inside int()<br><br>
+
+				Example:<br>
+				<code>
+				number = int(input(“Enter a number: “)
+				</code>
+
+			</p>
+
+		</form>
+		<div class="eve-container">
+			<img src="/img/blinky-eve.gif" alt="Eve" class="happy-eve">
+			<img src="/img/sad-eve.png" alt="Sad Eve" class="sad-eve hidden">
+		</div>
+	</div>
+
+	<div class="coding">
+		<form method="post" action="/levels/compiler" class="compiler">
+			<textarea name="code" placeholder="Code here" class="codeeditor"></textarea>
+				<div class="formbutton">
+					<div class="form-in-button">
+						<div class="bgbutton"></div>
+						<button class="loginbutton">Compile</button>
+					</div>
+				</div>
+				<div class="output-container">
+					<pre data-heading="OUTPUT"><code class="stdout"></code></pre>
+					<pre data-heading="STATUS"><code class="stderr"></code></pre>
+				</div>
+		</form>
+
+		<input class="stdin" placeholder="Send input to program...">
+
+	</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="/javascripts/level.js"></script>
+<script src="/mode/python/python.js"></script>
+<script src="/javascripts/compiler.js"></script>
+  <script type="text/javascript">
+      $(document).ready(function () {
+      var MastStory = function () {
+        $('#w1').click(function(){ $('#p1').removeClass('hidden'); });
+        $('#w2').click(function(){ $('#p2').removeClass('hidden'); });
+        $('#w3').click(function(){ $('#p3').removeClass('hidden'); });
+        $('#w4').click(function(){ $('#p4').removeClass('hidden'); });
+        $('#w5').click(function(){ $('#p5').removeClass('hidden'); });
+        $('#clr').click(function(){ $('#p1').addClass('hidden'); });
+      };
+      MastStory();
+      });
+  </script>
+</body>
+</html>
