@@ -33,7 +33,14 @@ var answers = {
 		var correct = '112.5';
 		// rough function removes decimal point
 		return str.trim() === correct.trim() || str.trim() === ('$' + correct.trim());
-	}
+	},
+	6: function(str) {
+		var prev = 'Welcome to the bakery ';
+		var next = 'What would you like to order today?';
+		//                                              vv    matches any string input
+		var expr = new RegExp(regEscape(rough(prev)) + '.*\.' + rough(next), 'g');
+		return expr.test(rough(str));
+	},
 };
 
 function checkCorrect(level, answer) {
