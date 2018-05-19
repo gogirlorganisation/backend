@@ -2,18 +2,43 @@ var express = require('express');
 var router = express.Router();
 var User = require('../auth/models/User');
 
+function rough(str) {
+	return str.trim().toLowerCase().replace(/[^a-z0-9.]/g, '');
+}
+
+function regEscape(str) {
+	return str.replace(/([.?*+^$[\]\\(){}|-])/g, "\\$1");
+}
+
 var answers = {
 	1: function(str) {
-		return str.trim() === 'Hello World!';
+		var correct = 'Hello World!';
+		return rough(str) === rough(correct);
 	},
 	2: function(str) {
-		// matches "Hello, my name is pqr." where pqr is any string.
-		return /Hello, my name is.*\./.test(str.trim());
+		var correct = 'Eve\'s Family Bakery, 155 Main St, Bihar 84101, INDIA';
+		return rough(str) === rough(correct);
+	},
+	3: function(str) {
+		var correct = 'Float\nInteger\nString\nFloat\nString';
+		return rough(str) === rough(correct);
+	},
+	4: function(str) {
+		var correct = 'Welcome to the bakery, ';
+		//                                                 vv    matches any string input
+		var expr = new RegExp(regEscape(rough(correct)) + '.*\.', 'g');
+		return expr.test(rough(str));
+	},
+	5: function(str) {
+		var correct = '112.5';
+		// rough function removes decimal point
+		return str.trim() === correct.trim() || str.trim() === ('$' + correct.trim());
 	}
 };
 
 function checkCorrect(level, answer) {
 	console.log('Input start' + answer + 'Input end');
+	if(!answers[level]) return false;
 	return answers[level](answer);
 }
 

@@ -87,6 +87,7 @@ $('form.compiler').on('submit', function(e) {
 	});
 
 	socket.on('stderr', function(data) {
+		console.log(data);
 		err(data);
 	});
 
