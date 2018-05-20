@@ -16,3 +16,14 @@ $('form').on('submit', function(e) {
 		}
 	});
 });
+
+$('.an-input').each(function(){
+    $(this).on('blur', function(){
+        if($(this).val().trim() != "") {
+            $(this).addClass('hasvalue');
+        }
+        else {
+            $(this).removeClass('hasvalue');
+        }
+    })    
+})
