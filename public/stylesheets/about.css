@@ -195,12 +195,15 @@ section.timeline {
     position: relative;
     display: flex;
     flex-direction: column-reverse;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    padding-bottom: 3rem;
 }
 
 .timeline-item:nth-child(even) {
     align-self: flex-end;
-    justify-content: flex-start;
+    justify-content: flex-end;
+    padding-top: 3rem;
+    padding-bottom: 0;
 }
 
 .timeline-item:before {
@@ -473,7 +476,8 @@ article img {
 
   .timeline-item {
       text-align: left;
-      padding: 3.5rem 0 2rem 3.5rem;
+      padding: 3.5rem 0 2rem 3.5rem !important;
+      justify-content: flex-start !important;
   }
 
   .timeline-item:nth-child(even) {
