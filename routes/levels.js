@@ -55,7 +55,7 @@ var answers = {
 		return expr.test(rough(str));
 	},
 	9: function(str) {
-		var correct = 'Eve is not free at 13';
+		var correct = 'Enter a number: 13 Eve is not free at 13';
 		return rough(str) === rough(correct);
 	},
 	10: function(str) {
