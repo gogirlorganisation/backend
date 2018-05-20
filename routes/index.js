@@ -27,7 +27,7 @@ router.get('/signup', function(req, res) {
 
 router.get('/dashboard', function(req, res) {
 	if(req.isAuthenticated()) {
-		var levels = req.user.solvedLevels;
+		var levels = req.user.solvedLevels || {};
 
 		var nextLevel = Object.keys(levels).length + 1;
 
