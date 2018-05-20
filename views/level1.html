@@ -4,7 +4,6 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<title>The Girl Code Backend</title>
-	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
 	<link rel="stylesheet" type="text/css" href="/stylesheets/level.css">
 	<!-- Create a simple CodeMirror instance -->
 	<link rel="stylesheet" href="/stylesheets/codemirror.css">
@@ -14,29 +13,34 @@
 </head>
 <body>
 	<div class="question">
-		<a href='/dashboard'>&larr; Back to the dashboard</a>
+		<div class="nav">
+			<a href='/dashboard' style="padding-right: 7rem;">&larr; Back to the dashboard</a>
+			<a href='/dashboard'>Next &rarr;</a>
+		</div>
 		<br><br>
 		<form method="post" class="submit">
 			<h1>Introduction</h1>
 			<p>Ever heard the phrase “Work smart, not hard”?  Well, computers don’t do that at all. It’s best to think of a computer as a really dumb but hard working human being. It can do great things with good guidance, like running Facebook. But without that guidance, it’s just a hunk of metal. That’s where you come in: with your guidance and support, you can make a computer do great things.</p>
 
+			<p> In this tutorial some words will be underlined and can be clicked upon for explanation like this <a id="w1" href="#" onclick="return false;"><b>like this.</b></a><span id="p1" class="hidden"> Good job! You’ve opened up an explanation for ‘like this’ and you can do it <b> <a id="w2" href="#" onclick="return false;">again.</span></b></a><span id="p2" class="hidden"> Wow! You are terrific at this!! </span></p>
+
 			<p>Before we go any further and make cool stuff like the next Google, let’s figure out how to talk to these computers. </p>
 
-			<p> Computers can only understand programming languages. This means that they cannot understand human languages. So, humans have developed some languages which help the computer understand what we want it to do. A program is an algorithm written in one of these languages.</p>
+			<p> Computers can only understand programming languages. This means that they cannot understand human languages. So, humans have developed some languages which help the computer understand what we want it to do. A program is an <a id="w3" href="#" onclick="return false;"><b>algorithm</b></a><span id="p3" class="hidden"> (An algorithm is like a recipe: if you’ve ever cooked, you probably know that you are made to follow certain steps. Say, you want to make a glass of coffee. You would first put the coffee powder, then pour the milk, and then stir. For computers, this step-by-step instruction is called an Algorithm)</span> written in one of these languages.</p>
 
 			<p>This course is covering one of the most popular programming languages, Python 3.5.</p>
 
-			<p> In this tutorial some words will be underlined and can be clicked upon for explanation like this <a id="w1" href="#" onclick="return false;"><b>like this.</b></a><span id="p1" class="hidden"> Good job! You’ve opened up an explanation for ‘like this’ and you can do it <b> <a id="w4" href="#" onclick="return false;">again.</span></b></a><span id="p4" class="hidden"> Wow! You are terrific at this!! </span></p>
+			<p> For now, don't worry about what's written below and just type it into the white text box on the right and hit the compile button.</p>
 
-			<p> Press next to continue </p>
-
-
+			<code> 
+			print("Hello World")
+			</code>
 
 
 		</form>
 		<div class="eve-container">
-			<img src="/img/blinky-eve.gif" alt="Eve" class="happy-eve">
-			<img src="/img/sad-eve.png" alt="Sad Eve" class="sad-eve hidden">
+			<img src="/img/blinky-eve.gif" alt="Eve" class="happy-eve" draggable="false">
+			<img src="/img/sad-eve.png" alt="Sad Eve" class="sad-eve hidden draggable="false">
 		</div>
 	</div>
 
@@ -73,6 +77,8 @@
         $('#w4').click(function(){ $('#p4').removeClass('hidden'); });
         $('#w5').click(function(){ $('#p5').removeClass('hidden'); });
         $('#clr').click(function(){ $('#p1').addClass('hidden'); });
+        $('#clr').click(function(){ $('#p2').addClass('hidden'); });
+        $('#clr').click(function(){ $('#p3').addClass('hidden'); });
       };
       MastStory();
       });

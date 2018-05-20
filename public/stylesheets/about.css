@@ -25,7 +25,7 @@ header {
 }
 
 header .logo img {
-  height: 3rem !important;
+  height: 2.5rem !important;
   width: auto;
   margin: 1rem;
 }
@@ -164,7 +164,7 @@ section.description {
 }
 
 section.timeline {
-    background: #ff1151;
+    background: #ff115199;
     color: white;
     padding-bottom: 6em;
 }

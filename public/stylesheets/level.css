@@ -7,8 +7,25 @@ body, html {
   background-color: #f2f2f2;
 }
 
+a {
+  text-decoration: none;
+  color: #fb7f9f;
+}
+
+div .nav {
+  height: 3rem;
+  position: fixed;
+  background: #ffffffc9;
+  top: 0;
+  line-height: 3rem;
+}
+
 h1,h2,h3,h4,h5,h6 {
   margin: 0px;
+}
+body .hidden {
+  visibility: hidden;
+  display: none;
 }
 
 form.compiler {
@@ -136,7 +153,9 @@ form p {
 }
 
 input.stdin {
-  text-align: left;
+    text-align: left;
+    height: 3rem;
+    font-size: 1rem;
 }
 
 /*[ Input ]*/
@@ -262,7 +281,9 @@ input.stdin {
 
 .loginbutton {
   color: #fff;
-  font-size: 12px;
+  font-family: Europa;
+  font-weight: 600;
+  font-size: 14px;
   line-height: 1.2;
   text-transform: uppercase;
   display: -webkit-box;
