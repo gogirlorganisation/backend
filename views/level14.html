@@ -28,59 +28,56 @@
             
 				Ever played a game of rock paper scissor? Well,you can make a program to play with the computer now!<br>
 				For this you’ll need to know:<br> <br>
-
+				
 				Loops<br>
 				Conditional Flow<br>
 				
 				<br><br>
 
 				           
-				<pre>#create a list of play options
-				t = [&quot;Rock&quot;, &quot;Paper&quot;, &quot;Scissors&quot;]</pre>
+				<code>#create a list of play options
+				t = [&quot;Rock&quot;, &quot;Paper&quot;, &quot;Scissors&quot;]</code>
 				 
-				Randint() is an <b>inbuilt </b> function that assigns a random value to the variable.  <br> <br> 
-				<pre> 
-computer = t[randint(0,2)]  <i>#assign a random play to the computer</i> 
- 
-#set player to False
-player = False
- 
-while player == False:
-#set player to True
-    player = input(&quot;Rock, Paper, Scissors?&quot;)<br> <br> &lt;<br>
+				Randint() is an <b>inbuilt </b> function that assigns a random value to the variable.  <br> <br> <code> 
+				computer = t[randint(0,2)]  <i>#assign a random play to the computer</i> <br>
+				 
+				#set player to False<br>
+				player = False<br>
+				 
+				while player == False:<br>
+				#set player to True<br>
+				    player = input(&quot;Rock, Paper, Scissors?&quot;)<br> <br> &lt;<br>
 
-				  </pre>
-
+				  </code>
 				  After taking an input from the user, you&#39;ve to make all possible cases for the possible outcomes. These cases are:<br>
 				  1. The computer and player&#39;s move is the same- this will produce a <b> tie</b> <br>
 				  2. The player is scissor and the computer is paper- the player wins. <br>
 				  3. The player is rock and the computer is scissor- the player wins. <br>
 				  4. The player is paper and the computer is scissor- the player loses. <br>
 				  5. The player is rock and the computer is paper- the player loses. <br> <br>  <br>
-<pre>
-if player == computer:
-    print(&quot;Tie!&quot;)
-elif player == &quot;Rock&quot;:
-    if computer == &quot;Paper&quot;:
-        print(&quot;You lose!&quot;, computer, &quot;covers&quot;, player)
-    else:
-        print(&quot;You win!&quot;, player, &quot;smashes&quot;, computer)
-elif player == &quot;Paper&quot;:
-    if computer == &quot;Scissors&quot;:
-        print(&quot;You lose!&quot;, computer, &quot;cut&quot;, player)
-    else:
-        print(&quot;You win!&quot;, player, &quot;covers&quot;, computer)
-elif player == &quot;Scissors&quot;:
-    if computer == &quot;Rock&quot;:
-        print(&quot;You lose...&quot;, computer, &quot;smashes&quot;, player)
-    else:
-        print(&quot;You win!&quot;, player, &quot;cut&quot;, computer)<br>
-else:
-    print(&quot;That&#39;s not a valid play. Check your spelling!&quot;)
-#player was set to True, but we want it to be False so the loop continues
-player = False
-computer = t[randint(0,2)] 
-</pre>
+				  <code>
+				    if player == computer:<br>
+				        print(&quot;Tie!&quot;)<br>
+				    elif player == &quot;Rock&quot;:<br>
+				        if computer == &quot;Paper&quot;:<br>
+				            print(&quot;You lose!&quot;, computer, &quot;covers&quot;, player)<br>
+				        else:<br>
+				            print(&quot;You win!&quot;, player, &quot;smashes&quot;, computer)<br>
+				    elif player == &quot;Paper&quot;:<br>
+				        if computer == &quot;Scissors&quot;:<br>
+				            print(&quot;You lose!&quot;, computer, &quot;cut&quot;, player)<br>
+				        else:<br>
+				            print(&quot;You win!&quot;, player, &quot;covers&quot;, computer)<br>
+				    elif player == &quot;Scissors&quot;:<br>
+				        if computer == &quot;Rock&quot;:<br>
+				            print(&quot;You lose...&quot;, computer, &quot;smashes&quot;, player)<br>
+				        else:<br> 
+				            print(&quot;You win!&quot;, player, &quot;cut&quot;, computer)<br>
+				    else:<br>
+				        print(&quot;That&#39;s not a valid play. Check your spelling!&quot;)
+				    <i> #player was set to True, but we want it to be False so the loop continues</i><br> <br>
+				    player = False<br>
+				    computer = t[randint(0,2)] <br> </code>
 				    <br>
 				    <br>
 
