@@ -7,6 +7,11 @@ body, html {
   background-color: #f2f2f2;
 }
 
+a {
+  text-decoration: none;
+  color: #fb7f9f;
+}
+
 h1,h2,h3,h4,h5,h6 {
   margin: 0px;
 }
