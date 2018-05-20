@@ -12,11 +12,11 @@ function regEscape(str) {
 
 var answers = {
 	1: function(str) {
-		var correct = 'Hello World!';
+		var correct = 'Hello World';
 		return rough(str) === rough(correct);
 	},
 	2: function(str) {
-		var correct = 'Eve\'s Family Bakery, 155 Main St, Bihar 84101, INDIA';
+		var correct = 'Eve\'s Family Bakery, 155 Main St, Delhi 84101, INDIA';
 		return rough(str) === rough(correct);
 	},
 	3: function(str) {
