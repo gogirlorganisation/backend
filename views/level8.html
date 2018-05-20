@@ -13,7 +13,10 @@
 </head>
 <body>
 	<div class="question">
-		<a href='/dashboard'>&larr; Back to the dashboard</a>
+		<div class="nav">
+			<a href='/dashboard' style="padding-right: 7rem;">&larr; Back to the dashboard</a>
+			<a href='/levels/9'>Next &rarr;</a>
+		</div>
 		<br><br>
 		<form method="post" class="submit">
 
@@ -56,16 +59,16 @@ if  timer == 25:
 				Else statements are used to execute a block of code when the condition for the if statement is False.<br><br>
 
 				if timer is equal to 25:<br>
-					Tell Eve to take the cake out
+				&emsp;Tell Eve to take the cake out
 				else:<br>
-					Tell Eve not to take the cake out
+				&emsp;Tell Eve not to take the cake out
 
 				We can write it like this in Python:<br><br>
 
 				<pre>
-if timer == 25:<br>
+if timer == 25:
 	print("Take the cake out of the oven")
-else:<br>
+else:
 	print("Leave the cake in the oven")
 				</pre>
 
