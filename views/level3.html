@@ -18,9 +18,9 @@
 		<br><br>
 		<form method="post" class="submit">
 			
-			<h1>Syntax and Printing</h1>
+			<h1>Data Type and Variables</h1>
 			<p>
-				Just like your brain, the computer also has memory where it stores data (pieces of information). These data come in many various types, which we will be talking in just a minute.
+				Just like your brain, the computer also has memory where it stores <a id="w1" href="#" onclick="return false;"><b>data.</b></a><span id="p1" class="hidden">(pieces of information)</span> These data come in many various types, which we will be talking in just a minute.
 
 			</p>
 
@@ -31,14 +31,11 @@
 			<p> <b> PICTURE </b> </p>
 
 			<p>
-				Eve’s receipt above includes three different types of information.<br>
-				These three things on Eve’s receipt represent three different types of data: string, integer, and float.
-
-
+				Eve’s receipt above includes three different types of information.These three things on Eve’s receipt represent three different types of data: string, integer, and float.
 			<p>
 
 			<p>
-				Looking the product section of the receipt, “Cupcake” is one example of a string. Up to this point, you may be wondering why we’re putting words in quotes(“ ”). Any characters in between these is called a string, you can type many characters in between these quotation marks to form words and sentences.
+				Looking the product section of the receipt, “Cupcake” is one example of a string. Up to this point, you may be wondering why we’re putting words in quotes(“ ”). Any characters in between these is called a string, you can type many characters in between these quotation marks to form words and sentences.<br><br>
 
 				<code>
 					print(“Hello! My name is Eve and I help run a family bakery”)
@@ -46,21 +43,22 @@
 
 
 			<p>
-				For Number Purchased, the number 5 is stored. This number’s type is called int, which stands for integers. The integers in Python are essentially the same as the ones you’ve studied in Math - whole numbers. Just like strings, you can print ints as well! 
+				For Number Purchased, the number 5 is stored. This number’s type is called int, which stands for integers. The integers in Python are essentially the same as the ones you’ve studied in Math - whole numbers. Just like strings, you can print ints as well! <br><br>
 				<code>
 					print(5)
 				</code>
 
+				<br><br>
 				<b>Note:</b> Notice how “” aren’t used here? That’s because it’s an integer and not a string. <br> <br>
 
-				Lastly, looking at the Total Price, the number 2.5 is of another data type called floats. These numbers are different from integers in that they have a fractional value; a number with a decimal point. Like integers, they aren’t enclosed within quotes.
+				Lastly, looking at the Total Price, the number 2.5 is of another data type called floats. These numbers are different from integers in that they have a fractional value; a number with a decimal point. Like integers, they aren’t enclosed within quotes.<br><br>
 
 				<code>
 					print(11.2)
 				</code>
 			</p>
 
-			<h2> Variables </h2>
+			<h4> Variables </h4>
 
 			<p>
 				We’ve talked about the different kinds of data that exist in Python, but how do we get the computer to save this data? In order for the computer to do so, we need to make use of something called variables.<br><br>
@@ -80,30 +78,32 @@
 						The left hand side contains the name of the variable you wish to create, whereas the right hand side contains the data you wish to store in this variable.<br><br>
 
 						<b>Note</b>: You can see an `=` sign being used. Just like we assign values in mathematics with `=`, we do the same in Python.
-      				
+      					<br>
       				<li>
 	      				<b>Being able to take out that stored information:<br></b>
-						Eve wants to display this information to others.
+						Eve wants to display this information to others.<br><br>
 
 						<code>
 						print(what_eve_wants)
 						</code>
-
+						<br><br>
 						Using variables is an easy and convenient way of storing and using data.
 					</li>
 
 					<li>
-						Edit stored information:<br>
-						Eve changes her mind and now wants ice cream.
+						<b>Edit stored information:</b><br>
+						Eve changes her mind and now wants ice cream.<br><br>
 						<code>
 						what_eve_wants = “Ice cream”
 						</code>
+						<br><br>
+						<b>Note:</b> Here we see that we changed the value of what_eve_wants to “Ice cream”. You can assign new values to old variables. The computer will remember the latest value that you have assigned.<br><br>
 					</li>
 				</ol>
 			</p>
 
 			<p>
-				<b>Note:</b> Here we see that we changed the value of what_eve_wants to “Ice cream”. You can assign new values to old variables. The computer will remember the latest value that you have assigned.<br><br>
+				
 
 				Go ahead and try in your compiler! <br> <br>
 
@@ -114,7 +114,7 @@
 					<li>Variable names are case sensitive.</li>
 				</ol>
 
-				_hello, hello_123 and _HELLO are valid variable names whereas 1hello and hello$ aren’t. <br>
+				_hello, hello_123 and _HELLO are valid variable names whereas 1hello and hello$ aren’t. <br><br>
 
 				Meanwhile, hello and Hello are 2 different variables. Be sure to be careful when you type!
 
