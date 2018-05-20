@@ -15,7 +15,7 @@ a {
 div .nav {
   height: 3rem;
   position: fixed;
-  background: #fff;
+  background: #ffffffc9;
   top: 0;
   line-height: 3rem;
 }
@@ -58,6 +58,8 @@ textarea[name=code] {
   min-width: 100%;
   padding-top: 6px;
   padding-bottom: 6px;
+  display: block;
+  white-space: pre-wrap 
 }
 
 .CodeMirror {
