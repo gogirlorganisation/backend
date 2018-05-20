@@ -17,46 +17,35 @@
 		<br><br>
 		<form method="post" class="submit">
 			
-			<h1>Loops-While</h1>
-			<p>
-				Ever opened a book and seen hundreds of pages you have to read for a test? Don’t you wish there could be something more concise?<br><br>
-				That’s exactly what we want in a program – it should be as short and efficient as possible! Functions can simply be defined as a method that gives an output given an input.<br><br>
+			<h1>Functions</h1>
+			<p>Ever opened your book and seen tens of pages of the syllabus you have to read for a test? Don’t you wish there could be something more concise? That’s exactly what we want in a program – it should be as short and efficient as possible! Functions can simply defined as a method which gives an output given an input.</p>
 
-				But what if you want to create a function for something that doesn’t have a predefined one? For this, there are <b>user-defined functions</b> which you (i.e the user) have to create. The first step is to define your function, give it a name and parameter: let’s talk about Mathematics, in Trigonometry you have  functions (sin x, cos x, tan x), now they do not make sense <b>at all</b> if a value for <b>x</b> isn’t given. Here x is our <b>parameter</b> and that’s exactly what we need in coding too!<br><br>
-				So let’s define a function <i>add</i> that adds two numbers(m,n) given as parameters<br><br>
- 
-<pre>
-def add(m, n):
-  return m + n
+			<p>But what if you want to create a function for something that doesn’t have a predefined one? For this, there are <b>user-defined functions</b> which you (i.e the user) have to create. The first step is to define your function, give it a name and parameter: let’s talk about Mathematics, in Trigonometry you have  functions (sin x, cos x, tan x), now they do not make sense <b>at all</b> if a value for <b>x</b> isn’t given. Here x is our <b>parameter</b> and that’s exactly what we need in coding too!</p>
 
-print add(123, 77) 
-</pre>
+			<p>So let’s define a function <i>add</i> that adds two numbers given as parameters:</p>
+
+<pre><code>def add(m, n):
+    return m + n
+print add(123, 77)</code></pre>
+
+			<p>Once you call the function (use the function in your program), the parameters provided within the brackets are used to carry it out(in this example, we carry out an addition function). The variable m will have the value of 123,  n of 77 and the function yields their sum.</p>
+
+			<p>Note: That colon present after the bracket is important, do not forget to add it after defining a function, else there will be an error.</p>
+
+			<p>We can create a function using strings too.</p>
+<pre><code>def statement(name):
+    print(name + “, you’re doing amazing sweetie”)</code></pre>
 
 
-				Once you call the function (use the function in your program), the parameters provided within the brackets are used to carry it out(in this example, we carry out an addition function). The variable m will have the value of 123,  n of 77 and the function yields their sum.<br><br> 
+	<p>Can you create a few functions on your own?</p>
 
-				<b>Note:</b> That colon present after the bracket is important, do not forget to add it after defining a function, else there will be an error.<br><br>
+	<p>Functions mainly help us shorten our program, letting us avoid writing the same statements over and over again. Can you imagine typing the same greeting for over 100 people Now that sounds horrid! So instead of doing that, we could use functions and further reduce the load by using loops (How? That’s for you to figure out!).</p>
 
-				We can create a function using strings too.<br>
+	<p>In Python, function is a group of related statements that perform a specific task. Functions help break our program into smaller and modular chunks. As our program grows larger and larger, functions make it more organized and manageable.</p>
 
-				<code> 
-					def statement(name) 
-						   print (name + “, you’re doing amazing!”)
-				</code>
-				Can you create a few functions on your own?<br><br>
+	<p>Furthermore, it avoids repetition and makes code reusable.</p>
 
-				Functions mainly help us shorten our program, letting us avoid writing the same statements over and over again. Can you imagine typing the same greeting for over 100 people Now that sounds horrid! So instead of doing that, we could use functions and further reduce the load by using loops (How? That’s for you to figure out!).<br><br>
-
-				In Python, function is a group of related statements that perform a specific task.<br>
-				Functions help break our program into smaller and modular chunks. As our program grows larger and larger, functions make it more organized and manageable.<br><br>
-				Furthermore, it avoids repetition and makes code reusable.<br>
-
-				</code>
-
-			</p>
-			<br><br>
-
-			<h2>Question</h2>
+			<h4>Question</h4>
 			
 			<p>
 
