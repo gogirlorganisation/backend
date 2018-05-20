@@ -18,6 +18,15 @@ div .nav {
   background: #ffffffc9;
   top: 0;
   line-height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  width: 360px;
+  top: 0;
+  left: 20px;
+}
+
+div .nav > a {
+  padding: 0 !important;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -39,6 +48,7 @@ div.coding {
   display: flex;
   flex-direction: column;
   padding: 1rem;
+  max-width: calc(100% - 420px);
 }
 
 div.coding form  textarea[name=code] {
@@ -85,12 +95,22 @@ button:hover {
 }
 
 .output-container pre {
-  flex: 1;
+  max-width: 50%;
   margin: 0.5rem 0.25rem;
   background: white;
   position: relative;
   text-align: left;
   padding: 0.75rem;
+  flex: 1;
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+}
+
+code.stdout, code.stderr {
+    display: block;
+    overflow-x: auto;
+    flex: 1;
 }
 
 .output-container pre:before {
@@ -100,6 +120,7 @@ button:hover {
   right: 1rem;
   box-shadow: 0 0 0.2rem rgba(0,0,0,0.2);
   padding: 0.25rem 0.5rem;
+  background: rgba(255,255,255,0.8);
 }
 
 /*[ login ]*/
@@ -124,13 +145,14 @@ button:hover {
 }
 
 .question {
-  width: 350px;
+  width: 420px;
   background: #fff;
   border-radius: 10px;
   overflow-x: hidden;
   padding: 25px 30px;
   box-shadow: 0 10px 35px 0px rgba(0, 0, 0, 0.1);
   text-align: left;
+  box-sizing: border-box;
 }
 
 
