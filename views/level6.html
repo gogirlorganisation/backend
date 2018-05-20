@@ -22,10 +22,10 @@
 
 			<h1>String Operations</h1>
 			<p>
-				We’ve been talking a lot about working with numbers, so now, we’ll be talking about what are the things you can do with strings!<br><br>
+				We’ve been talking a lot about working with numbers, so now, we’ll be talking about what are the things you can do with strings!<br>
 
 				<h4>Concatenation</h4>
-				<br><br>
+				<br>
 				Earlier, we learnt about strings as collections of characters. Concatenation is a way of joining multiple strings together. You can easily add strings to build a complete sentence by using the addition operator - i.e. the ‘+’ sign. Crazy, right?
 
 				<pre>
@@ -42,10 +42,10 @@ word3 = word1 + word2
 			</p>
 
 			<h4>Uppercase and Lowercase</h4>
-			<br><br>
+			<br>
 			<p>
 
-				There is a handy feature in Python that helps convert the characters in a string to uppercase or lowercase. Let’s look at an example to show you how it works. <br> <br>
+				There is a handy feature in Python that helps convert the characters in a string to uppercase or lowercase. Let’s look at an example to show you how it works. 
 
 				<pre>
 word1 = "GiNgEr"
@@ -104,7 +104,7 @@ print(Length_of_greeting)
 String[postion_of_the_letter]
 			</pre>
 
-			For example:
+			For example:<br>
 
 			<pre>
 word = "HELLO"
@@ -137,13 +137,13 @@ print(word[2]) # or just "HELLO"[2]
 Variable_name[starting_index : ending_index]
 			</pre>
 
-			A is at index position 0 and the 2nd A is at index position 2. To print out "Ada", we need to write<br> <br>
+			A is at index position 0 and the 2nd A is at index position 2. To print out "Ada", we need to write<br>
 
 			<pre>
 print(amazing_programmer[0:3])
 			</pre>
 
-			You might be wondering why we used 0:3 instead of 0:2. That’s because the first index number is inclusive (includes that position) and the last index number is exclusive (doesn’t include that position). In other words, the sliced string only includes characters up to the character before the ending index.<br> <br>
+			You might be wondering why we used 0:3 instead of 0:2. That’s because the first index number is <a id="w1" href="#" onclick="return false;"><b>inclusive</b></a><span id="p1" class="hidden">(includes that position)</span> and the last index number is <a id="w2" href="#" onclick="return false;"><b>exclusive</b></a><span id="p2" class="hidden">(doesn’t include that position)</span>. In other words, the sliced string only includes characters up to the character before the ending index.<br> <br>
 
 			Now, Eve wants to print out "Love". Can you try to do that for her?<br> <br>
 			Done? Here’s the answer:<br>
@@ -210,6 +210,7 @@ print(amazing_programmer[4:8])
         $('#w4').click(function(){ $('#p4').removeClass('hidden'); });
         $('#w5').click(function(){ $('#p5').removeClass('hidden'); });
         $('#clr').click(function(){ $('#p1').addClass('hidden'); });
+        $('#clr').click(function(){ $('#p2').addClass('hidden'); });
       };
       MastStory();
       });
