@@ -22,7 +22,7 @@
 
 			<h1>Lists</h1>
 			<p>
-				Eve’s mom wants her to go grocery shopping for their bakery, so, she makes a list of all the items she needs. Her list contains the following items: <br> <br>
+				Eve’s mom wants her to go grocery shopping for their bakery, so, she makes a list of all the items she needs. Her list contains the following items: 
 				<ul>
 					<li>Butter</li>
 					<li>Milk</li>
@@ -33,7 +33,7 @@
 				Python offers a tool called lists to keep track of related "things," or values. To help Eve, let's make a list called shopping_list  and fill it with each of the items:<br><br>
 
 				<pre>
-shopping_list = ["Butter", "Milk", "Chocolate", "Bread"]
+shoppinglist=["Butter","Milk","Chocolate","Bread"] 
 				</pre>
 
 				<b>Note:</b> We use square brackets to create a list. Each item in the list is separated by a comma!<br><br>
@@ -41,13 +41,13 @@ shopping_list = ["Butter", "Milk", "Chocolate", "Bread"]
 				To call and check an item in the list, we use the following format:<br>
 				<pre>shopping_list[item_number]</pre>
 
-				This looks familiar to indexing in strings, doesn’t it? That’s because it works the exact same way. We can call a specific item in the list by typing the name of the list, then entering the item’s <a id="w1" href="#" onclick="return false;">position</a> <span id="p1" class="hidden">also called an index number is</span> inside square brackets ([]), Now, let’s try to print the first element from the list and seeing if it prints Butter:<br><br>
+				This looks familiar to indexing in strings, doesn’t it? That’s because it works the exact same way. We can call a specific item in the list by typing the name of the list, then entering the item’s <a id="w1" href="#" onclick="return false;">position</a> <span id="p1" class="hidden">also called an index number is</span> inside square brackets ([]), Now, let’s try to print the first element from the list and seeing if it prints Butter:<br>
 
-				<pre>print(shopping_list[1])</pre>
+				<pre>print(shoppinglist[1])</pre>
 
-				Try and run this. Did it return "Butter"? Nope, It printed Milk, didn’t it? That’s because, just like for strings, Python starts counting from 0. If we want to print the fourth item in the shopping_list (bread) we can do so like this:<br>
+				Try and run this. Did it return "Butter"? Nope, It printed Milk, didn’t it? That’s because, just like for strings, Python starts counting from 0. If we want to print the fourth item in the shoppinglist (bread) we can do so like this:<br>
 
-				<pre>print(shopping_list[3])</pre>
+				<pre>print(shoppinglist[3])</pre>
 
 				Output: Bread<br>
 				Even though Bread is the 4th item, it’s index position is 3.<br><br>
@@ -60,7 +60,7 @@ shopping_list = ["Butter", "Milk", "Chocolate", "Bread"]
 				list_name.append(item)
 
 				<pre>
-shopping_list.append("flour")
+shoppinglist.append("flour")
 				</pre>
 
 				Now using .append(), the item can only be added to the end of the list. But do not fret, we can add the item to whichever position you like using another function <b>insert()</b><br><br>
@@ -68,7 +68,7 @@ shopping_list.append("flour")
 				list_name.insert(index number, item)
 
 				<pre>
-shopping_list.insert(1,"flour")
+shoppinglist.insert(1,"flour")
 				</pre>
 
 				Within the brackets first mention the desired  <i>index number</i>  and then the item.<br><br>
@@ -78,7 +78,7 @@ shopping_list.insert(1,"flour")
 				list_name[index] = element
 
 				<pre>
-shopping_list[5] = "Toffees"
+shoppinglist[5] = "Toffees"
 				</pre>
 
 				Sometimes you need to remove something from the list, that can achieved by yet another function <b>remove()</b>.
@@ -87,7 +87,7 @@ shopping_list[5] = "Toffees"
 				list_name.remove(element)<br>
 
 				<pre>
-shopping_list.remove("bread")
+shoppinglist.remove("bread")
 				</pre>
 
 
