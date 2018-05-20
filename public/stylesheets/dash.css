@@ -17,7 +17,7 @@ html * {
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 1px;
-    background: #FF0042;
+    background: #fb7f9f;
     border: 2.5px solid #fff;
     font-size: 1em;
     font-weight: 800;
@@ -35,14 +35,14 @@ html * {
     text-transform: uppercase;
     letter-spacing: 1px;
     background: #FFF;
-    border: 1px solid #FF0042;
+    border: 1px solid #fb7f9f;
     font-size: 1em;
     font-weight: 800;
     border-radius: 3px;
     cursor: pointer;
     display: inline-block;
     margin: 20px 0;
-    color: #FF0042;
+    color: #fb7f9f;
     margin-right: 10px;
     border-radius: 10px;
 }
@@ -55,7 +55,7 @@ body .timeline{
 }
 
 a {
-  color: #FF0042;
+  color: #fb7f9f;
   text-decoration: none;
 }
 
@@ -189,7 +189,7 @@ header h1 {
 
 }
 .cd-timeline-img{
-  background: #FF0042;
+  background: #fb7f9f;
 }
 .cd-timeline-img img{
   filter: invert(100%);
@@ -302,7 +302,7 @@ header h1 {
   border-radius: 0.25em;
 }
 .no-touch .cd-timeline-content .cd-read-more:hover {
-  background-color: #FF0042;
+  background-color: #fb7f9f;
 }
 .cd-timeline-content .cd-date {
   float: left;
