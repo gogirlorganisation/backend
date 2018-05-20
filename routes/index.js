@@ -27,9 +27,14 @@ router.get('/signup', function(req, res) {
 
 router.get('/dashboard', function(req, res) {
 	if(req.isAuthenticated()) {
+		var levels = req.user.solvedLevels;
+
+		var nextLevel = Object.keys(levels).length + 1;
+
 		res.render('dash', {
 			user: req.user.username,
-			points: req.user.points
+			points: Math.floor(req.user.points),
+			nextLevel: nextLevel
 		});
 	} else {
 		res.redirect('/');

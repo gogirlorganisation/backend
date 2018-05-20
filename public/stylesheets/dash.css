@@ -52,6 +52,7 @@ body .timeline{
   color: #7f8c97;
   background-color: #e9f0f5;
   text-align: left;
+  overflow: hidden;
 }
 
 a {

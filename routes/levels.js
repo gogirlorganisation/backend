@@ -16,7 +16,7 @@ var answers = {
 		return rough(str) === rough(correct);
 	},
 	2: function(str) {
-		var correct = 'Eve\'s Family Bakery, 155 Main St, Delhi 84101, INDIA';
+		var correct = '155 Main St, Delhi 84101, INDIA';
 		return rough(str) === rough(correct);
 	},
 	3: function(str) {
