@@ -16,7 +16,7 @@
 		<a href='/dashboard'>&larr; Back to the dashboard</a>
 		<br><br>
 		<form method="post" class="submit">
-			
+
 			<h1>Syntax and Printing</h1>
 			<p>
 				The keywords ‘and’, and ‘or’ are used to join together boolean expressions. The syntax is:<br><br>
@@ -29,33 +29,33 @@
 			</p>
 
 			<h3>Or</h3>
-			<p> 
-				
+			<p>
+
 			A customer wants cakes worth either $7 or $20.<br><br>
 
-			<code>
-			If price == 7 or price== 20:
-				print(“Buy this cake!”)
-			Else:
-				print(“The cake isn't for the price you specified.”)
-			</code>
+			<pre>
+If price == 7 or price== 20:
+	print(“Buy this cake!”)
+Else:
+	print(“The cake isn't for the price you specified.”)
+			</pre>
 
 			Or statements returns True if even one condition is True.
 
 			</p>
 
 			<h3>And</h3>
-			<p> 
-				
+			<p>
+
 			The customer realized this condition isn't very logical. Instead of selecting cakes at two drastically different price points, he now makes a range of values. If the cake is more than $7 and less than $20, he'll buy it. This way, he gets more options with the same amount of money!
 			<br><br>
 
-			<code>
-			if price > 7 and price < 20:
-			print(“Buy this cake!”)
-			else:
-				print(“This cake isn't within your range”)
-			</code>
+			<pre>
+if price > 7 and price < 20:
+	print(“Buy this cake!”)
+else:
+	print(“This cake isn't within your range”)
+			</pre>
 
 
 			And only returns True if both the statements are True.
@@ -63,19 +63,19 @@
 			</p>
 
 			<h3>Not</h3>
-			<p> 
-				
+			<p>
+
 			Another customer walks in. This one want fancy cakes and won't buy anything below $25 <br>
 
-			<code>
-			if not (price < 25):
-			print(“You can buy this cake!”)
-			else:
-				print(“This cake is below your price range”)
-			</code>
+			<pre>
+if not (price < 25):
+	print(“You can buy this cake!”)
+else:
+	print(“This cake is below your price range”)
+			</pre>
 
 			The not keyword is used to flip the boolean value. If the condition is false, the boolean is true, and vice versa.<br>
-			So, if the the price of the cake is less than 25 then the condition <code>(price < 25)</code> will return True but the condition <code>not(price < 25) </code> will return False thus the cutomer won't buy the cake and the else condition would run.
+			So, if the the price of the cake is less than 25 then the condition <pre>(price < 25)</pre> will return True but the condition <pre>not(price < 25) </pre> will return False thus the cutomer won't buy the cake and the else condition would run.
 
 
 			</p>
@@ -83,7 +83,7 @@
 			<br><br>
 
 			<h2>Question</h2>
-			
+
 			<p>
 
 				Eve needs to be at the bakery from 12:00 to 20:00, and she has asked you to write a program for her friends to check if she’s free or not.<br>So, if her friends input 8, the output would be<br><br>
@@ -93,9 +93,9 @@
 				<b>Note:</b> To input integer value you need to inclose the input function inside int()<br><br>
 
 				Example:<br>
-				<code>
-				number = int(input(“Enter a number: “)
-				</code>
+				<pre>
+number = int(input(“Enter a number: “)
+				</pre>
 
 			</p>
 
@@ -116,8 +116,8 @@
 					</div>
 				</div>
 				<div class="output-container">
-					<pre data-heading="OUTPUT"><code class="stdout"></code></pre>
-					<pre data-heading="STATUS"><code class="stderr"></code></pre>
+					<pre data-heading="OUTPUT"><pre class="stdout"></pre></pre>
+					<pre data-heading="STATUS"><pre class="stderr"></pre></pre>
 				</div>
 		</form>
 

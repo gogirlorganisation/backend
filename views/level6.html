@@ -16,19 +16,19 @@
 		<a href='/dashboard'>&larr; Back to the dashboard</a>
 		<br><br>
 		<form method="post" class="submit">
-			
+
 			<h1>Syntax and Printing</h1>
 			<p>
 				We’ve been talking a lot about working with numbers, so now, we’ll be talking about what are the things you can do with strings!<br><br>
 
-				<h5>Concatenation</h5> 
-				Earlier, we learnt about strings as collections of characters. Concatenation is a way of joining multiple strings together. You can easily add strings to build a complete sentence by using the addition operator - i.e. the ‘+’ sign. Crazy, right? 
+				<h5>Concatenation</h5>
+				Earlier, we learnt about strings as collections of characters. Concatenation is a way of joining multiple strings together. You can easily add strings to build a complete sentence by using the addition operator - i.e. the ‘+’ sign. Crazy, right?
 
-				<code>
-				word1 = “ginger” 
-				word2 = “bread”
-				word3 = word1 + word2
-				</code>
+				<pre>
+word1 = “ginger”
+word2 = “bread”
+word3 = word1 + word2
+				</pre>
 
 				Now, word3 will read gingerbread. Thus, we have concatenated str01 and str02. <br> <br>
 
@@ -38,17 +38,17 @@
 			</p>
 
 			<h5>Uppercase and Lowercase</h5>
-			<p> 
-				
+			<p>
+
 				There is a handy feature in Python that helps convert the characters in a string to uppercase or lowercase. Let’s look at an example to show you how it works. <br> <br>
 
-				<code>
-					word1 = “GiNgEr”
-					word1 = word1.upper()
-					print(word1)
-					print(“BrEaD”.lower())
-				</code>
-    
+				<pre>
+word1 = “GiNgEr”
+word1 = word1.upper()
+print(word1)
+print(“BrEaD”.lower())
+				</pre>
+
 				The output looks like this:<br>
 				GINGER<br>
 				bread<br>
@@ -59,14 +59,14 @@
 
 			<h5> Length of Variables</h5>
 			<p>
-							
+
 			What do you do if you want to know the length of a string? We know that the word ‘Hello’ contains 5 letters. <br> <br>
 
-			Instead of counting each letter, we can let the computer do it for you. All you need to do is use a function called len(). <br> 
+			Instead of counting each letter, we can let the computer do it for you. All you need to do is use a function called len(). <br>
 
-			<code>
-			len(“Eve likes to go shopping during the weekends”) 
-			</code>
+			<pre>
+len(“Eve likes to go shopping during the weekends”)
+			</pre>
 
 			Output: 44 <br> <br>
 
@@ -76,11 +76,11 @@
 
 			You can use it with variables too! <br> <br>
 
-			<code>
-				greetings = “Hello” 
-				Length_of_greeting = len(greetings) 
-				print(Length_of_greeting)
-			</code>
+			<pre>
+greetings = “Hello”
+Length_of_greeting = len(greetings)
+print(Length_of_greeting)
+			</pre>
 
 
 			Output: 5
@@ -91,21 +91,21 @@
 
 			<p>
 
-			Eve wants to print the letter at the second index position in “HELLO”. <br> 
+			Eve wants to print the letter at the second index position in “HELLO”. <br>
 			Can you help her do that? For accessing specific letters in a string we have to write the following: <br> <br>
 
-			<code>
-			String[postion_of_the_letter]
-			</code>
+			<pre>
+String[postion_of_the_letter]
+			</pre>
 
 			For example:
 
-			<code>
-			word = “HELLO”
-			print(word[2]) # or just "HELLO"[2]
-			</code>
+			<pre>
+word = “HELLO”
+print(word[2]) # or just "HELLO"[2]
+			</pre>
 
-			The output is… <br> 
+			The output is… <br>
 			L <br> <br>
 
 			That shocked you, didn’t it? Although L is the third letter in the word HELLO, it is in the <b>second index</b> position.<br> <br>
@@ -126,25 +126,25 @@
 
 			Phew...that’s a <b> long </b> name! Eve wants to just print out the first name. How would she do that? <br> <br>
 
-			To get a part of a string we need to write:<br> 
-			<code>
-			Variable_name[starting_index : ending_index]
-			</code>
+			To get a part of a string we need to write:<br>
+			<pre>
+Variable_name[starting_index : ending_index]
+			</pre>
 
 			A is at index position 0 and the 2nd A is at index position 2. To print out “Ada”, we need to write<br> <br>
 
-			<code>
-			print(amazing_programmer[0:4])
-			</code>
+			<pre>
+print(amazing_programmer[0:4])
+			</pre>
 
 			You might be wondering why we used 0:4 instead of 0:3. That’s because the first index number is inclusive (includes that position) and the last index number is exclusive (doesn’t include that position). In other words, the sliced string only includes characters up to the character before the ending index.<br> <br>
 
 			Now, Eve wants to print out “Love”. Can you try to do that for her?<br> <br>
-			Done? Here’s the answer:<br> 
+			Done? Here’s the answer:<br>
 
-			<code>
-			print(y[5:10]) 
-			</code>
+			<pre>
+print(y[5:10])
+			</pre>
 
 			Wondering why it isn’t 4:10? That’s because we count a space “ “ as one position too! So, L comes at the 5th index position.<br> <br>
 
@@ -154,7 +154,7 @@
 
 
 			<h2>Question</h2>
-			
+
 			<p>
 
 				Eve wants to improve her previous greeting program! This time she wants to greet the user in a better way. Ask the user for their name and use your newly acquired string manipulation skills to greet them in the following way:<br><br>
@@ -181,8 +181,8 @@
 					</div>
 				</div>
 				<div class="output-container">
-					<pre data-heading="OUTPUT"><code class="stdout"></code></pre>
-					<pre data-heading="STATUS"><code class="stderr"></code></pre>
+					<pre data-heading="OUTPUT"><pre class="stdout"></pre></pre>
+					<pre data-heading="STATUS"><pre class="stderr"></pre></pre>
 				</div>
 		</form>
 

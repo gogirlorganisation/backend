@@ -29,22 +29,22 @@
 
 				Python offers a tool called lists to keep track of related "things," or values. To help Eve, let's make a list called shopping_list  and fill it with each of the items:<br><br>
 
-				<code>
+				<pre>
 				shopping_list = [“Butter”, ”Milk”, ”Chocolate”, “Bread”]
-				</code>
+				</pre>
 
 				<b>Note:</b> We use square brackets to create a list. Each item in the list is separated by a comma!<br><br>
 
 				To call and check an item in the list, we use the following format:<br>
-				<code>shopping_list[item_number]</code>
+				<pre>shopping_list[item_number]</pre>
 
 				This looks familiar to indexing in strings, doesn’t it? That’s because it works the exact same way. We can call a specific item in the list by typing the name of the list, then entering the item’s position inside square brackets ([]), Now, let’s try to print the first element from the list and seeing if it prints Butter:<br><br>
 
-				<code>print(shopping_list[1])</code>
+				<pre>print(shopping_list[1])</pre>
 
 				Try and run this. Did it return “Butter”? Nope, It printed Milk, didn’t it? That’s because, just like for strings, Python starts counting from 0. If we want to print the fourth item in the shopping_list (bread) we can do so like this:<br>
 
-				<code>print(shopping_list[3])</code>
+				<pre>print(shopping_list[3])</pre>
 
 				Output: Bread<br>
 				Even though Bread is the 4th item, it’s index position is 3.<br><br>
@@ -56,17 +56,17 @@
 
 				list_name.append(item)
 
-				<code>
+				<pre>
 				shopping_list.append(“flour”)
-				</code>
+				</pre>
 
 				Now using .append(), the item can only be added to the end of the list. But do not fret, we can add the item to whichever position you like using another function <b>insert()</b><br><br>
 
 				list_name.insert(index number, item)
 
-				<code>
+				<pre>
 				shopping_list.insert(1,”flour”)
-				</code>
+				</pre>
 
 				Within the brackets first mention the desired  <i>index number</i>  and then the item.<br><br>
 
@@ -74,18 +74,18 @@
 
 				list_name[index] = element
 
-				<code>
+				<pre>
 				shopping_list[5] = “Toffees”
-				</code>
+				</pre>
 
 				Sometimes you need to remove something from the list, that can achieved by yet another function <b>remove()</b>.
 				Silly Eve forgot she already had a loaf of bread at home, so she needs our help to remove that item from the list.<br><br>
 
 				list_name.remove(element)<br>
 
-				<code>
+				<pre>
 				shopping_list.remove(“bread”)
-				</code>
+				</pre>
 
 
 			</p>
@@ -126,8 +126,8 @@
 					</div>
 				</div>
 				<div class="output-container">
-					<pre data-heading="OUTPUT"><code class="stdout"></code></pre>
-					<pre data-heading="STATUS"><code class="stderr"></code></pre>
+					<pre data-heading="OUTPUT"><pre class="stdout"></pre></pre>
+					<pre data-heading="STATUS"><pre class="stderr"></pre></pre>
 				</div>
 		</form>
 
