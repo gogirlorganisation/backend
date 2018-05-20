@@ -817,6 +817,14 @@ footer .do img {
   }
 }
 
+footer p a {
+    color: rgba(255,255,255,0.66);
+    border-bottom: 2px solid rgba(255,255,255,0.2);
+}
+footer p a:hover {
+    color: rgba(255,255,255,0.8);
+}
+
 
 @media(max-width: 1024px) {
     .submenu.visible {
