@@ -13,106 +13,112 @@
 </head>
 <body>
 	<div class="question">
-		<a href='/dashboard'>&larr; Back to the dashboard</a>
+		<div class="nav">
+			<a href='/dashboard' style="padding-right: 7rem;">&larr; Back to the dashboard</a>
+			<a href='/levels/7'>Next &rarr;</a>
+		</div>
 		<br><br>
 		<form method="post" class="submit">
-			
-			<h1>Syntax and Printing</h1>
+
+			<h1>String Operations</h1>
 			<p>
-				We’ve been talking a lot about working with numbers, so now, we’ll be talking about what are the things you can do with strings!<br><br>
+				We’ve been talking a lot about working with numbers, so now, we’ll be talking about what are the things you can do with strings!<br>
 
-				<h5>Concatenation</h5> 
-				Earlier, we learnt about strings as collections of characters. Concatenation is a way of joining multiple strings together. You can easily add strings to build a complete sentence by using the addition operator - i.e. the ‘+’ sign. Crazy, right? 
+				<h4>Concatenation</h4>
+				<br>
+				Earlier, we learnt about strings as collections of characters. Concatenation is a way of joining multiple strings together. You can easily add strings to build a complete sentence by using the addition operator - i.e. the ‘+’ sign. Crazy, right?
 
-				<code>
-				word1 = “ginger” 
-				word2 = “bread”
-				word3 = word1 + word2
-				</code>
+				<pre>
+word1 = "ginger"
+word2 = "bread"
+word3 = word1 + word2
+				</pre>
 
-				Now, word3 will read gingerbread. Thus, we have concatenated str01 and str02. <br> <br>
+				Now, word3 will read gingerbread. Thus, we have concatenated word1 and word2. <br> <br>
 
 				<b>Note:</b> Do not use this in your examination! We don’t want your English teacher to faint!
 
 
 			</p>
 
-			<h5>Uppercase and Lowercase</h5>
-			<p> 
-				
-				There is a handy feature in Python that helps convert the characters in a string to uppercase or lowercase. Let’s look at an example to show you how it works. <br> <br>
+			<h4>Uppercase and Lowercase</h4>
+			<br>
+			<p>
 
-				<code>
-					word1 = “GiNgEr”
-					word1 = word1.upper()
-					print(word1)
-					print(“BrEaD”.lower())
-				</code>
-    
+				There is a handy feature in Python that helps convert the characters in a string to uppercase or lowercase. Let’s look at an example to show you how it works. 
+
+				<pre>
+word1 = "GiNgEr"
+word1 = word1.upper()
+print(word1)
+print("BrEaD".lower())
+				</pre>
+
 				The output looks like this:<br>
 				GINGER<br>
 				bread<br>
+				<br>
 
 				You can see how adding .upper() or .lower() to a variable or to a string can change its case.
 
 			</p>
 
-			<h5> Length of Variables</h5>
+			<h4> Length of Variables</h4>
 			<p>
-							
+
 			What do you do if you want to know the length of a string? We know that the word ‘Hello’ contains 5 letters. <br> <br>
 
-			Instead of counting each letter, we can let the computer do it for you. All you need to do is use a function called len(). <br> 
+			Instead of counting each letter, we can let the computer do it for you. All you need to do is use a function called len(). <br>
 
-			<code>
-			len(“Eve likes to go shopping during the weekends”) 
-			</code>
+			<pre>
+len("Eve likes to go shopping")
+			</pre>
 
-			Output: 44 <br> <br>
+			Output: 24 <br> <br>
 
 			<b>Note:</b> len() function counts spaces too!<br> <br>
 
-			Did you notice something strange? 44 is not printed on the screen. That’s because you haven’t called the print function to do it for you! Go ahead and do it! <br> <br>
+			Did you notice something strange? 24 is not printed on the screen. That’s because you haven’t called the print function to do it for you! Go ahead and do it! <br> <br>
 
 			You can use it with variables too! <br> <br>
 
-			<code>
-				greetings = “Hello” 
-				Length_of_greeting = len(greetings) 
-				print(Length_of_greeting)
-			</code>
+			<pre>
+greetings = "Hello"
+Length_of_greeting = len(greetings)
+print(Length_of_greeting)
+			</pre>
 
 
 			Output: 5
 
 			</p>
 
-			<h5> Indexing </h5>
+			<h4> Indexing </h4>
 
 			<p>
 
-			Eve wants to print the letter at the second index position in “HELLO”. <br> 
-			Can you help her do that? For accessing specific letters in a string we have to write the following: <br> <br>
+			Eve wants to print the letter at the second index position in "HELLO". <br>
+			Can you help her do that? For accessing specific letters in a string we have to write the following: <br>
 
-			<code>
-			String[postion_of_the_letter]
-			</code>
+			<pre>
+String[postion_of_the_letter]
+			</pre>
 
-			For example:
+			For example:<br>
 
-			<code>
-			word = “HELLO”
-			print(word[2]) # or just "HELLO"[2]
-			</code>
+			<pre>
+word = "HELLO"
+print(word[2]) # or just "HELLO"[2]
+			</pre>
 
-			The output is… <br> 
+			The output is… <br>
 			L <br> <br>
 
 			That shocked you, didn’t it? Although L is the third letter in the word HELLO, it is in the <b>second index</b> position.<br> <br>
 
 			Programmers are weird like that. They like to count from 0. Look at the image attached to get a better sense. Now think about which letter you would get if you printed the fourth index position.<br> <br>
 
-			<b> PICTURE </b>
+			<b> PICTURE </b> <br>
 
 			The answer is…<br>
 			O<br>
@@ -122,31 +128,31 @@
 			<h3> Slicing </h3>
 
 			<p>
-			amazing_programmer = “Ada Lovelace” <br> <br>
+			amazing_programmer = "Ada Lovelace" <br> <br>
 
 			Phew...that’s a <b> long </b> name! Eve wants to just print out the first name. How would she do that? <br> <br>
 
-			To get a part of a string we need to write:<br> 
-			<code>
-			Variable_name[starting_index : ending_index]
-			</code>
+			To get a part of a string we need to write:<br>
+			<pre>
+Variable_name[starting_index : ending_index]
+			</pre>
 
-			A is at index position 0 and the 2nd A is at index position 2. To print out “Ada”, we need to write<br> <br>
+			A is at index position 0 and the 2nd A is at index position 2. To print out "Ada", we need to write<br>
 
-			<code>
-			print(amazing_programmer[0:4])
-			</code>
+			<pre>
+print(amazing_programmer[0:3])
+			</pre>
 
-			You might be wondering why we used 0:4 instead of 0:3. That’s because the first index number is inclusive (includes that position) and the last index number is exclusive (doesn’t include that position). In other words, the sliced string only includes characters up to the character before the ending index.<br> <br>
+			You might be wondering why we used 0:3 instead of 0:2. That’s because the first index number is <a id="w1" href="#" onclick="return false;"><b>inclusive</b></a><span id="p1" class="hidden"> (includes that position)</span> and the last index number is <a id="w2" href="#" onclick="return false;"><b>exclusive</b></a><span id="p2" class="hidden"> (doesn’t include that position)</span>. In other words, the sliced string only includes characters up to the character before the ending index.<br> <br>
 
-			Now, Eve wants to print out “Love”. Can you try to do that for her?<br> <br>
-			Done? Here’s the answer:<br> 
+			Now, Eve wants to print out "Love". Can you try to do that for her?<br> <br>
+			Done? Here’s the answer:<br>
 
-			<code>
-			print(y[5:10]) 
-			</code>
+			<pre>
+print(amazing_programmer[4:8])
+			</pre>
 
-			Wondering why it isn’t 4:10? That’s because we count a space “ “ as one position too! So, L comes at the 5th index position.<br> <br>
+			Wondering why it isn’t 3:8? That’s because we count a space " " as one position too! So, L comes at the 5th index position.<br> <br>
 
 			Got it? Good!
 			</p>
@@ -154,12 +160,12 @@
 
 
 			<h2>Question</h2>
-			
+
 			<p>
 
 				Eve wants to improve her previous greeting program! This time she wants to greet the user in a better way. Ask the user for their name and use your newly acquired string manipulation skills to greet them in the following way:<br><br>
 
-				“Welcome to the bakery Eve! What would you like to order today?”<br><br>
+				"Welcome to the bakery Eve! What would you like to order today?"<br><br>
 
 				Hint: Use string concatenation!
 			</p>
@@ -181,8 +187,8 @@
 					</div>
 				</div>
 				<div class="output-container">
-					<pre data-heading="OUTPUT"><code class="stdout"></code></pre>
-					<pre data-heading="STATUS"><code class="stderr"></code></pre>
+					<pre data-heading="OUTPUT"><pre class="stdout"></pre></pre>
+					<pre data-heading="STATUS"><pre class="stderr"></pre></pre>
 				</div>
 		</form>
 
@@ -204,6 +210,7 @@
         $('#w4').click(function(){ $('#p4').removeClass('hidden'); });
         $('#w5').click(function(){ $('#p5').removeClass('hidden'); });
         $('#clr').click(function(){ $('#p1').addClass('hidden'); });
+        $('#clr').click(function(){ $('#p2').addClass('hidden'); });
       };
       MastStory();
       });

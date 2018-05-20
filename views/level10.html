@@ -13,42 +13,45 @@
 </head>
 <body>
 	<div class="question">
-		<a href='/dashboard'>&larr; Back to the dashboard</a>
+		<div class="nav">
+			<a href='/dashboard' style="padding-right: 7rem;">&larr; Back to the dashboard</a>
+			<a href='/levels/11'>Next &rarr;</a>
+		</div>
 		<br><br>
 		<form method="post" class="submit">
-			
-			<h1>Syntax and Printing</h1>
+
+			<h1>Lists</h1>
 			<p>
 				Eve’s mom wants her to go grocery shopping for their bakery, so, she makes a list of all the items she needs. Her list contains the following items: <br> <br>
 				<ul>
 					<li>Butter</li>
 					<li>Milk</li>
-					<li>Chocolate</li> 
+					<li>Chocolate</li>
 					<li>Bread</li>
 				</ul>
 
 				Python offers a tool called lists to keep track of related "things," or values. To help Eve, let's make a list called shopping_list  and fill it with each of the items:<br><br>
 
-				<code>
-				shopping_list = [“Butter”, ”Milk”, ”Chocolate”, “Bread”]
-				</code>
+				<pre>
+shopping_list = ["Butter", "Milk", "Chocolate", "Bread"]
+				</pre>
 
 				<b>Note:</b> We use square brackets to create a list. Each item in the list is separated by a comma!<br><br>
 
 				To call and check an item in the list, we use the following format:<br>
-				<code>shopping_list[item_number]</code>
+				<pre>shopping_list[item_number]</pre>
 
-				This looks familiar to indexing in strings, doesn’t it? That’s because it works the exact same way. We can call a specific item in the list by typing the name of the list, then entering the item’s position inside square brackets ([]), Now, let’s try to print the first element from the list and seeing if it prints Butter:<br><br>
+				This looks familiar to indexing in strings, doesn’t it? That’s because it works the exact same way. We can call a specific item in the list by typing the name of the list, then entering the item’s <a id="w1" href="#" onclick="return false;">position</a> <span id="p1" class="hidden">also called an index number is</span> inside square brackets ([]), Now, let’s try to print the first element from the list and seeing if it prints Butter:<br><br>
 
-				<code>print(shopping_list[1])</code>
+				<pre>print(shopping_list[1])</pre>
 
-				Try and run this. Did it return “Butter”? Nope, It printed Milk, didn’t it? That’s because, just like for strings, Python starts counting from 0. If we want to print the fourth item in the shopping_list (bread) we can do so like this:<br>
+				Try and run this. Did it return "Butter"? Nope, It printed Milk, didn’t it? That’s because, just like for strings, Python starts counting from 0. If we want to print the fourth item in the shopping_list (bread) we can do so like this:<br>
 
-				<code>print(shopping_list[3])</code>
+				<pre>print(shopping_list[3])</pre>
 
 				Output: Bread<br>
 				Even though Bread is the 4th item, it’s index position is 3.<br><br>
-				 
+
 				Eve forgot to add flour to her list! Oh no, how will she bake her cake now?<br>
 				Fear not...you can add flour to her shopping list since there’s no limit for the length of the shopping list.<br><br>
 
@@ -56,17 +59,17 @@
 
 				list_name.append(item)
 
-				<code>
-				shopping_list.append(“flour”)
-				</code>
+				<pre>
+shopping_list.append("flour")
+				</pre>
 
 				Now using .append(), the item can only be added to the end of the list. But do not fret, we can add the item to whichever position you like using another function <b>insert()</b><br><br>
 
 				list_name.insert(index number, item)
 
-				<code>
-				shopping_list.insert(1,”flour”)
-				</code>
+				<pre>
+shopping_list.insert(1,"flour")
+				</pre>
 
 				Within the brackets first mention the desired  <i>index number</i>  and then the item.<br><br>
 
@@ -74,32 +77,32 @@
 
 				list_name[index] = element
 
-				<code>
-				shopping_list[5] = “Toffees”
-				</code>
+				<pre>
+shopping_list[5] = "Toffees"
+				</pre>
 
 				Sometimes you need to remove something from the list, that can achieved by yet another function <b>remove()</b>.
 				Silly Eve forgot she already had a loaf of bread at home, so she needs our help to remove that item from the list.<br><br>
 
 				list_name.remove(element)<br>
 
-				<code>
-				shopping_list.remove(“bread”)
-				</code>
+				<pre>
+shopping_list.remove("bread")
+				</pre>
 
 
 			</p>
 			<br><br>
 
 			<h2>Question</h2>
-			
+
 			<p>
 
 				Eve’s shopping list has the following items:<br>
 				<ul>
 					<li>Butter</li>
 					<li>Milk</li>
-					<li>Chocolate</li> 
+					<li>Chocolate</li>
 					<li>Flour</li>
 					<li>Apples</li>
 				</ul>
@@ -126,8 +129,8 @@
 					</div>
 				</div>
 				<div class="output-container">
-					<pre data-heading="OUTPUT"><code class="stdout"></code></pre>
-					<pre data-heading="STATUS"><code class="stderr"></code></pre>
+					<pre data-heading="OUTPUT"><pre class="stdout"></pre></pre>
+					<pre data-heading="STATUS"><pre class="stderr"></pre></pre>
 				</div>
 		</form>
 

@@ -13,10 +13,12 @@
 </head>
 <body>
 	<div class="question">
-		<a href='/dashboard'>&larr; Back to the dashboard</a>
+		<div class="nav">
+			<a href='/dashboard' style="padding-right: 7rem;">&larr; Back to the dashboard</a>
+			<a href='/levels/13'>Next &rarr;</a>
+		</div>
 		<br><br>
 		<form method="post" class="submit">
-			
 			<h1>Loops: While</h1>
 			<p>
 				Eve has had a hard day at work at the bakery today.So, she wants to take a nap. She’s told her mum not to disturb her  <b> while </b> she’s sleeping. Once  she wakes up, her mother can give her chores.Her request condition expires or, is terminated, once she wakes up and is no longer sleeping.<br><br>
@@ -36,11 +38,11 @@
 				<br><br>
 				Eve can’t sleep, so she decides to count sheeps till 25. Let’s try printing values from 1 till 25 using a while loop.<br>
 
-				<code>
-				sheep_counter = 1
-				while sheep_counter < 26:
-						print(sheep_counter)
-				</code>
+				<pre>
+sheep_counter = 1
+while sheep_counter < 26:
+	print(sheep_counter)
+				</pre>
 
 				Oh no! What happened, the computer is just printing 1 and is not even stopping!<br>
 				Don’t worry, you are just stuck in an <u>infinite loop</u> as the condition sheep_counter which has a value of 1 is less than 26 is always True! Let’s update the value of the sheep_counter after each iteration.<br><br>
@@ -56,12 +58,12 @@
 			<br><br>
 
 			<h2>Question</h2>
-			
+
 			<p>
 
-				Eve is given a long list of items that her family plans to put on the bakery menu. But due to limited space she can’t fit items with the length longer than 12 characters. Help her out by printing all the list items that won’t fit.<br><br>
+				Eve is given a long list of items that her family plans to put on the bakery menu. But due to limited space she <b>can’t<b> fit items with the length longer than 12 characters. Help her out by printing all the list items that won’t fit.<br><br>
 
-				<code>my_list = [“Vanilla Cake”, “Garlic Bread”, “Butter Biscuits”, “cupcakes”, “egg tart”, “apple pie”]</code>
+				<pre>my_list = ["Vanilla Cake", "Garlic Bread", "Butter Biscuits", "cupcakes", "egg tart", "apple pie"]</pre>
 
 
 			</p>
@@ -83,8 +85,8 @@
 					</div>
 				</div>
 				<div class="output-container">
-					<pre data-heading="OUTPUT"><code class="stdout"></code></pre>
-					<pre data-heading="STATUS"><code class="stderr"></code></pre>
+					<pre data-heading="OUTPUT"><pre class="stdout"></pre></pre>
+					<pre data-heading="STATUS"><pre class="stderr"></pre></pre>
 				</div>
 		</form>
 

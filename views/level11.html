@@ -13,10 +13,13 @@
 </head>
 <body>
 	<div class="question">
-		<a href='/dashboard'>&larr; Back to the dashboard</a>
+		<div class="nav">
+			<a href='/dashboard' style="padding-right: 7rem;">&larr; Back to the dashboard</a>
+			<a href='/levels/12'>Next &rarr;</a>
+		</div>
 		<br><br>
 		<form method="post" class="submit">
-			
+
 			<h1>Loops-For</h1>
 			<p>
 				What’s the laziest thing, creature, or entity to have ever existed?<br>
@@ -24,16 +27,16 @@
 				No...it’s a programmer!<br><br>
 
 				Is there really anything worse than writing the same code again and again and again and again?<br>
-				A customer places an order for a 100 cupcakes. Eve needs to make a receipt for the purchase. So, she wants <code> print (“Cupcake $2.40”) </code> 100 times, she’s not going to repeat this code a 100 times. Instead, she’ll use a new feature- <b> loop.</b><br><br>
+				A customer places an order for a 100 cupcakes. Eve needs to make a receipt for the purchase. So, she wants <pre> print ("Cupcake $2.40") </pre> 100 times, she’s not going to repeat this code a 100 times. Instead, she’ll use a new feature- <b> loop.</b><br><br>
 
 				 #There is indentation space in for loops too!<br>
 				For variable in range(0,numberoftimes):<br>
-					code 
+					code
 
-				<code>
-				for x in range(0,100): 
-					print(“Cupcake $2.40”)
-				</code>
+				<pre>
+for x in range(0,100):
+	print("Cupcake $2.40")
+				</pre>
 
 
 				Here, the variable x will go (i.e. iterate) from 0-99, printing <b>Cupcake $2.40</b> each time it completes one iteration.<br><br>
@@ -42,37 +45,37 @@
 
 				Eve needs to count the number of eggs, thus she needs the computer to print numbers from 0 to 15.You can print numbers between 2 numbers by just adjusting the range. In this case it would be<br><br>
 
-				<code>
-				for x in range(0,16):
-					print(x)
-				</code>
+				<pre>
+for x in range(0,16):
+	print(x)
+				</pre>
 
 				<b>Note:</b> Keep in mind that the the values of x will vary from the first number till the (last number - 1)<br><br>
 
 				Let’s apply the if-else statements we learned earlier to loops.<br>
 				Suppose we want to check which numbers between 1-10, are even  and which are odd. Then it will be done in the following way:<br><br>
 
-				<code>
-				for x in range(1,10):
-					If ( x%2 ==0)
-						print (“even”)
-					else
-						print(“odd”)
-				</code>
+				<pre>
+for x in range(1,10):
+	if ( x%2 ==0)
+		print ("even")
+	else
+		print("odd")
+				</pre>
 
 
 			</p>
 			<br><br>
 
 			<h2>Question</h2>
-			
+
 			<p>
 
 				Eve loves prime numbers but she finds it really hard to determine if a number is prime or not. She wants to use her programming skills to determine is a number a prime or not. <br><br>
 
 				She comes up with a very basic condition, if she can find a factor of the number other than 1 and itself then it’s not prime. She wants to use a for loop to make a variable x iterate from 2 till the number itself using the inbuilt function, and use if condition to check if the number is divisible by x then she knows its prime.<br><br>
 
-				Check if 169 is a prime, if it is print ”prime” if not print “not prime”.
+				Check if 169 is a prime, if it is print "prime" if not print "not prime".
 
 
 
@@ -95,8 +98,8 @@
 					</div>
 				</div>
 				<div class="output-container">
-					<pre data-heading="OUTPUT"><code class="stdout"></code></pre>
-					<pre data-heading="STATUS"><code class="stderr"></code></pre>
+					<pre data-heading="OUTPUT"><pre class="stdout"></pre></pre>
+					<pre data-heading="STATUS"><pre class="stderr"></pre></pre>
 				</div>
 		</form>
 
