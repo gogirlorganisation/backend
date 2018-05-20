@@ -25,8 +25,8 @@
 				Earlier, we learnt about strings as collections of characters. Concatenation is a way of joining multiple strings together. You can easily add strings to build a complete sentence by using the addition operator - i.e. the ‘+’ sign. Crazy, right?
 
 				<pre>
-word1 = “ginger”
-word2 = “bread”
+word1 = "ginger"
+word2 = "bread"
 word3 = word1 + word2
 				</pre>
 
@@ -43,10 +43,10 @@ word3 = word1 + word2
 				There is a handy feature in Python that helps convert the characters in a string to uppercase or lowercase. Let’s look at an example to show you how it works. <br> <br>
 
 				<pre>
-word1 = “GiNgEr”
+word1 = "GiNgEr"
 word1 = word1.upper()
 print(word1)
-print(“BrEaD”.lower())
+print("BrEaD".lower())
 				</pre>
 
 				The output looks like this:<br>
@@ -65,7 +65,7 @@ print(“BrEaD”.lower())
 			Instead of counting each letter, we can let the computer do it for you. All you need to do is use a function called len(). <br>
 
 			<pre>
-len(“Eve likes to go shopping during the weekends”)
+len("Eve likes to go shopping during the weekends")
 			</pre>
 
 			Output: 44 <br> <br>
@@ -77,7 +77,7 @@ len(“Eve likes to go shopping during the weekends”)
 			You can use it with variables too! <br> <br>
 
 			<pre>
-greetings = “Hello”
+greetings = "Hello"
 Length_of_greeting = len(greetings)
 print(Length_of_greeting)
 			</pre>
@@ -91,7 +91,7 @@ print(Length_of_greeting)
 
 			<p>
 
-			Eve wants to print the letter at the second index position in “HELLO”. <br>
+			Eve wants to print the letter at the second index position in "HELLO". <br>
 			Can you help her do that? For accessing specific letters in a string we have to write the following: <br> <br>
 
 			<pre>
@@ -101,7 +101,7 @@ String[postion_of_the_letter]
 			For example:
 
 			<pre>
-word = “HELLO”
+word = "HELLO"
 print(word[2]) # or just "HELLO"[2]
 			</pre>
 
@@ -122,7 +122,7 @@ print(word[2]) # or just "HELLO"[2]
 			<h3> Slicing </h3>
 
 			<p>
-			amazing_programmer = “Ada Lovelace” <br> <br>
+			amazing_programmer = "Ada Lovelace" <br> <br>
 
 			Phew...that’s a <b> long </b> name! Eve wants to just print out the first name. How would she do that? <br> <br>
 
@@ -131,7 +131,7 @@ print(word[2]) # or just "HELLO"[2]
 Variable_name[starting_index : ending_index]
 			</pre>
 
-			A is at index position 0 and the 2nd A is at index position 2. To print out “Ada”, we need to write<br> <br>
+			A is at index position 0 and the 2nd A is at index position 2. To print out "Ada", we need to write<br> <br>
 
 			<pre>
 print(amazing_programmer[0:4])
@@ -139,14 +139,14 @@ print(amazing_programmer[0:4])
 
 			You might be wondering why we used 0:4 instead of 0:3. That’s because the first index number is inclusive (includes that position) and the last index number is exclusive (doesn’t include that position). In other words, the sliced string only includes characters up to the character before the ending index.<br> <br>
 
-			Now, Eve wants to print out “Love”. Can you try to do that for her?<br> <br>
+			Now, Eve wants to print out "Love". Can you try to do that for her?<br> <br>
 			Done? Here’s the answer:<br>
 
 			<pre>
 print(y[5:10])
 			</pre>
 
-			Wondering why it isn’t 4:10? That’s because we count a space “ “ as one position too! So, L comes at the 5th index position.<br> <br>
+			Wondering why it isn’t 4:10? That’s because we count a space " " as one position too! So, L comes at the 5th index position.<br> <br>
 
 			Got it? Good!
 			</p>
@@ -159,7 +159,7 @@ print(y[5:10])
 
 				Eve wants to improve her previous greeting program! This time she wants to greet the user in a better way. Ask the user for their name and use your newly acquired string manipulation skills to greet them in the following way:<br><br>
 
-				“Welcome to the bakery Eve! What would you like to order today?”<br><br>
+				"Welcome to the bakery Eve! What would you like to order today?"<br><br>
 
 				Hint: Use string concatenation!
 			</p>
