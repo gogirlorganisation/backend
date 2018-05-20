@@ -82,8 +82,6 @@ router.get('/:level', function(req, res) {
 	if(req.isAuthenticated()) {
 		res.render('level' + req.params.level, {
 			user: req.user.username
-		}, function(err) {
-			res.status(404).send('404');
 		});
 	} else {
 		res.redirect('/');
@@ -117,7 +115,7 @@ router.post('/:level', function(req, res, next) {
 
 							// calculate score based on previously solved levels
 							for(var level in solvedLevels) {
-								if(solvedLevels[level] == true) score += 10;
+								if(solvedLevels[level] == true) score += (100/(Object.keys(answers).length));
 							}
 
 							User.findByIdAndUpdate(req.user._id, { points: score, solvedLevels: solvedLevels }, function(err, user) {
