@@ -13,11 +13,14 @@
 </head>
 <body>
 	<div class="question">
-		<a href='/dashboard'>&larr; Back to the dashboard</a>
+		<div class="nav">
+			<a href='/dashboard' style="padding-right: 7rem;">&larr; Back to the dashboard</a>
+			<a href='/levels/11'>Next &rarr;</a>
+		</div>
 		<br><br>
 		<form method="post" class="submit">
 
-			<h1>Syntax and Printing</h1>
+			<h1>Lists</h1>
 			<p>
 				Eve’s mom wants her to go grocery shopping for their bakery, so, she makes a list of all the items she needs. Her list contains the following items: <br> <br>
 				<ul>
@@ -38,7 +41,7 @@ shopping_list = ["Butter", "Milk", "Chocolate", "Bread"]
 				To call and check an item in the list, we use the following format:<br>
 				<pre>shopping_list[item_number]</pre>
 
-				This looks familiar to indexing in strings, doesn’t it? That’s because it works the exact same way. We can call a specific item in the list by typing the name of the list, then entering the item’s position inside square brackets ([]), Now, let’s try to print the first element from the list and seeing if it prints Butter:<br><br>
+				This looks familiar to indexing in strings, doesn’t it? That’s because it works the exact same way. We can call a specific item in the list by typing the name of the list, then entering the item’s <a id="w1" href="#" onclick="return false;">position</a> <span id="p1" class="hidden">also called an index number is</span> inside square brackets ([]), Now, let’s try to print the first element from the list and seeing if it prints Butter:<br><br>
 
 				<pre>print(shopping_list[1])</pre>
 
