@@ -25,7 +25,7 @@
 				The keywords ‘and’, and ‘or’ are used to join together boolean expressions. The syntax is:<br><br>
 
 				if condition1 and/or condition2:<br>
-					Statements
+				&emsp;Statements
 				<br><br>
 				The keyword ‘not’ just changes a True condition to False and vica versa.
 
@@ -37,13 +37,13 @@
 			A customer wants cakes worth either $7 or $20.<br><br>
 
 			<pre>
-If price == 7 or price== 20:
+if price == 7 or price== 20:
 	print("Buy this cake!")
-Else:
-	print("The cake isn't for the price you specified.")
+else:
+	print("Don't buy this cake!")
 			</pre>
 
-			Or statements returns True if even one condition is True.
+			Or statements returns True if even one condition is True. So, if the price is equal to 7 the condition (price == 7 or price== 20) will return True and "Buy this cake!" will be printed.
 
 			</p>
 
@@ -57,11 +57,11 @@ Else:
 if price > 7 and price < 20:
 	print("Buy this cake!")
 else:
-	print("This cake isn't within your range")
+	print("Don't buy this cake!")
 			</pre>
 
 
-			And only returns True if both the statements are True.
+			And only returns True if both the statements are True. So, if the price is equal to 21 the condition (price == 7 or price== 20) will return False and "Don't buy this cake!" will be printed.
 
 			</p>
 
@@ -78,9 +78,10 @@ else:
 			</pre>
 
 			The not keyword is used to flip the boolean value. If the condition is false, the boolean is true, and vice versa.<br>
-			So, if the the price of the cake is less than 25 then the condition <pre>(price < 25)</pre> will return True but the condition <pre>not(price < 25) </pre> will return False thus the cutomer won't buy the cake and the else condition would run.
+			So, if the the price of the cake is less than 25 then the condition <pre>(price < 25)</pre> will return True but the condition <pre>not(price < 25) </pre> will return False thus the cutomer won't buy the cake and the else condition would run. <br> <br>
 
-
+			A follow-up question: How would you rewrite this without using the 'not' keyword, but with a > operator? Try it out right now!
+			
 			</p>
 
 			<br><br>
