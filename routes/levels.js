@@ -66,7 +66,7 @@ var answers = {
 		return rough(str) === rough(correct);
 	},
 	11: function(str) {
-		var correct = '53';
+		var correct = '96';
 		return rough(str) === rough(correct);
 	},
 	12: function(str) {
