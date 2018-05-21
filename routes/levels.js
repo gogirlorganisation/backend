@@ -66,7 +66,7 @@ var answers = {
 		return rough(str) === rough(correct);
 	},
 	11: function(str) {
-		var correct = 'not prime';
+		var correct = '53';
 		return rough(str) === rough(correct);
 	},
 	12: function(str) {
