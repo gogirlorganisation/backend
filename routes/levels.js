@@ -55,8 +55,11 @@ var answers = {
 		return expr.test(rough(str));
 	},
 	9: function(str) {
-		var correct = 'Enter a number: 13 Eve is not free at 13';
-		return rough(str) === rough(correct);
+		var prev = '';
+		var next = 'Eve is not free at 13';
+		//                                              vv    matches any string input
+		var expr = new RegExp(regEscape(rough(prev)) + '.*\.' + regEscape(rough(next)), 'g');
+		return expr.test(rough(str));
 	},
 	10: function(str) {
 		var correct = 'Flour';
