@@ -31,7 +31,7 @@
 
 				The condition is evaluated, and if the condition is <b>true</b>, the code within the block is executed. This repeats until the condition becomes false.<br><br>
 
-				The syntax for while loop is :<br><br>
+				The syntax for while loop is :
 
 				<pre>
 while a condition is True:
@@ -47,7 +47,7 @@ while sheep_counter < 26:
 				</pre>
 
 				Oh no! What happened, the computer is just printing 1 and is not even stopping!<br>
-				Don’t worry, you are just stuck in an <a id="w1" href="#" onclick="return false;"><b>infinite loop</b></a><span id="p1" class="hidden"> (Infinite loop is nothing but when there is no end condition to the loop thus the code runs forever. No programmer want this to happen!)</span> as the condition sheep_counter which has a value of 1 is less than 26 is always True! Let’s update the value of the sheep_counter after each iteration.<br><br>
+				Don’t worry, you are just stuck in an <a id="w1" href="#" onclick="return false;"><b>infinite loop</b></a><span id="p1" class="hidden"> (Infinite loop is nothing but when there is no end condition to the loop thus the code runs forever. No programmer want this to happen!)</span> as the condition sheep_counter (which has a value of 1) is less than 26 is always True! Let’s update the value of the sheep_counter after each <a id="w2" href="#" onclick="return false;"><b>iteration.</b></a><span id="p2" class="hidden"> (one cycle of running the code)</span><br><br>
 
 				<pre>
 Sheep_counter = 1
@@ -117,6 +117,7 @@ while sheep_counter < 26:
         $('#w4').click(function(){ $('#p4').removeClass('hidden'); });
         $('#w5').click(function(){ $('#p5').removeClass('hidden'); });
         $('#clr').click(function(){ $('#p1').addClass('hidden'); });
+        $('#clr').click(function(){ $('#p2').addClass('hidden'); });
       };
       MastStory();
       });
