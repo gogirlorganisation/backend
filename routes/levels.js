@@ -70,7 +70,11 @@ var answers = {
 		return rough(str) === rough(correct);
 	},
 	12: function(str) {
-		var correct = 'butter biscuits';
+		var correct = 'dark chocolate\nvanilla cupcakes';
+		return rough(str) === rough(correct);
+	},
+	13: function(str) {
+		var correct = 'not prime';
 		return rough(str) === rough(correct);
 	},
 };
