@@ -30,6 +30,7 @@
 					<li>Bread</li>
 				</ul>
 				<img src="/img/illustrations/buttermilkchocolatebread.png" alt="" width="100%">
+				<br>
 				Python offers a tool called lists to keep track of related "things," or values. To help Eve, let's make a list called shopping_list  and fill it with each of the items:<br><br>
 
 				<pre>
@@ -41,7 +42,7 @@ shoppinglist=["Butter","Milk","Chocolate","Bread"]
 				To call and check an item in the list, we use the following format:<br>
 				<pre>shopping_list[item_number]</pre>
 
-				This looks familiar to indexing in strings, doesn’t it? That’s because it works the exact same way. We can call a specific item in the list by typing the name of the list, then entering the item’s <a id="w1" href="#" onclick="return false;">position</a> <span id="p1" class="hidden">also called an index number is</span> inside square brackets ([]), Now, let’s try to print the first element from the list and seeing if it prints Butter:<br>
+				This looks familiar to indexing in strings, doesn’t it? That’s because it works the exact same way. We can call a specific item in the list by typing the name of the list, then entering the item’s <a id="w1" href="#" onclick="return false;"><b>position</b></a> <span id="p1" class="hidden">also called an index number is</span> inside square brackets ([]), Now, let’s try to print the first element from the list and seeing if it prints Butter:<br>
 
 				<pre>print(shoppinglist[1])</pre>
 
@@ -62,7 +63,8 @@ shoppinglist=["Butter","Milk","Chocolate","Bread"]
 				<pre>
 shoppinglist.append("flour")
 				</pre>
-<img src="/img/illustrations/buttermilkchocolatebreadflour.png" alt=""width="100%">
+				<img src="/img/illustrations/buttermilkchocolatebreadflour.png" alt=""width="100%">
+				<br>
 				Now using .append(), the item can only be added to the end of the list. But do not fret, we can add the item to whichever position you like using another function <b>insert()</b><br><br>
 
 				list_name.insert(index number, item)
@@ -80,7 +82,8 @@ shoppinglist.insert(1,"flour")
 				<pre>
 shoppinglist[5] = "Toffees"
 				</pre>
-<img src="/img/illustrations/butterflourmilkchocolatebreadtoffees.png" alt="" width="100%">
+				<img src="/img/illustrations/butterflourmilkchocolatebreadtoffees.png" alt="" width="100%">
+				<br>
 				Sometimes you need to remove something from the list, that can achieved by yet another function <b>remove()</b>.
 				Silly Eve forgot she already had a loaf of bread at home, so she needs our help to remove that item from the list.<br><br>
 
