@@ -87,11 +87,16 @@ function checkCorrect(level, answer) {
 
 router.get('/:level', function(req, res) {
 	if(req.isAuthenticated()) {
-		res.render('level' + req.params.level, {
-			user: req.user.username
-		});
+		if(answers[req.params.level]) {
+			res.render('level' + req.params.level, {
+				user: req.user.username
+			});
+		}
+		else {
+			res.redirect('/dashboard');
+		}
 	} else {
-		res.redirect('/');
+		res.redirect('/login');
 	}
 });
 
