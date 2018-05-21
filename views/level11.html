@@ -59,7 +59,7 @@ for x in range(0,16):
 
 				<pre>
 for x in range(1,10):
-  if (x%2 ==0):
+  if(x%2 ==0):
     print ("even")
   else:
     print("odd")
@@ -67,19 +67,13 @@ for x in range(1,10):
 
 
 			</p>
-			<br><br>
+			<br>
 
 			<h2>Question</h2>
 
 			<p>
-
-				Eve loves prime numbers but she finds it really hard to determine if a number is prime or not. She wants to use her programming skills to determine is a number a prime or not. <br><br>
-
-				She comes up with a very basic condition, if she can find a factor of the number other than 1 and itself then it’s not prime. She wants to use a for loop to make a variable x iterate from 2 till the number itself using the inbuilt function, and use if condition to check if the number is divisible by x then she knows its prime.<br><br>
-
-				Check if 169 is a prime, if it is print "prime" if not print "not prime".
-
-
+				Eve loves numbers with factors! She wants to create a function that determines the <a id="w1" href="#" onclick="return false;"><b>factors</b></a><span id="p1" class="hidden">(A factor of a number divides the number <a id="w2" href="#" onclick="return false;"><b>completely!</b></a><span id="p2" class="hidden"> Use '%' to check the divisibility.</span>)</span> of the number entered. Can you help her?
+				Print the sum of all the factors of 42.
 
 			</p>
 
@@ -123,6 +117,7 @@ for x in range(1,10):
         $('#w4').click(function(){ $('#p4').removeClass('hidden'); });
         $('#w5').click(function(){ $('#p5').removeClass('hidden'); });
         $('#clr').click(function(){ $('#p1').addClass('hidden'); });
+        $('#clr').click(function(){ $('#p2').addClass('hidden'); });
       };
       MastStory();
       });
