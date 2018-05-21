@@ -423,7 +423,7 @@ section.mast div.container p {
 
 
 article img {
-      border-radius: 100px;
+      border-radius: 50%;
 }
 
 .card-content h2 {
@@ -439,6 +439,20 @@ article img {
 
 .card-content p {
   margin-top: 1.5em !important;
+}
+
+article.card.column-6.table {
+    box-sizing: border-box;
+    align-self: stretch;
+}
+
+.cards > .container > .center {
+    width: 100%;
+}
+
+.cards > .container {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .submenu {
