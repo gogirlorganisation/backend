@@ -111,4 +111,21 @@ while sheep_counter < 26:
 
 <script src="/socket.io/socket.io.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="/javascripts/level.js"></scr
+<script src="/javascripts/level.js"></script>
+<script src="/mode/python/python.js"></script>
+<script src="/javascripts/compiler.js"></script>
+  <script type="text/javascript">
+      $(document).ready(function () {
+      var MastStory = function () {
+        $('#w1').click(function(){ $('#p1').removeClass('hidden'); });
+        $('#w2').click(function(){ $('#p2').removeClass('hidden'); });
+        $('#w3').click(function(){ $('#p3').removeClass('hidden'); });
+        $('#w4').click(function(){ $('#p4').removeClass('hidden'); });
+        $('#w5').click(function(){ $('#p5').removeClass('hidden'); });
+        $('#clr').click(function(){ $('#p1').addClass('hidden'); });
+      };
+      MastStory();
+      });
+  </script>
+</body>
+</html>
