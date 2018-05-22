@@ -75,6 +75,8 @@ function err(text) {
 $('form.compiler').on('submit', function(e) {
 	e.preventDefault();
 
+	$('form.compiler button').prop('disabled', true);
+
 	var socket = io.connect('/');
 
 	$('.stdout').html('');
@@ -106,5 +108,6 @@ $('form.compiler').on('submit', function(e) {
 		$('.stdin').off('keypress');
 		socket.disconnect();
 		$('form.submit').submit();
+		$('form.compiler button').prop('disabled', false);
 	});
 });
