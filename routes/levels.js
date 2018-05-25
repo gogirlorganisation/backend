@@ -87,9 +87,15 @@ function checkCorrect(level, answer) {
 
 router.get('/:level', function(req, res) {
 	if(req.isAuthenticated()) {
+
 		if(answers[req.params.level]) {
-			res.render('level' + req.params.level, {
-				user: req.user.username
+			var nextLevel = parseInt(req.params.level) + 1;
+			res.render('level', {
+				user: req.user.username,
+				nextLevel: nextLevel,
+				partials: {
+					levelText: 'levels/' + req.params.level
+				}
 			});
 		}
 		else {

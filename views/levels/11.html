@@ -1,0 +1,56 @@
+<h1>Loops: For</h1>
+<p>
+	What’s the laziest thing, creature, or entity to have ever existed?<br>
+	Is it a sloth? A slug, maybe?<br>
+	No...it’s a programmer!<br><br>
+
+	Is there really anything worse than writing the same code again and again and again and again?<br>
+	A customer places an order for a 100 cupcakes. Eve needs to make a receipt for the purchase. So, she wants print ("Cupcake $2.40"), 100 times, she’s not going to repeat this code a 100 times. Instead, she’ll use a new feature- <b> loop.</b><br>
+
+	 <pre>
+#There is indentation space in for loops too!
+For variable in range(0,numberoftimes):
+code
+		</pre>
+
+	<pre>
+for x in range(0,100):
+print("Cupcake $2.40")
+	</pre>
+
+
+	Here, the variable x will go (i.e. iterate) from 0-99, printing <b>Cupcake $2.40</b> each time it completes one iteration.<br><br>
+
+	Note: Like slicing, the first value is inclusive whereas the second value is exclusive thus the value of x changes from 0 - 99 and not from 1 - 100.<br><br>
+
+	Eve needs to count the number of eggs, thus she needs the computer to print numbers from 0 to 15.You can print numbers between 2 numbers by just adjusting the range. In this case it would be<br><br>
+
+	<pre>
+for x in range(0,16):
+print(x)
+	</pre>
+
+	<b>Note:</b> Keep in mind that the the values of x will vary from the first number till the (last number - 1)<br><br>
+
+	Let’s apply the if-else statements we learned earlier to loops.<br>
+	Suppose we want to check which numbers between 1-10, are even  and which are odd. Then it will be done in the following way:<br><br>
+
+	<pre>
+for x in range(1,10):
+if(x%2 ==0):
+print ("even")
+else:
+print("odd")
+	</pre>
+
+
+</p>
+<br>
+
+<h2>Question</h2>
+
+<p>
+	Eve loves numbers with factors! She wants to create a function that determines the <a id="w1" href="#" onclick="return false;"><b>factors</b></a><span id="p1" class="hidden">(A factor of a number divides the number <a id="w2" href="#" onclick="return false;"><b>completely!</b></a><span id="p2" class="hidden"> Use '%' to check the divisibility</span>)</span> of the number entered. Can you help her?
+	Print the sum of all the factors of 42.
+
+</p>
