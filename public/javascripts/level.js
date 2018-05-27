@@ -37,7 +37,7 @@ $('form.submit').on('submit', function(e) {
 		url: location.href,
 		type: $(this).attr('method'),
 		data: {
-			answer: $('.stdout').text()
+			answer: $('form.compiler textarea').val()
 		},
 		success: function(data) {
 			if(data.message == 'win') {

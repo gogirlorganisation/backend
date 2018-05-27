@@ -2,13 +2,13 @@ module.exports = function(io) {
 
 var express = require('express');
 var router = express.Router();
-var compiler = require('./compiler'); 
+var run = require('./compiler'); 
 
 io.on('connection', function(socket) {
 	console.log('user connected');
 
 	socket.on('code', function(content) {
-		var program = compiler(content, socket);
+		var program = run(content, socket);
 
 		program.stdout.on('data', function(data) {
 			console.log(data);

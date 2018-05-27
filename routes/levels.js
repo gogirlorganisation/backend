@@ -1,9 +1,11 @@
 var express = require('express');
 var router = express.Router();
 var User = require('../auth/models/User');
+var run = require('./compiler');
+var pseudoSocket = require('./pseudoSocket');
 
 function rough(str) {
-	return str.trim().toLowerCase().replace(/[^a-z0-9.]/g, '');
+	return str.trim().toLowerCase().replace(/[^a-z0-9\r\n.]/g, '');
 }
 
 function regEscape(str) {
@@ -11,78 +13,146 @@ function regEscape(str) {
 }
 
 var answers = {
-	1: function(str) {
-		var correct = 'Hello World';
-		return rough(str) === rough(correct);
-	},
-	2: function(str) {
-		var correct = '155 Main St, Delhi 84101, INDIA';
-		return rough(str) === rough(correct);
-	},
-	3: function(str) {
-		var correct = 'Float\nInteger\nString\nFloat\nString';
-		return rough(str) === rough(correct);
-	},
-	4: function(str) {
-		var prev = 'Welcome to the bakery, ';
-		var next = '';
-		//                                              vv    matches any string input
-		var expr = new RegExp(regEscape(rough(prev)) + '.*\.' + regEscape(rough(next)), 'g');
-		return expr.test(rough(str));
-	},
-	5: function(str) {
-		var correct = '112.5';
-		// rough function removes decimal point
-		return str.trim() === correct.trim() || str.trim() === ('$' + correct.trim());
-	},
-	6: function(str) {
-		var prev = 'Welcome to the bakery ';
-		var next = 'What would you like to order today?';
-		//                                              vv    matches any string input
-		var expr = new RegExp(regEscape(rough(prev)) + '.*\.' + regEscape(rough(next)), 'g');
-		return expr.test(rough(str));
-	},
-	7: function(str) {
-		var correct = 'True\nFalse\nTrue';
-		// rough function removes decimal point
-		return str.trim() === correct.trim();
-	},
-	8: function(str) {
-		var prev = '';
-		var next = 'Here is a free toffee! Have a nice day!';
-		//                                              vv    matches any string input
-		var expr = new RegExp(regEscape(rough(prev)) + '.*\.' + regEscape(rough(next)), 'g');
-		return expr.test(rough(str));
-	},
-	9: function(str) {
-		var prev = '';
-		var next = 'Eve is not free at 13';
-		//                                              vv    matches any string input
-		var expr = new RegExp(regEscape(rough(prev)) + '.*\.' + regEscape(rough(next)), 'g');
-		return expr.test(rough(str));
-	},
-	10: function(str) {
-		var correct = 'Flour';
-		return rough(str) === rough(correct);
-	},
-	11: function(str) {
-		var correct = '96';
-		return rough(str) === rough(correct);
-	},
-	12: function(str) {
-		var correct = 'dark chocolate\nvanilla cupcakes';
-		return rough(str) === rough(correct);
-	},
-	13: function(str) {
-		var correct = 'not prime';
-		return rough(str) === rough(correct);
-	},
+	1: [
+		{
+			stdin: '',
+			stdout: 'Hello World\n'
+		}
+	],
+	2: [
+		{
+			stdin: '',
+			stdout: '155 Main St, Delhi 84101, INDIA\n'
+		}
+	],
+	3: [
+		{
+			stdin: '',
+			stdout: 'Float\nInteger\nString\nFloat\nString\n'
+		}
+	],
+	4: [
+		{
+			stdin: 'Kevin',
+			stdout: 'What\'s your name?\nWelcome to the bakery,\nKevin\n'
+		},
+		{
+			stdin: 'Jake Peralta',
+			stdout: 'What\'s your name?\nWelcome to the bakery,\nJake Peralta\n'
+		}
+	],
+	5: [
+		{
+			stdin: '',
+			stdout: '112.5\n'
+		}
+	],
+	6: [
+		{
+			stdin: 'Japnit',
+			stdout: 'What\'s your name?\nWelcome to the bakery Japnit! What would you like to order today?\n'
+		},
+		{
+			stdin: 'Dhimant',
+			stdout: 'What\'s your name?\nWelcome to the bakery Dhimant! What would you like to order today?\n'
+		}
+	],
+	7: [
+		{
+			stdin: '',
+			stdout: 'True\nFalse\nTrue\n'
+		}
+	],
+	8: [
+		{
+			stdin: '42',
+			stdout: 'Enter a number:\nHere is a free toffee! Have a nice day!\n'
+		},
+		{
+			stdin: '43',
+			stdout: 'Enter a number:\nHave a nice day!\n'
+		}
+	],
+	9: [
+		{
+			stdin: '11',
+			stdout: 'Enter the time:\nEve is free at 11\n'
+		},
+		{
+			stdin: '23',
+			stdout: 'Enter the time:\nEve is free at 23\n'
+		},
+		{
+			stdin: '14',
+			stdout: 'Enter the time:\nEve is not free at 14\n'
+		}
+	],
+	10: [
+		{
+			stdin: '',
+			stdout: 'Flour\n'
+		}
+	],
+	11: [
+		{
+			stdin: '',
+			stdout: '96\n'
+		}
+	],
+	12: [
+		{
+			stdin: '',
+			stdout: 'Dark Chocolate\nVanilla Cupcakes\n'
+		}
+	],
+	13: [
+		{
+			stdin: '',
+			stdout: 'not prime\n'
+		}
+	],
 };
 
-function checkCorrect(level, answer) {
-	console.log('Input start' + answer + 'Input end');
-	if(!answers[level]) return false;
-	return answers[level](answer);
+function checkCorrect(level, answer, callback) {
+	var returnValues = [];
+
+	if(!answers[level] || answers[level].length == 0) {
+		callback(false);
+		return;
+	}
+
+	for(var i = 0; i < answers[level].length; i++) {
+		(function(i) {
+			var stdin = answers[level][i].stdin;
+			var stdout = answers[level][i].stdout;
+
+			var socket = new pseudoSocket(stdin);
+
+			var program = run(answer, socket);
+
+			program.stdout.on('data', function(data) {
+				socket.emit('stdout', data);
+			});
+
+			program.stderr.on('data', function(data) {
+				socket.emit('stderr', data);
+			});
+
+			socket.on('stdin', function(data) {
+				program.stdin.write(data + '\n');
+			});
+
+			program.on('exit', function() {
+				//                                   vvvvvvvvvvvvvvvvvvvvvvv for Windows hosts
+				var received = socket.output().stdout.replace(/\r\n/g, '\n');
+				returnValues[returnValues.length] = (received === stdout);
+				if(returnValues.length === answers[level].length) {
+					var checker = returnValues.indexOf(false) < 0;
+					callback(checker);
+				}
+			});
+		})(i);
+	}
 }
 
 router.get('/:level', function(req, res) {
@@ -109,49 +179,49 @@ router.get('/:level', function(req, res) {
 router.post('/:level', function(req, res, next) {
 	try {
 		if(req.isAuthenticated()) {
-			if(checkCorrect(req.params.level, req.body.answer)) {
+			checkCorrect(req.params.level, req.body.answer, function(isCorrect) {
+				if(isCorrect) {
+					var win = function() { res.send({ message: 'win' }) };
 
-				var win = function() { res.send({ message: 'win' }) };
-
-				var dealWith = function(err) {
-					console.log(err);
-					res.send(err);
-				}
-
-				User.findById(req.user._id, function(err, user) {
-					if(err) {
+					var dealWith = function(err) {
 						console.log(err);
 						res.send(err);
 					}
-					else {
-						var solvedLevels = user.solvedLevels || {};
 
-						// check if user has already solved this level before
-						if(!solvedLevels[req.params.level]) {
-							solvedLevels[req.params.level] = true;
-							var score = 0;
-
-							// calculate score based on previously solved levels
-							for(var level in solvedLevels) {
-								if(solvedLevels[level] == true) score += (100/(Object.keys(answers).length));
-							}
-
-							User.findByIdAndUpdate(req.user._id, { points: score, solvedLevels: solvedLevels }, function(err, user) {
-								if(err) {
-									console.log(err);
-									res.send(err);
-								}
-								else    win();
-							});
+					User.findById(req.user._id, function(err, user) {
+						if(err) {
+							console.log(err);
+							res.send(err);
 						}
-						else win();
-					}
-				});
+						else {
+							var solvedLevels = user.solvedLevels || {};
 
-			}
-			else {
-				res.send({ message: 'lose' });
-			}
+							// check if user has already solved this level before
+							if(!solvedLevels[req.params.level]) {
+								solvedLevels[req.params.level] = true;
+								var score = 0;
+
+								// calculate score based on previously solved levels
+								for(var level in solvedLevels) {
+									if(solvedLevels[level] == true) score += (100/(Object.keys(answers).length));
+								}
+
+								User.findByIdAndUpdate(req.user._id, { points: score, solvedLevels: solvedLevels }, function(err, user) {
+									if(err) {
+										console.log(err);
+										res.send(err);
+									}
+									else    win();
+								});
+							}
+							else win();
+						}
+					});
+				}
+				else {
+					res.send({ message: 'lose' });
+				}
+			});
 		} else {
 			res.send({ message: 'logout' });
 		}
