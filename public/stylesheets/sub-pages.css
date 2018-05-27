@@ -164,19 +164,6 @@ img {
   font-size: 1.33rem;
 }
 
-footer .row.table {
-  margin: auto;
-}
-
-footer p a {
-    color: rgba(255,255,255,0.66);
-    border-bottom: 2px solid rgba(255,255,255,0.2);
-    text-decoration: none;
-}
-footer p a:hover {
-    color: rgba(255,255,255,0.8);
-}
-
 /* Flexbox styles */
 @media screen and (min-width: 40em) {
   .cards {
