@@ -6,7 +6,7 @@ module.exports = function(passport) {
 		passport.authenticate('signup', function(err, user, info) {
 			if(err) res.send(err);
 			else if(info) res.send(info);
-			else res.send({ message: 'idk' })
+			else res.send({ message: 'Unknown error.' })
 		})(req, res, next);
 	});
 
@@ -17,24 +17,11 @@ module.exports = function(passport) {
 				req.login(user, function(err) {
 					if(err) res.send(err);
 					else if(info) res.send(info);
-					else res.send({ message: 'idk' });
+					else res.send({ message: 'Unknown error.' });
 				})
 			}
-			else res.send({ message: 'no_user' });
+			else res.send({ message: 'The specified user does not exist.' });
 		})(req, res, next);
-	});
-
-	/*router.post('/login', passport.authenticate('login', {
-		successRedirect: '/users/check',
-		failureRedirect: '/users/check'
-	}));*/
-
-	router.all('/check', function(req, res, next) {
-		if(req.user) {
-			res.send(req.user.username);
-		} else {
-			res.send('null');
-		}
 	});
 
 	router.all('/logout', function(req, res, next) {

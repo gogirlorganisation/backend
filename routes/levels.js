@@ -12,6 +12,15 @@ function regEscape(str) {
 	return str.replace(/([.?*+^$[\]\\(){}|-])/g, "\\$1");
 }
 
+/*
+
+Answer format: array, consisting of objects, each comprising a test case.
+Testcase consists of input string (stdin) and expected output (stdout).
+Every print() statement is followed by a newline (\n).
+Every input() to the program is followed by a newline as well.
+
+*/
+
 var answers = {
 	1: [
 		{
@@ -122,6 +131,9 @@ function checkCorrect(level, answer, callback) {
 	}
 
 	for(var i = 0; i < answers[level].length; i++) {
+		// program execution is asynchronus so returnValues[] counts number of functions
+		// that have returned, then after the last one is done we run the callback with
+		// the required result
 		(function(i) {
 			var stdin = answers[level][i].stdin;
 			var stdout = answers[level][i].stdout;
@@ -184,13 +196,13 @@ router.post('/:level', function(req, res, next) {
 					var win = function() { res.send({ message: 'win' }) };
 
 					var dealWith = function(err) {
-						console.log(err);
+						console.error(err);
 						res.send(err);
 					}
 
 					User.findById(req.user._id, function(err, user) {
 						if(err) {
-							console.log(err);
+							console.error(err);
 							res.send(err);
 						}
 						else {
@@ -208,7 +220,7 @@ router.post('/:level', function(req, res, next) {
 
 								User.findByIdAndUpdate(req.user._id, { points: score, solvedLevels: solvedLevels }, function(err, user) {
 									if(err) {
-										console.log(err);
+										console.error(err);
 										res.send(err);
 									}
 									else    win();
@@ -226,7 +238,7 @@ router.post('/:level', function(req, res, next) {
 			res.send({ message: 'logout' });
 		}
 	} catch(e) {
-		console.log(e);
+		console.error(e);
 		res.send({ message: 'error' });
 	}
 });

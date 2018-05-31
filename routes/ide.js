@@ -5,18 +5,14 @@ var router = express.Router();
 var run = require('./compiler'); 
 
 io.on('connection', function(socket) {
-	console.log('user connected');
-
 	socket.on('code', function(content) {
 		var program = run(content, socket);
 
 		program.stdout.on('data', function(data) {
-			console.log(data);
 			socket.emit('stdout', data);
 		});
 
 		program.stderr.on('data', function(data) {
-			console.log(data);
 			socket.emit('stderr', data);
 		});
 
@@ -24,10 +20,6 @@ io.on('connection', function(socket) {
 			program.stdin.write(data + '\n');
 		});
 
-	});
-
-	socket.on('disconnect', function() {
-		console.log('user disconnected');
 	});
 });
 

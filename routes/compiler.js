@@ -6,8 +6,11 @@ function rand() {
 }
 
 module.exports = function(code, socket) {
+	// todo: find a way to save file in tmpfs
 	var fileName = rand() + '_' + Date.now();
 	fs.writeFileSync(fileName + '.py', code);
+
+	// todo: run process as unprivileged user
 	var child = process.spawn('python3', ['-u', '-m', fileName], {
 		shell: true,
 		detatched: true

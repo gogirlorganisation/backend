@@ -13,11 +13,11 @@ module.exports = function(passport) {
 				}
 
 				if(!user) {
-					return done(null, false, { message: 'no_user' });
+					return done(null, false, { message: 'The specified user does not exist.' });
 				}
 
 				if(!bCrypt.compareSync(password, user.password)) {
-					return done(null, false, { message: 'invalid_password' });
+					return done(null, false, { message: 'You have entered an incorrect password. Try again.' });
 				}
 
 				return done(null, user, { message: 'success' });
