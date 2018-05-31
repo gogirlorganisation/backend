@@ -11,6 +11,7 @@ var fs = require('fs');
 var proc = require('child_process');
 var auth = require('./auth/init')(passport);
 var cons = require('consolidate');
+var MongoStore = require('connect-mongo')(session);
 
 var app = express();
 
@@ -29,9 +30,17 @@ app.engine('html', cons.mustache);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
 
-app.use(session({secret: auth.key, 
-                 saveUninitialized: true,
-                 resave: true}));
+app.use(session({
+	secret: auth.key, 
+	saveUninitialized: true,
+	resave: true,
+	store: new MongoStore({
+		url: auth.url,
+		ttl: 24 * 60 * 60,
+		touchAfter: 5 * 60
+	})
+}));
+
 app.use(passport.initialize());
 app.use(passport.session());
 mongoose.connect(auth.url);
