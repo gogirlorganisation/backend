@@ -1,6 +1,4 @@
 # Firejail profile for tgc
-quiet
-
 # Persistent global definitions
 include /etc/firejail/globals.local
 
