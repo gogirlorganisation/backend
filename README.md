@@ -4,8 +4,8 @@
 
 1. Install
   * MongoDB Community Edition: https://docs.mongodb.com/manual/administration/install-community/
-  * NodeJS https://nodejs.org
-  * Python https://python.org
+  * NodeJS: https://nodejs.org
+  * Python: https://python.org
 
 2. Clone this repository
 
@@ -34,4 +34,30 @@
 
 **Prod setup:**
 
-tbd
+1. Install
+  * MongoDB Community Edition: https://docs.mongodb.com/manual/administration/install-community/
+  * NodeJS: https://nodejs.org
+  * Python: https://python.org
+  * Firejail: https://firejail.wordpress.com
+
+2. Clone this repository
+
+        git clone https://github.com/thegirlcode/backend.git
+
+3. Install required packages
+
+        cd backend
+
+        npm install
+
+        npm install -g forever
+
+4. Start server
+
+  Start Mongo as system service: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/#run-mongodb-community-edition
+
+  Start forever.js server
+
+        sudo NODE_ENV=production forever start bin/www
+
+5. Site will be at localhost:3000
