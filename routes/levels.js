@@ -157,7 +157,6 @@ function checkCorrect(level, answer, callback) {
 			program.on('exit', function() {
 				//                                   vvvvvvvvvvvvvvvvvvvvvvv for Windows hosts
 				var received = socket.output().stdout.replace(/\r\n/g, '\n');
-				received = received.replace(/^\s+/g, '');
 				returnValues[returnValues.length] = (received === stdout);
 				if(returnValues.length === answers[level].length) {
 					var checker = returnValues.indexOf(false) < 0;

@@ -11,7 +11,7 @@ var directory = './';
 
 if(process.env.NODE_ENV === 'production') {
 	procName = 'firejail';
-	procOpts = '--profile=sandbox/tgc.profile --quiet python3 ' + procOpts;
+	procOpts = '--profile=sandbox/tgc.profile python3 ' + procOpts;
 	directory = '/tmp/';
 }
 
