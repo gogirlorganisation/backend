@@ -1,17 +1,33 @@
 var fs = require('fs');
-var process = require('child_process');
+var proc = require('child_process');
 
 function rand() {
 	return Math.floor(Math.random() * 1000);
 }
 
-module.exports = function(code, socket) {
-	// todo: find a way to save file in tmpfs
-	var fileName = rand() + '_' + Date.now();
-	fs.writeFileSync(fileName + '.py', code);
+var procName = 'python3';
+var procOpts = '-u';
+var directory = './';
 
-	// todo: run process as unprivileged user
-	var child = process.spawn('python3', ['-u', '-m', fileName], {
+if(process.env.NODE_ENV === 'production') {
+	procName = 'firejail';
+	procOpts = '--profile=sandbox/tgc.profile python3 ' + procOpts;
+	directory = '/tmp/';
+}
+
+module.exports = function(code, socket) {
+	var fileName = rand() + '_' + Date.now();
+	var filePath = directory + fileName;
+	fs.writeFileSync(filePath + '.py', code);
+
+/*	code +=
+'import sys\n\
+sys.modules[os] = None\n\n';*/
+
+	var options = procOpts.split(' ');
+	options[options.length] = filePath + '.py';
+
+	var child = proc.spawn(procName, options, {
 		shell: true,
 		detatched: true
 	});
@@ -22,7 +38,7 @@ module.exports = function(code, socket) {
 
 	child.on('exit', function(exitCode) {
 		if(socket) socket.emit('end', 'Program exited with code ' + exitCode);
-		fs.unlinkSync(fileName + '.py');
+		fs.unlinkSync(filePath + '.py');
 	});
 
 
