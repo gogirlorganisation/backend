@@ -28,6 +28,8 @@ sys.modules[os] = None\n\n';*/
 	var options = procOpts.split(' ');
 	options[options.length] = filePath + '.py';
 
+	var gracefulExit = false;
+
 	var child = proc.spawn(procName, options, {
 		shell: true,
 		detatched: true
@@ -41,7 +43,14 @@ sys.modules[os] = None\n\n';*/
 		debug(e.stack);
 	})
 
+	setTimeout(function() {
+		if(!gracefulExit && !child.killed)
+			child.kill('SIGKILL');
+	}, 300 * 1000);
+
 	child.on('exit', function(exitCode) {
+		if(!child.killed)
+			gracefulExit = true;
 		if(socket) socket.emit('end', 'Program exited with code ' + exitCode);
 		fs.unlinkSync(filePath + '.py');
 	});
