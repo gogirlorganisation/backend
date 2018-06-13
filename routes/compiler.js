@@ -38,7 +38,7 @@ sys.modules[os] = None\n\n';*/
 	child.stderr.setEncoding('utf8');
 
 	child.stdin.on('error', function(e) {
-		debug(e);
+		debug(e.stack);
 	})
 
 	child.on('exit', function(exitCode) {
