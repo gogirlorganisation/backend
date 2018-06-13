@@ -1,5 +1,6 @@
 var fs = require('fs');
 var proc = require('child_process');
+var debug = require('debug');
 
 function rand() {
 	return Math.floor(Math.random() * 1000);
@@ -35,6 +36,10 @@ sys.modules[os] = None\n\n';*/
 	child.stdout.setEncoding('utf8');
 
 	child.stderr.setEncoding('utf8');
+
+	child.stdin.on('error', function(e) {
+		debug(e);
+	})
 
 	child.on('exit', function(exitCode) {
 		if(socket) socket.emit('end', 'Program exited with code ' + exitCode);
