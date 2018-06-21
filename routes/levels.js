@@ -5,7 +5,7 @@ var run = require('./compiler');
 var pseudoSocket = require('./pseudoSocket');
 
 function rough(str) {
-	return str.trim().toLowerCase().replace(/[^a-z0-9\r\n.]/g, '');
+	return str.trim().toLowerCase().replace(/[^a-z0-9.]/g, '');
 }
 
 function regEscape(str) {
@@ -155,9 +155,8 @@ function checkCorrect(level, answer, callback) {
 			});
 
 			program.on('exit', function() {
-				//                                   vvvvvvvvvvvvvvvvvvvvvvv for Windows hosts
-				var received = socket.output().stdout.replace(/\r\n/g, '\n');
-				returnValues[returnValues.length] = (received === stdout);
+				var received = socket.output().stdout;
+				returnValues[returnValues.length] = (rough(received) === rough(stdout));
 				if(returnValues.length === answers[level].length) {
 					var checker = returnValues.indexOf(false) < 0;
 					callback(checker);
