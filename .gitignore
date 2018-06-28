@@ -33,6 +33,5 @@ npm-debug.log
 # python temp files don't need to be uploaded
 /*.py
 
-# sorry we only accept cheque
-# no cache
+# don't save python cache
 __pycache__
