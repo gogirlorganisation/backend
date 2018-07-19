@@ -116,12 +116,8 @@ var answers = {
 	],
 	13: [
 		{
-			stdin: '42',
-			stdout: 'Enter a number:\nnot prime\n'
-		},
-		{
-			stdin: '43',
-			stdout: 'Enter a number:\nprime\n'
+			stdin: '',
+			stdout: 'not prime\n'
 		}
 	],
 };
