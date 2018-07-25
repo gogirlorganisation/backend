@@ -30,5 +30,15 @@ module.exports = function(passport) {
 		res.redirect('/');
 	});
 
+	router.get('/google', passport.authenticate('google', {
+		scope: ['email']
+	}));
+
+	router.get('/google/callback', passport.authenticate('google', {
+		failureRedirect: '/login'
+	}), function(req, res) {
+		res.redirect('/dashboard');
+	})
+
 	return router;
 };

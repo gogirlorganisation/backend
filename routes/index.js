@@ -20,7 +20,7 @@ router.get('/dashboard', function(req, res) {
 		var nextLevel = Object.keys(levels).length + 1;
 
 		res.render('dash', {
-			user: req.user.username,
+			user: req.user.displayName || req.user.username,
 			points: Math.floor(req.user.points),
 			nextLevel: nextLevel
 		});
