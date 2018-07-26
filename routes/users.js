@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var login = require('../auth/helper');
 
 module.exports = function(passport) {
 	router.post('/signup', function(req, res, next) {
@@ -38,7 +39,36 @@ module.exports = function(passport) {
 		failureRedirect: '/login'
 	}), function(req, res) {
 		res.redirect('/dashboard');
-	})
+	});
+
+	router.get('/new', function(req, res) {
+		if(req.user && req.user.username === req.user.email) {
+			res.render('newuser');
+		}
+		else {
+			res.redirect('/')
+		}
+	});
+
+	router.post('/new', function(req, res) {
+		if(req.user && req.user.username === req.user.email) {
+			if(req.body.username) {
+				login.setUsername(req.user.username, req.body.username, function(err) {
+					res.send({
+						message: err || 'success'
+					});
+				});
+			}
+
+			else {
+				res.redirect('/users/new');
+			}
+		}
+
+		else {
+			res.redirect('/');
+		}
+	});
 
 	return router;
 };

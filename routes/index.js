@@ -15,15 +15,22 @@ router.get('/signup', function(req, res) {
 
 router.get('/dashboard', function(req, res) {
 	if(req.isAuthenticated()) {
-		var levels = req.user.solvedLevels || {};
+		if(req.user.email === req.user.username) {
+			// first login, have them set a username
+			res.redirect('/users/new');
+		}
 
-		var nextLevel = Object.keys(levels).length + 1;
+		else {
+			var levels = req.user.solvedLevels || {};
 
-		res.render('dash', {
-			user: req.user.displayName || req.user.username,
-			points: Math.floor(req.user.points),
-			nextLevel: nextLevel
-		});
+			var nextLevel = Object.keys(levels).length + 1;
+
+			res.render('dash', {
+				user: req.user.displayName || req.user.username,
+				points: Math.floor(req.user.points),
+				nextLevel: nextLevel
+			});
+		}
 	} else {
 		res.redirect('/');
 	}

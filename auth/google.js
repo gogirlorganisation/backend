@@ -28,7 +28,6 @@ module.exports = function(passport) {
 
 				newUser.username = email;
 				newUser.email = email;
-				newUser.displayName = profile.displayName;
 				newUser.points = 0;
 				newUser.solvedLevels = 0;
 
