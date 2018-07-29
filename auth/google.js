@@ -1,6 +1,7 @@
 var GoogleStrategy = require('passport-google-oauth20').Strategy;
 var User = require('./models/User');
 var bCrypt = require('bcrypt-nodejs');
+var keys = require('./keys');
 
 var callbackURL = 'http://localhost:3000/users/google/callback';
 
@@ -9,8 +10,8 @@ if(process.env.NODE_ENV === 'production')
 
 module.exports = function(passport) {
 	passport.use('google', new GoogleStrategy({
-		clientID: 'clientID',
-		clientSecret: 'clientSecret',
+		clientID: keys.googleID,
+		clientSecret: keys.googleSecret,
 		callbackURL: callbackURL
 	}, function(accessToken, refreshToken, profile, done) {
 		var email = profile.emails[0].value;
