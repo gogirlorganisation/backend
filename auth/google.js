@@ -9,8 +9,8 @@ if(process.env.NODE_ENV === 'production')
 
 module.exports = function(passport) {
 	passport.use('google', new GoogleStrategy({
-		clientID: '***REMOVED***',
-		clientSecret: '***REMOVED***',
+		clientID: 'clientID',
+		clientSecret: 'clientSecret',
 		callbackURL: callbackURL
 	}, function(accessToken, refreshToken, profile, done) {
 		var email = profile.emails[0].value;
