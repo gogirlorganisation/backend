@@ -19,7 +19,16 @@
 
         npm install -g nodemon
 
-4. Start server
+4. Create keyfile as auth/keys.js:
+
+        module.exports = {
+        	googleID: 'googleSignInID',
+        	googleSecret: 'googleSignInSecret',
+        	facebookID: 'facebookSignInID',
+        	facebookSecret: 'facebookSignInSecret'
+        };
+
+5. Start server
 
   In one Terminal, open and leave running:
 
@@ -30,7 +39,7 @@
 
         nodemon bin/www
 
-5. Site will be at localhost:3000
+6. Site will be at localhost:3000
 
 **Prod setup:**
 
@@ -52,7 +61,17 @@
 
         npm install -g forever
 
-4. Start server
+
+4. Create keyfile as auth/keys.js:
+
+        module.exports = {
+          googleID: 'googleSignInID',
+          googleSecret: 'googleSignInSecret',
+          facebookID: 'facebookSignInID',
+          facebookSecret: 'facebookSignInSecret'
+        };
+
+5. Start server
 
   Start Mongo as system service: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/#run-mongodb-community-edition
 
@@ -60,4 +79,4 @@
 
         sudo NODE_ENV=production forever start bin/www
 
-5. Site will be at localhost:3000
+6. Site will be at localhost:3000
