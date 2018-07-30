@@ -6,7 +6,7 @@ var keys = require('./keys');
 var callbackURL = 'http://localhost:3000/users/google/callback';
 
 if(process.env.NODE_ENV === 'production')
-	callbackURL = 'http://learn.thegirlcode.co/users/google/callback';
+	callbackURL = 'https://learn.thegirlcode.co/users/google/callback';
 
 module.exports = function(passport) {
 	passport.use('google', new GoogleStrategy({
