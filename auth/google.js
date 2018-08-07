@@ -3,7 +3,7 @@ var User = require('./models/User');
 var bCrypt = require('bcrypt-nodejs');
 var keys = require('./keys');
 
-var callbackURL = 'http://localhost:3000/users/google/callback';
+var callbackURL = 'https://localhost/users/google/callback';
 
 if(process.env.NODE_ENV === 'production')
 	callbackURL = 'https://learn.thegirlcode.co/users/google/callback';
