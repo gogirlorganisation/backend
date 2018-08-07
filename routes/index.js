@@ -6,7 +6,10 @@ router.get('/', function(req, res) {
 })
 
 router.get('/login', function(req, res) {
-	res.render('login');
+	var error = (req.query.login == 'false') ? 'This account is not associated with an email address. Try signing up manually instead.' : '';
+	res.render('login', {
+		error: error
+	});
 });
 
 router.get('/signup', function(req, res) {

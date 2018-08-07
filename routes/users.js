@@ -46,7 +46,7 @@ module.exports = function(passport) {
 	}));
 
 	router.get('/facebook/callback', passport.authenticate('facebook', {
-		failureRedirect: '/login'
+		failureRedirect: '/login?login=false'
 	}), function(req, res) {
 		res.redirect('/dashboard');
 	});
