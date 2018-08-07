@@ -247,6 +247,24 @@ img.google-signin-logo {
   left: 1.25rem;
 }
 
+.facebook-signin .bgbutton {
+  background: #3B5998;
+}
+
+.facebook-signin .loginbutton {
+  color: white;
+  text-decoration: none;
+}
+
+img.facebook-signin-logo {
+  position: absolute;
+  height: 1.25rem;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  left: 1.25rem;
+}
+
 
 /*[ Responsive ]*/
 
