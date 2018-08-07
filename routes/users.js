@@ -41,6 +41,16 @@ module.exports = function(passport) {
 		res.redirect('/dashboard');
 	});
 
+	router.get('/facebook', passport.authenticate('facebook', {
+		scope: ['email']
+	}));
+
+	router.get('/facebook/callback', passport.authenticate('facebook', {
+		failureRedirect: '/login'
+	}), function(req, res) {
+		res.redirect('/dashboard');
+	});
+
 	router.get('/new', function(req, res) {
 		if(req.user && req.user.username === req.user.email) {
 			res.render('newuser');
