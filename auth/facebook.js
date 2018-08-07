@@ -16,6 +16,7 @@ module.exports = function(passport) {
 		profileFields: ['id', 'emails', 'name']
 	}, function(accessToken, refreshToken, profile, done) {
 		var email = profile.emails[0].value;
+		if(!email) done(null, false, { message: 'Your Facebook ID is not associated with an email account. Please use another way to sign in.' });
 		User.findOne({
 			email: email
 		}, function(err, user) {
