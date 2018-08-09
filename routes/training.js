@@ -22,11 +22,11 @@ var answers = {
 	2: [
 		{
 			stdin: 'coding',
-			stdout: 'No, it’s not a palindrome!\n'
+			stdout: 'No, it\'s not a palindrome!\n'
 		},
 		{
 			stdin: 'madam',
-			stdout: 'Yes, it’s a palindrome!\n'
+			stdout: 'Yes, it\'s a palindrome!\n'
 		}
 	],
 	3: [
