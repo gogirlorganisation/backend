@@ -33,29 +33,29 @@
 	  3. The player is rock and the computer is scissor- the player wins. <br>
 	  4. The player is paper and the computer is scissor- the player loses. <br>
 	  5. The player is rock and the computer is paper- the player loses. <br> <br>  <br>
-	  <code>
-	    if player == computer:<br>
-	        print(&quot;Tie!&quot;)<br>
-	    elif player == &quot;Rock&quot;:<br>
-	        if computer == &quot;Paper&quot;:<br>
-	            print(&quot;You lose!&quot;, computer, &quot;covers&quot;, player)<br>
-	        else:<br>
-	            print(&quot;You win!&quot;, player, &quot;smashes&quot;, computer)<br>
-	    elif player == &quot;Paper&quot;:<br>
-	        if computer == &quot;Scissors&quot;:<br>
-	            print(&quot;You lose!&quot;, computer, &quot;cut&quot;, player)<br>
-	        else:<br>
-	            print(&quot;You win!&quot;, player, &quot;covers&quot;, computer)<br>
-	    elif player == &quot;Scissors&quot;:<br>
-	        if computer == &quot;Rock&quot;:<br>
-	            print(&quot;You lose...&quot;, computer, &quot;smashes&quot;, player)<br>
-	        else:<br> 
-	            print(&quot;You win!&quot;, player, &quot;cut&quot;, computer)<br>
-	    else:<br>
-	        print(&quot;That&#39;s not a valid play. Check your spelling!&quot;)
-	    <i> #player was set to True, but we want it to be False so the loop continues</i><br> <br>
-	    player = False<br>
-	    computer = t[randint(0,2)] <br> </code>
+	  <pre>
+if player == computer:<br>
+    print(&quot;Tie!&quot;)<br>
+elif player == &quot;Rock&quot;:<br>
+    if computer == &quot;Paper&quot;:<br>
+        print(&quot;You lose!&quot;, computer, &quot;covers&quot;, player)<br>
+    else:<br>
+        print(&quot;You win!&quot;, player, &quot;smashes&quot;, computer)<br>
+elif player == &quot;Paper&quot;:<br>
+    if computer == &quot;Scissors&quot;:<br>
+        print(&quot;You lose!&quot;, computer, &quot;cut&quot;, player)<br>
+    else:<br>
+        print(&quot;You win!&quot;, player, &quot;covers&quot;, computer)<br>
+elif player == &quot;Scissors&quot;:<br>
+    if computer == &quot;Rock&quot;:<br>
+        print(&quot;You lose...&quot;, computer, &quot;smashes&quot;, player)<br>
+    else:<br> 
+        print(&quot;You win!&quot;, player, &quot;cut&quot;, computer)<br>
+else:<br>
+    print(&quot;That&#39;s not a valid play. Check your spelling!&quot;)
+<i> #player was set to True, but we want it to be False so the loop continues</i><br> <br>
+player = False<br>
+computer = t[randint(0,2)] <br> </pre>
 	    <br>
 	    <br>
 
