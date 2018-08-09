@@ -24,6 +24,7 @@ var index = require('./routes/index');
 var users = require('./routes/users')(passport);
 var levels = require('./routes/levels');
 var ide = require('./routes/ide')(io);
+var training = require('./routes/training');
 
 // view engine setup
 app.engine('html', cons.mustache);
@@ -57,6 +58,7 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/levels', levels);
 app.use('/levels/ide', ide);
+app.use('/train', training);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

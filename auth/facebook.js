@@ -33,7 +33,9 @@ module.exports = function(passport) {
 				newUser.username = email;
 				newUser.email = email;
 				newUser.points = 0;
-				newUser.solvedLevels = 0;
+				newUser.trainingPoints = 0;
+				newUser.solvedLevels = {};
+				newUser.solvedTrainingLevels = {};
 
 				newUser.save(function(err) {
 					if(err) throw err;

@@ -39,4 +39,27 @@ router.get('/dashboard', function(req, res) {
 	}
 });
 
+router.get('/training', function(req, res) {
+	if(req.isAuthenticated()) {
+		if(req.user.email === req.user.username) {
+			// first login, have them set a username
+			res.redirect('/users/new');
+		}
+
+		else {
+			var levels = req.user.solvedTrainingLevels || {};
+
+			var nextLevel = Object.keys(levels).length + 1;
+
+			res.render('training', {
+				user: req.user.displayName || req.user.username,
+				points: Math.floor(req.user.trainingPoints) || 0,
+				nextLevel: nextLevel || 1
+			});
+		}
+	} else {
+		res.redirect('/');
+	}
+});
+
 module.exports = router;

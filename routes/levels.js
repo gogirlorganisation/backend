@@ -1,16 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var User = require('../auth/models/User');
-var run = require('./compiler');
-var pseudoSocket = require('./pseudoSocket');
-
-function rough(str) {
-	return str.trim().toLowerCase().replace(/[^a-z0-9.]/g, '');
-}
-
-function regEscape(str) {
-	return str.replace(/([.?*+^$[\]\\(){}|-])/g, "\\$1");
-}
+var levelHelper = require('./levelHelper');
 
 /*
 
@@ -122,50 +113,6 @@ var answers = {
 	],
 };
 
-function checkCorrect(level, answer, callback) {
-	var returnValues = [];
-
-	if(!answers[level] || answers[level].length == 0) {
-		callback(false);
-		return;
-	}
-
-	for(var i = 0; i < answers[level].length; i++) {
-		// program execution is asynchronus so returnValues[] counts number of functions
-		// that have returned, then after the last one is done we run the callback with
-		// the required result
-		(function(i) {
-			var stdin = answers[level][i].stdin;
-			var stdout = answers[level][i].stdout;
-
-			var socket = new pseudoSocket(stdin);
-
-			var program = run(answer, socket);
-
-			program.stdout.on('data', function(data) {
-				socket.emit('stdout', data);
-			});
-
-			program.stderr.on('data', function(data) {
-				socket.emit('stderr', data);
-			});
-
-			socket.on('stdin', function(data) {
-				program.stdin.write(data + '\n');
-			});
-
-			program.on('exit', function() {
-				var received = socket.output().stdout;
-				returnValues[returnValues.length] = (rough(received) === rough(stdout));
-				if(returnValues.length === answers[level].length) {
-					var checker = returnValues.indexOf(false) < 0;
-					callback(checker);
-				}
-			});
-		})(i);
-	}
-}
-
 router.get('/:level', function(req, res) {
 	if(req.isAuthenticated()) {
 
@@ -190,7 +137,7 @@ router.get('/:level', function(req, res) {
 router.post('/:level', function(req, res, next) {
 	try {
 		if(req.isAuthenticated()) {
-			checkCorrect(req.params.level, req.body.answer, function(isCorrect) {
+			levelHelper.checkCorrect(answers, req.params.level, req.body.answer, function(isCorrect) {
 				if(isCorrect) {
 					var win = function() { res.send({ message: 'win' }) };
 

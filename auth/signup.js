@@ -26,6 +26,8 @@ module.exports = function(passport) {
 					newUser.email = req.body.email;
 					newUser.solvedLevels = {};
 					newUser.points = 0;
+					newUser.solvedTrainingLevels = {};
+					newUser.trainingPoints = 0;
 
 					newUser.save(function(err) {
 						if(err) {

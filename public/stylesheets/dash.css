@@ -200,6 +200,94 @@ header h1 {
   filter: invert(100%);
 }
 
+.switcher {
+    margin: 2rem auto;
+    width: 20rem;
+    border: 2px solid #fb7f9f;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.switcher-link {
+    width: 50%;
+    display: block;
+    float: left;
+    text-align: center;
+    line-height: 2;
+}
+
+.switcher-link.active {
+    background: #fb7f9f;
+    color: white;
+}
+
+.timeline.training .problems {
+  color: #757575;
+  max-width: 42rem;
+  margin: 2rem auto;
+  text-align: left;
+  box-shadow: 0 0.1rem 0.1rem rgba(0, 0, 0, 0.2);
+}
+
+.timeline.training .problems .row {
+  background: white;
+  box-shadow: 0 0 0.15rem rgba(0, 0, 0, 0.1);
+  display: block;
+  line-height: 3.5;
+  padding: 0 1rem;
+  overflow: hidden;
+  color: inherit;
+  transition: all 0.2s ease-in-out;
+}
+
+.timeline.training .problems .row.header {
+  font-weight: bolder;
+  border-bottom: 0.2rem solid #fb7f9f;
+}
+
+.timeline.training .problems .row.header .view {
+  color: transparent;
+  pointer-events: none;
+}
+
+.timeline.training .problems .row:before {
+  content: none;
+}
+
+.timeline.training .problems .row .title {
+  float: left;
+}
+
+.timeline.training .problems .row .right-side {
+  float: right;
+  overflow: hidden;
+}
+
+.timeline.training .problems .row .right-side > div {
+  float: left;
+}
+
+.timeline.training .problems .row .right-side .difficulty {
+  padding: 0 2rem;
+}
+
+.timeline.training .problems .row .right-side .view:after {
+  content: " ›";
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  right: 0.66rem;
+}
+
+.timeline.training .problems a.row:hover {
+  color: #fb7f9f;
+}
+
+.timeline.training .problems a.row:hover .right-side .view:after {
+  opacity: 1;
+  right: 0;
+}
+
 @media only screen and (min-width: 1170px) {
   .cd-timeline-img {
     width: 60px;

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+	<title>The Girl Code</title>
+	<link rel="stylesheet" href="/stylesheets/main.css">
+	<link rel="stylesheet" href="/stylesheets/sub-pages.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/skeleton.css">
+	<link rel="stylesheet" href="/stylesheets/dash.css">
+	<link rel="stylesheet" href="https://use.typekit.net/pme3yyf.css">
+</head>
+<body>
+
+<section class="mast">
+	<div class="container" style="text-align:center;">
+		<h1 style="font-size:400%;">Hello, {{user}}! </h1>
+		<p>You have {{points}} points.</p>
+		<div class="progress-bar">
+			<div class="progress" data-points="{{points}}" data-max="100"></div>
+		</div>
+		<a href="/levels/{{nextLevel}}" class="cta-button">start</a>
+		<a href="/users/logout" class="cta-button-outline">logout</a>
+	</div>
+
+
+</section>
+
+<!-- Start timeline -->
+<section class="timeline training">
+	<div class="switcher">
+		<a class="switcher-link" href="/dashboard">Learn</a>
+		<a class="switcher-link active" href="#">Train</a>
+	</div>
+	
+	<div class="problems">
+		<div class="row header">
+			<div class="title">Problem name</div>
+			<div class="right-side">
+				<div class="difficulty">Difficulty</div>
+				<div aria-hidden="true" class="view">View</div>
+			</div>
+		</div>
+		<a href="/train/1" class="row">
+			<div class="title">Fibonacci Series</div>
+			<div class="right-side">
+				<div class="difficulty">Easy</div>
+				<div class="view">View</div>
+			</div>
+		</a>
+		<a href="/train/1" class="row">
+			<div class="title">Life, the Universe and Everything</div>
+			<div class="right-side">
+				<div class="difficulty">Easy</div>
+				<div class="view">View</div>
+			</div>
+		</a>
+		<a href="/train/1" class="row">
+			<div class="title">Life, the Universe and Everything</div>
+			<div class="right-side">
+				<div class="difficulty">Easy</div>
+				<div class="view">View</div>
+			</div>
+		</a>
+		<a href="/train/1" class="row">
+			<div class="title">Life, the Universe and Everything</div>
+			<div class="right-side">
+				<div class="difficulty">Easy</div>
+				<div class="view">View</div>
+			</div>
+		</a>
+		<a href="/train/1" class="row">
+			<div class="title">Life, the Universe and Everything</div>
+			<div class="right-side">
+				<div class="difficulty">Easy</div>
+				<div class="view">View</div>
+			</div>
+		</a>
+		<a href="/train/1" class="row">
+			<div class="title">Life, the Universe and Everything</div>
+			<div class="right-side">
+				<div class="difficulty">Easy</div>
+				<div class="view">View</div>
+			</div>
+		</a>
+
+	</div>
+</section>
+<!-- Stop timeline -->
+
+<style>
+
+.progress-bar {
+	width: 600px;
+	height: 5px;
+	background: #eee;
+	margin: 2rem auto;
+}
+
+.progress-bar .progress {
+	background: #f5658a;
+	height: 100%;
+	width: 0%;
+	transition: all 0.1s ease-in-out;
+}
+
+</style>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="/javascripts/dash.js"></script>
+
+</body>
+</html>

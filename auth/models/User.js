@@ -9,7 +9,9 @@ var schema = new Schema({
 	password: String,
 	email: String,
 	points: Number,
-	solvedLevels: Object
+	trainingPoints: Number,
+	solvedLevels: Object,
+	solvedTrainingLevels: Object,
 });
 
 schema.plugin(findOrCreate);
