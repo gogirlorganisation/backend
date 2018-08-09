@@ -21,14 +21,18 @@ var answers = {
 	],
 	2: [
 		{
-			stdin: '',
-			stdout: '155 Main St, Delhi 84101, INDIA\n'
+			stdin: 'coding',
+			stdout: 'No, it’s not a palindrome!\n'
+		},
+		{
+			stdin: 'madam',
+			stdout: 'Yes, it’s a palindrome!\n'
 		}
 	],
 	3: [
 		{
-			stdin: '',
-			stdout: 'Float\nInteger\nString\nFloat\nString\n'
+			stdin: '150',
+			stdout: '16'
 		}
 	],
 	4: [
