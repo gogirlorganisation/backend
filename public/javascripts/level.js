@@ -41,11 +41,11 @@ $('form.submit').on('submit', function(e) {
 		},
 		success: function(data) {
 			if(data.message == 'win') {
-				Eve.say('correct answer!');
+				Eve.say('Correct answer,<br>well done!');
 				//Eve.happy();
 			}
 			else if(data.message == 'lose') {
-				Eve.say('incorrect answer!');
+				Eve.say('Incorrect answer,<br>try again!');
 				/*Eve.sad();
 				setTimeout(function() {
 					Eve.happy();
