@@ -15,7 +15,8 @@ this.emit = function(type, data) {
 
 this.on = function(type, cb) {
 	if(type == 'stdin') {
-		cb(input[i++]);
+		for(var i = 0; i < input.length; i++)
+			cb(input[i]);
 	}
 }
 

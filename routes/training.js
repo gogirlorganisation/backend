@@ -37,13 +37,21 @@ var answers = {
 	],
 	4: [
 		{
-			stdin: 'Kevin',
-			stdout: 'What\'s your name?\nWelcome to the bakery,\nKevin\n'
+			stdin: '6\n*\n7\n',
+			stdout: 'Enter first number:\nOperator:\nEnter second number:\n42\n'
 		},
 		{
-			stdin: 'Jake Peralta',
-			stdout: 'What\'s your name?\nWelcome to the bakery,\nJake Peralta\n'
-		}
+			stdin: '9\n/\n3\n',
+			stdout: 'Enter first number:\nOperator:\nEnter second number:\n3.0\n'
+		},
+		{
+			stdin: '41\n+\n9\n',
+			stdout: 'Enter first number:\nOperator:\nEnter second number:\n50\n'
+		},
+		{
+			stdin: '900\n-\n5\n',
+			stdout: 'Enter first number:\nOperator:\nEnter second number:\n895\n'
+		},
 	],
 	5: [
 		{
