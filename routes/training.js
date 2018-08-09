@@ -51,70 +51,6 @@ var answers = {
 			stdout: '112.5\n'
 		}
 	],
-	6: [
-		{
-			stdin: 'Japnit',
-			stdout: 'What\'s your name?\nWelcome to the bakery Japnit! What would you like to order today?\n'
-		},
-		{
-			stdin: 'Dhimant',
-			stdout: 'What\'s your name?\nWelcome to the bakery Dhimant! What would you like to order today?\n'
-		}
-	],
-	7: [
-		{
-			stdin: '',
-			stdout: 'True\nFalse\nTrue\n'
-		}
-	],
-	8: [
-		{
-			stdin: '42',
-			stdout: 'Enter a number:\nHere is a free toffee! Have a nice day!\n'
-		},
-		{
-			stdin: '43',
-			stdout: 'Enter a number:\nHave a nice day!\n'
-		}
-	],
-	9: [
-		{
-			stdin: '11',
-			stdout: 'Enter the time:\nEve is free at 11\n'
-		},
-		{
-			stdin: '23',
-			stdout: 'Enter the time:\nEve is free at 23\n'
-		},
-		{
-			stdin: '14',
-			stdout: 'Enter the time:\nEve is not free at 14\n'
-		}
-	],
-	10: [
-		{
-			stdin: '',
-			stdout: 'Flour\n'
-		}
-	],
-	11: [
-		{
-			stdin: '',
-			stdout: '96\n'
-		}
-	],
-	12: [
-		{
-			stdin: '',
-			stdout: 'Dark Chocolate\nVanilla Cupcakes\n'
-		}
-	],
-	13: [
-		{
-			stdin: '',
-			stdout: 'not prime\n'
-		}
-	],
 };
 
 router.get('/:level', function(req, res) {
@@ -122,7 +58,7 @@ router.get('/:level', function(req, res) {
 
 		if(answers[req.params.level]) {
 			var nextLevel = parseInt(req.params.level) + 1;
-			res.render('level', {
+			res.render('train', {
 				user: req.user.username,
 				nextLevel: nextLevel,
 				partials: {
