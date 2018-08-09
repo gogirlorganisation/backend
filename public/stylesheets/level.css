@@ -372,3 +372,17 @@ img.hidden {
     opacity: 1;
   }
 }
+
+table {
+    border-collapse: collapse;
+}
+
+th {
+    color: #fb718d;
+}
+
+th, td {
+    border: 2px solid #fb718d;
+    padding: 0.5rem 1rem;
+    text-align: center;
+}
