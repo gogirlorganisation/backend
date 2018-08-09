@@ -54,10 +54,106 @@ var answers = {
 		},
 	],
 	5: [
-		{
-			stdin: '',
-			stdout: '112.5\n'
-		}
+	    {
+	    	stdin: '1',
+	    	stdout: 'I'
+	    },
+	    {
+	    	stdin: '2',
+	    	stdout: 'II'
+	    },
+	    {
+	    	stdin: '3',
+		    stdout: 'III'
+		},
+    	{
+    		stdin: '4',
+    		stdout: 'IV'
+    	},
+	    {
+	    	stdin: '5',
+	    	stdout: 'V'
+	    },
+	    {
+	    	stdin: '9',
+	    	stdout: 'IX'
+	    },
+	    {
+	    	stdin: '12',
+	    	stdout: 'XII'
+	    },
+	    {
+	    	stdin: '16',
+	    	stdout: 'XVI'
+	    },
+	    {
+	    	stdin: '29',
+	    	stdout: 'XXIX'
+	    },
+	    {
+	    	stdin: '44',
+	    	stdout: 'XLIV'
+	    },
+	    {
+	    	stdin: '45',
+	    	stdout: 'XLV'
+	    },
+	    {
+	    	stdin: '68',
+	    	stdout: 'LXVIII'
+	    },
+	    {
+	    	stdin: '83',
+	    	stdout: 'LXXXIII'
+	    },
+	    {
+	    	stdin: '97',
+	    	stdout: 'XCVII'
+	    },
+	    {
+	    	stdin: '99',
+	    	stdout: 'XCIX'
+	    },
+	    {
+	    	stdin: '500',
+	    	stdout: 'D'
+	    },
+	    {
+	    	stdin: '501',
+	    	stdout: 'DI'
+	    },
+	    {
+	    	stdin: '649',
+	    	stdout: 'DCXLIX'
+	    },
+	    {
+	    	stdin: '798',
+	    	stdout: 'DCCXCVIII'
+	    },
+	    {
+	    	stdin: '891',
+	    	stdout: 'DCCCXCI'
+	    },
+	    {
+	    	stdin: '1000',
+	    	stdout: 'M'
+	    },
+	    {
+	    	stdin: '1004',
+	    	stdout: 'MIV'
+	    },
+	    {
+	    	stdin: '1006',
+	    	stdout: 'MVI'
+	    },
+	    {
+	    	stdin: '1023',
+		    stdout: 'MXXIII'
+		},
+	    {
+	    	stdin: '2014',
+	    	stdout: 'MMXIV'
+	    },
 	],
 };
 
