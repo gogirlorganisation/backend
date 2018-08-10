@@ -6,14 +6,24 @@ router.get('/', function(req, res) {
 })
 
 router.get('/login', function(req, res) {
-	var error = (req.query.login == 'false') ? 'This account is not associated with an email address. Try signing up manually instead.' : '';
-	res.render('login', {
-		error: error
-	});
+	if(!req.isAuthenticated()) {
+		var error = (req.query.login == 'false') ? 'This account is not associated with an email address. Try signing up manually instead.' : '';
+		res.render('login', {
+			error: error
+		});
+	}
+	else {
+		res.redirect('/dashboard');
+	}
 });
 
 router.get('/signup', function(req, res) {
-	res.render('signup');
+	if(!req.isAuthenticated()) {
+		res.render('signup');
+	}
+	else {
+		res.redirect('/dashboard');
+	}
 });
 
 router.get('/dashboard', function(req, res) {
