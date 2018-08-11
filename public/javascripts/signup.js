@@ -7,14 +7,23 @@ $('form').on('submit', function(e) {
 		data: $(this).serialize(),
 		success: function(data) {
 			if(data.message == 'success') {
-				alert('signup successful! now login');
 				location.href = '/login';
 			}
 			else alert(data.message);
 		},
 		error: function(xhr, err) {
-			alert('see console for error');
 			console.log(err);     
 		}
 	});
 });
+
+$('.an-input').each(function(){
+    $(this).on('blur', function(){
+        if($(this).val().trim() != "") {
+            $(this).addClass('hasvalue');
+        }
+        else {
+            $(this).removeClass('hasvalue');
+        }
+    })    
+})

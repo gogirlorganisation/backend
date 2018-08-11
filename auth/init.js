@@ -1,6 +1,8 @@
 var User = require('./models/User');
 var login = require('./login');
 var signup = require('./signup');
+var google = require('./google');
+var facebook = require('./facebook');
 
 
 // todo: add condition for production
@@ -24,6 +26,8 @@ module.exports = function(passport) {
 
 	login(passport);
 	signup(passport);
+	google(passport);
+	facebook(passport);
 
 	return {
 		url: server_uri,

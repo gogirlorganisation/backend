@@ -11,6 +11,7 @@ var fs = require('fs');
 var proc = require('child_process');
 var auth = require('./auth/init')(passport);
 var cons = require('consolidate');
+var MongoStore = require('connect-mongo')(session);
 
 var app = express();
 
@@ -23,21 +24,30 @@ var index = require('./routes/index');
 var users = require('./routes/users')(passport);
 var levels = require('./routes/levels');
 var ide = require('./routes/ide')(io);
+var training = require('./routes/training');
 
 // view engine setup
 app.engine('html', cons.mustache);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
 
-app.use(session({secret: auth.key, 
-                 saveUninitialized: true,
-                 resave: true}));
+app.use(session({
+	secret: auth.key, 
+	saveUninitialized: true,
+	resave: true,
+	store: new MongoStore({
+		url: auth.url,
+		ttl: 24 * 60 * 60,
+		touchAfter: 5 * 60
+	})
+}));
+
 app.use(passport.initialize());
 app.use(passport.session());
 mongoose.connect(auth.url);
 
 // uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -48,6 +58,7 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/levels', levels);
 app.use('/levels/ide', ide);
+app.use('/train', training);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

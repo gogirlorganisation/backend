@@ -10,15 +10,12 @@ module.exports = function(passport) {
 	}, function(req, username, password, done) {
 		var signup = function() {
 			User.findOne({ username: username }, function(err, user) {
-				console.log(++count);
-				console.log(err);
-				console.log(user);
 				if(err) {
 					return done(err);
 				}
 
 				else if(user) {
-					return done(null, user, { message: 'user_already_exists' });
+					return done(null, user, { message: 'Sorry, this username is already taken.' });
 				}
 
 				else {
@@ -29,6 +26,8 @@ module.exports = function(passport) {
 					newUser.email = req.body.email;
 					newUser.solvedLevels = {};
 					newUser.points = 0;
+					newUser.solvedTrainingLevels = {};
+					newUser.trainingPoints = 0;
 
 					newUser.save(function(err) {
 						if(err) {

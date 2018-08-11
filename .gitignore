@@ -29,3 +29,12 @@ node_modules
 
 # Debug log from npm
 npm-debug.log
+
+# python temp files don't need to be uploaded
+/*.py
+
+# don't save python cache
+__pycache__
+
+# private keys are private
+auth/keys.js
