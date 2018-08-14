@@ -34,14 +34,18 @@ router.get('/dashboard', function(req, res) {
 		}
 
 		else {
-			var levels = req.user.solvedLevels || {};
+			var levels = Object.keys(req.user.solvedLevels || {});
 
-			var nextLevel = Object.keys(levels).length + 1;
+			var i = 1;
+
+			// find first level which isn't on the solved list
+			while(i <= levels.length && parseInt(levels[i-1]) === i) i++;
 
 			res.render('dash', {
 				user: req.user.displayName || req.user.username,
 				points: Math.floor(req.user.points),
-				nextLevel: nextLevel
+				nextLevel: i,
+				levels: levels
 			});
 		}
 	} else {
@@ -57,14 +61,17 @@ router.get('/training', function(req, res) {
 		}
 
 		else {
-			var levels = req.user.solvedTrainingLevels || {};
+			var levels = Object.keys(req.user.solvedTrainingLevels || {});
 
-			var nextLevel = Object.keys(levels).length + 1;
+			var i = 1;
+
+			// find first level which isn't on the solved list
+			while(i <= levels.length && parseInt(levels[i-1]) === i) i++;
 
 			res.render('training', {
 				user: req.user.displayName || req.user.username,
 				points: Math.floor(req.user.trainingPoints) || 0,
-				nextLevel: nextLevel || 1
+				nextLevel: i || 1
 			});
 		}
 	} else {
