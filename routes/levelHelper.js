@@ -34,8 +34,6 @@ var checkCorrect = function(answers, level, answer, callback) {
 
 	inputFiltered = inputFiltered.join('input(');
 
-	console.log(inputFiltered);
-
 	answer = inputFiltered;
 
 	for(var i = 0; i < answers[level].length; i++) {
