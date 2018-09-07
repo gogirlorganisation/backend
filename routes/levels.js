@@ -34,11 +34,11 @@ var answers = {
 	4: [
 		{
 			stdin: 'Kevin',
-			stdout: 'What\'s your name?\nWelcome to the bakery,\nKevin\n'
+			stdout: 'Welcome to the bakery,\nKevin\n'
 		},
 		{
 			stdin: 'Jake Peralta',
-			stdout: 'What\'s your name?\nWelcome to the bakery,\nJake Peralta\n'
+			stdout: 'Welcome to the bakery,\nJake Peralta\n'
 		}
 	],
 	5: [
@@ -50,11 +50,11 @@ var answers = {
 	6: [
 		{
 			stdin: 'Japnit',
-			stdout: 'What\'s your name?\nWelcome to the bakery Japnit! What would you like to order today?\n'
+			stdout: 'Welcome to the bakery Japnit! What would you like to order today?\n'
 		},
 		{
 			stdin: 'Dhimant',
-			stdout: 'What\'s your name?\nWelcome to the bakery Dhimant! What would you like to order today?\n'
+			stdout: 'Welcome to the bakery Dhimant! What would you like to order today?\n'
 		}
 	],
 	7: [
@@ -66,25 +66,25 @@ var answers = {
 	8: [
 		{
 			stdin: '42',
-			stdout: 'Enter a number:\nHere is a free toffee! Have a nice day!\n'
+			stdout: 'Here is a free toffee! Have a nice day!\n'
 		},
 		{
 			stdin: '43',
-			stdout: 'Enter a number:\nHave a nice day!\n'
+			stdout: 'Have a nice day!\n'
 		}
 	],
 	9: [
 		{
 			stdin: '11',
-			stdout: 'Enter the time:\nEve is free at 11\n'
+			stdout: 'Eve is free at 11\n'
 		},
 		{
 			stdin: '23',
-			stdout: 'Enter the time:\nEve is free at 23\n'
+			stdout: 'Eve is free at 23\n'
 		},
 		{
 			stdin: '14',
-			stdout: 'Enter the time:\nEve is not free at 14\n'
+			stdout: 'Eve is not free at 14\n'
 		}
 	],
 	10: [

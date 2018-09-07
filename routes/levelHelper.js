@@ -17,6 +17,27 @@ var checkCorrect = function(answers, level, answer, callback) {
 		return;
 	}
 
+
+	// filter: remove input prompts for checking
+	var inputFiltered = answer;
+
+	inputFiltered = inputFiltered.split('input(');
+
+	for(var i = 1; i < inputFiltered.length; i++) {
+		var str = inputFiltered[i];
+		str = str.split(')');
+		str.shift();
+		str = str.join(')');
+		str = ')' + str;
+		inputFiltered[i] = str;
+	}
+
+	inputFiltered = inputFiltered.join('input(');
+
+	console.log(inputFiltered);
+
+	answer = inputFiltered;
+
 	for(var i = 0; i < answers[level].length; i++) {
 		// program execution is asynchronus so returnValues[] counts number of functions
 		// that have returned, then after the last one is done we run the callback with
