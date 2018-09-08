@@ -2,25 +2,49 @@ module.exports = function(io) {
 
 var express = require('express');
 var router = express.Router();
-var run = require('./compiler'); 
+var run = require('./compiler');
+var cmd = require('./cmdline');
 
 io.on('connection', function(socket) {
+	var socketBeingUsed = false;
+
 	socket.on('code', function(content) {
-		var program = run(content, socket);
+		if(!socketBeingUsed) {
+			socketBeingUsed = true;
 
-		program.stdout.on('data', function(data) {
-			socket.emit('stdout', data);
-		});
+			var program = run(content, socket);
 
-		program.stderr.on('data', function(data) {
-			socket.emit('stderr', data);
-		});
+			program.stdout.on('data', function(data) {
+				socket.emit('stdout', data);
+			});
 
-		socket.on('stdin', function(data) {
-			program.stdin.write(data + '\n');
-		});
+			program.stderr.on('data', function(data) {
+				socket.emit('stderr', data);
+			});
 
+			socket.on('stdin', function(data) {
+				program.stdin.write(data + '\n');
+			});
+		}
 	});
+
+	socket.on('cmdline', function() {
+		if(!socketBeingUsed) {
+			socketBeingUsed = true;
+
+			console.log('sup');
+
+			var program = cmd(socket);
+
+			program.stdout.on('data', function(data) {
+				socket.emit('stdout', data);
+			});
+
+			socket.on('stdin', function(data) {
+				program.stdin.write(data + '\n');
+			});
+		}
+	})
 });
 
 return router;

@@ -113,6 +113,15 @@ var answers = {
 	],
 };
 
+router.get('/cmdtest', function(req, res) {
+	if(req.isAuthenticated()) {
+		res.render('cmdline');
+	}
+	else {
+		res.redirect('/login');
+	}
+})
+
 router.get('/:level', function(req, res) {
 	if(req.isAuthenticated()) {
 
