@@ -43,7 +43,8 @@
 
 Note: In order for Facebook and Google login to work on localhost, you will need to do the following:
 
-1. Create a self-signed SSL certificate: https://stackoverflow.com/a/10176685
+1. Create a self-signed SSL certificate: 
+https://serverfault.com/questions/880804/can-not-get-rid-of-neterr-cert-common-name-invalid-error-in-chrome-with-self
 
 2. Install and setup nginx: https://nginx.org
 
