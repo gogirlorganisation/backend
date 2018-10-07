@@ -7,7 +7,7 @@ function rand() {
 }
 
 var procName = 'python3';
-var procOpts = '-u';
+var procOpts = '-u -I';
 var directory = './';
 
 if(process.env.NODE_ENV === 'production') {
