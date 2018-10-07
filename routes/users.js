@@ -21,7 +21,7 @@ module.exports = function(passport) {
 					else res.send({ message: 'Unknown error.' });
 				})
 			}
-			else res.send({ message: 'The specified user does not exist.' });
+			else res.send({ message: info.message });
 		})(req, res, next);
 	});
 

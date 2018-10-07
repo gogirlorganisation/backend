@@ -8,7 +8,7 @@ $('form').on('submit', function(e) {
 		success: function(data) {
 			if(data.message == 'success')
 				location.href = '/dashboard';
-			else alert('Invalid details - try again.');
+			else alert(data.message);
 		},
 		error: function(xhr, err) {
 			console.log(err);     

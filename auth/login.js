@@ -13,7 +13,11 @@ module.exports = function(passport) {
 				}
 
 				if(!user) {
-					return done(null, false, { message: 'The specified user does not exist.' });
+					return done(null, false, { message: 'There was a problem signing in.' });
+				}
+
+				if(!user.password) {
+					return done(null, false, { message: 'You have created your account using social sign-in. Please use social sign-in to login again.' })
 				}
 
 				if(!bCrypt.compareSync(password, user.password)) {
