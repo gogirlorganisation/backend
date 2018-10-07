@@ -12,6 +12,7 @@ var schema = new Schema({
 	trainingPoints: Number,
 	solvedLevels: Object,
 	solvedTrainingLevels: Object,
+	alsetUser: Boolean,
 });
 
 schema.plugin(findOrCreate);

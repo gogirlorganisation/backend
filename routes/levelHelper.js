@@ -1,5 +1,6 @@
 var run = require('./compiler');
 var pseudoSocket = require('./pseudoSocket');
+var request = require('request');
 
 var rough = function(str) {
 	return str.trim().toLowerCase().replace(/[^a-z0-9.]/g, '');
@@ -72,8 +73,31 @@ var checkCorrect = function(answers, level, answer, callback) {
 	}
 }
 
+/*
+Params for sendToAlset:
+
+{
+	user: UserObject,
+	level: Number,
+	answer: String,
+	date: Number,
+	correct: Boolean
+}
+*/
+
+var sendToAlset = function(params, res) {
+	request.post({
+		url: 'https://alset-md.firebaseio.com/thegirlcode.json',
+		json: true,
+		body: params
+	}, function(err, resp, body) {
+		if(err) console.error(err);
+	});
+}
+
 module.exports = {
 	checkCorrect: checkCorrect,
+	sendToAlset: sendToAlset,
 	rough: rough,
 	regEscape: regEscape
 };

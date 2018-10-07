@@ -148,7 +148,19 @@ router.post('/:level', function(req, res, next) {
 		if(req.isAuthenticated()) {
 			levelHelper.checkCorrect(answers, req.params.level, req.body.answer, function(isCorrect) {
 				if(isCorrect) {
-					var win = function() { res.send({ message: 'win' }) };
+					var win = function() { 
+						res.send({ message: 'win' });
+
+						if(req.user.alsetUser) {
+							levelHelper.sendToAlset({
+								user: req.user.username,
+								level: req.params.level,
+								answer: req.body.answer,
+								date: Date.now(),
+								correct: true
+							});
+						}
+					};
 
 					var dealWith = function(err) {
 						console.error(err);
@@ -187,6 +199,16 @@ router.post('/:level', function(req, res, next) {
 				}
 				else {
 					res.send({ message: 'lose' });
+
+					if(req.user.alsetUser) {
+						levelHelper.sendToAlset({
+							user: req.user.username,
+							level: req.params.level,
+							answer: req.body.answer,
+							date: Date.now(),
+							correct: false
+						});
+					}
 				}
 			});
 		} else {

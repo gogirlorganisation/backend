@@ -25,6 +25,13 @@ module.exports = function(passport) {
 		})(req, res, next);
 	});
 
+	router.get('/setalsettest', function(req, res) {
+		// todo: remove this once proper implemenation of login is done
+		login.setAsAlsetUser(req.user.username, function(msg) {
+			res.send(msg);
+		})
+	});
+
 	router.all('/logout', function(req, res, next) {
 		req.logout();
 

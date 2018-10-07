@@ -32,6 +32,27 @@ var setUsername = function(oldUsername, newUsername, done) {
 	});
 };
 
+var setAsAlsetUser = function(username, done) {
+	User.findOne({ username: username }, function(err, user) {
+		if(err) done(err);
+
+		else if(user) {
+			user.alsetUser = true;
+
+			user.save(function(err) {
+				if(err) done(err);
+
+				done('success');
+			})
+		}
+
+		else {
+			done('no such user');
+		}
+	})
+}
+
 module.exports = {
-	setUsername: setUsername
+	setUsername: setUsername,
+	setAsAlsetUser: setAsAlsetUser
 };

@@ -32,8 +32,6 @@ io.on('connection', function(socket) {
 		if(!socketBeingUsed) {
 			socketBeingUsed = true;
 
-			console.log('sup');
-
 			var program = cmd(socket);
 
 			program.stdout.on('data', function(data) {
