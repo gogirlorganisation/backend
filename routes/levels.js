@@ -17,11 +17,11 @@ cmdline answer format: array of strings, answers[i] is the answer to textbox q_i
 var answers = {
 	0: {
 		type: 'cmdline',
-		answers: ['test123', 'test234']
+		answers: []
 	},
 	1: {
 		type: 'cmdline',
-		answers: []
+		answers: ['test123', 'test234']
 	},
 	2: {
 		type: 'compiler',

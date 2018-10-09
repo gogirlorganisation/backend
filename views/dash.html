@@ -20,8 +20,10 @@
 		<div class="progress-bar">
 			<div class="progress" data-points="{{points}}" data-max="100"></div>
 		</div>
-		<a href="/levels/{{nextLevel}}" class="cta-button">start</a>
-		<a href="/users/logout" class="cta-button-outline">logout</a>
+		<div class="cta-container">
+			<a href="/levels/{{nextLevel}}" class="cta-button">start</a>
+			<a href="/users/logout" class="cta-button-outline">logout</a>
+		</div>
 	</div>
 
 
@@ -34,6 +36,17 @@
 		<a class="switcher-link" href="/training">Train</a>
 	</div>
 	<section id="cd-timeline" class="cd-container">
+		<div class="cd-timeline-block">
+			<div class="cd-timeline-img cd-grey">
+				<img src="img/icons/004-heart.svg" alt="Picture">
+			</div> <!-- cd-timeline-img -->
+
+			<div class="cd-timeline-content">
+				<h2>Level 0</h2>
+				<a href="/levels/0" class="cd-read-more">Start</a>
+			</div> <!-- cd-timeline-content -->
+		</div> <!-- cd-timeline-block -->
+
 		<div class="cd-timeline-block">
 			<div class="cd-timeline-img cd-picture">
 				<img src="img/icons/004-heart.svg" alt="Picture">

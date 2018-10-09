@@ -32,11 +32,11 @@ html * {
     font-weight: 800;
     border-radius: 3px;
     cursor: pointer;
-    display: inline-block;
-    margin: 20px 0;
+    display: block;
+    margin: 20px 5px;
     color: #f8f8f8;
-    margin-right: 10px;
     border-radius: 10px;
+    width: 9rem;
 }
 .cta-button-outline{
     padding: 10px 30px;
@@ -49,11 +49,16 @@ html * {
     font-weight: 800;
     border-radius: 3px;
     cursor: pointer;
-    display: inline-block;
-    margin: 20px 0;
+    display: block;
+    margin: 20px 5px;
     color: #fb7f9f;
-    margin-right: 10px;
     border-radius: 10px;
+    width: 9rem;
+}
+.cta-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 body .timeline{
   width: 100%;

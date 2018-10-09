@@ -1,63 +1,8 @@
-<h1> Mini Projects · Rock Paper Scissor </h1>
+<h1>Level 1</h1>
 
-<p>
-  <br>
-  <br>
+<p>test</p>
 
-	Ever played a game of rock paper scissor? Well,you can make a program to play with the computer now!<br>
-	For this you’ll need to know:<br> <br>
-	
-	Loops<br>
-	Conditional Flow<br>
-	
-	<br><br>
+<input type="text" name="q1" placeholder="test123">
+<input type="text" name="q2" placeholder="test234">
 
-	           
-	<code>#create a list of play options
-	t = [&quot;Rock&quot;, &quot;Paper&quot;, &quot;Scissors&quot;]</code>
-	 
-	Randint() is an <b>inbuilt </b> function that assigns a random value to the variable.  <br> <br> <code> 
-	computer = t[randint(0,2)]  <i>#assign a random play to the computer</i> <br>
-	 
-	#set player to False<br>
-	player = False<br>
-	 
-	while player == False:<br>
-	#set player to True<br>
-	    player = input(&quot;Rock, Paper, Scissors?&quot;)<br> <br> &lt;<br>
-
-	  </code>
-	  After taking an input from the user, you&#39;ve to make all possible cases for the possible outcomes. These cases are:<br>
-	  1. The computer and player&#39;s move is the same- this will produce a <b> tie</b> <br>
-	  2. The player is scissor and the computer is paper- the player wins. <br>
-	  3. The player is rock and the computer is scissor- the player wins. <br>
-	  4. The player is paper and the computer is scissor- the player loses. <br>
-	  5. The player is rock and the computer is paper- the player loses. <br> <br>  <br>
-	  <pre>
-if player == computer:<br>
-    print(&quot;Tie!&quot;)<br>
-elif player == &quot;Rock&quot;:<br>
-    if computer == &quot;Paper&quot;:<br>
-        print(&quot;You lose!&quot;, computer, &quot;covers&quot;, player)<br>
-    else:<br>
-        print(&quot;You win!&quot;, player, &quot;smashes&quot;, computer)<br>
-elif player == &quot;Paper&quot;:<br>
-    if computer == &quot;Scissors&quot;:<br>
-        print(&quot;You lose!&quot;, computer, &quot;cut&quot;, player)<br>
-    else:<br>
-        print(&quot;You win!&quot;, player, &quot;covers&quot;, computer)<br>
-elif player == &quot;Scissors&quot;:<br>
-    if computer == &quot;Rock&quot;:<br>
-        print(&quot;You lose...&quot;, computer, &quot;smashes&quot;, player)<br>
-    else:<br> 
-        print(&quot;You win!&quot;, player, &quot;cut&quot;, computer)<br>
-else:<br>
-    print(&quot;That&#39;s not a valid play. Check your spelling!&quot;)
-<i> #player was set to True, but we want it to be False so the loop continues</i><br> <br>
-player = False<br>
-computer = t[randint(0,2)] <br> </pre>
-	    <br>
-	    <br>
-
-	And we’re done! Go on, play!
-</p>
+<input type="submit">
