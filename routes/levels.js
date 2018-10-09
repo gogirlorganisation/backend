@@ -31,6 +31,7 @@ var answers = {
 				stdout: '155 Main St, Delhi 84101, INDIA\n'
 			}
 		],
+		defaultValue: ' '
 	},
 	3: {
 		type: 'compiler',
@@ -159,12 +160,14 @@ router.get('/:level', function(req, res) {
 
 		if(answers[req.params.level]) {
 			var nextLevel = parseInt(req.params.level) + 1;
+			var defaultValue = answers[req.params.level].defaultValue || '# Code here!';
 			res.render(answers[req.params.level].type, {
 				user: req.user.username,
 				nextLevel: nextLevel,
 				partials: {
 					levelText: 'levels/' + req.params.level
-				}
+				},
+				defaultValue: defaultValue
 			});
 		}
 		else {
