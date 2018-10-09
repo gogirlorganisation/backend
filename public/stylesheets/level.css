@@ -110,6 +110,10 @@ button:hover {
   align-items: stretch;
 }
 
+.output-container pre.cmdline {
+  max-width: 100%;
+}
+
 code.stdout, code.stderr {
     display: block;
     overflow-x: auto;

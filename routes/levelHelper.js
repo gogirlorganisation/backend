@@ -10,66 +10,88 @@ var regEscape = function(str) {
 	return str.replace(/([.?*+^$[\]\\(){}|-])/g, "\\$1");
 }
 
-var checkCorrect = function(answers, level, answer, callback) {
+var checkCorrect = function(levels, level, answer, callback) {
 	var returnValues = [];
 
-	if(!answers[level] || answers[level].length == 0) {
-		callback(false);
+	if(!levels[level]) {
+		callback([false]);
 		return;
 	}
 
+	if(levels[level].type == 'compiler') {
+		// if no answers, it's correct
+		if(!levels[level].answer || levels[level].answer.length == 0) {
+			callback([true]);
+			return;
+		}
 
-	// filter: remove input prompts for checking
-	var inputFiltered = answer;
+		// filter: remove input prompts for checking
+		var inputFiltered = answer;
 
-	inputFiltered = inputFiltered.split('input(');
+		inputFiltered = inputFiltered.split('input(');
 
-	for(var i = 1; i < inputFiltered.length; i++) {
-		var str = inputFiltered[i];
-		str = str.split(')');
-		str.shift();
-		str = str.join(')');
-		str = ')' + str;
-		inputFiltered[i] = str;
+		for(var i = 1; i < inputFiltered.length; i++) {
+			var str = inputFiltered[i];
+			str = str.split(')');
+			str.shift();
+			str = str.join(')');
+			str = ')' + str;
+			inputFiltered[i] = str;
+		}
+
+		inputFiltered = inputFiltered.join('input(');
+
+		answer = inputFiltered;
+
+		for(var i = 0; i < levels[level].answers.length; i++) {
+			// program execution is asynchronus so returnValues[] counts number of functions
+			// that have returned, then after the last one is done we run the callback with
+			// the required result
+			(function(i) {
+				var stdin = levels[level].answers[i].stdin;
+				var stdout = levels[level].answers[i].stdout;
+
+				var socket = new pseudoSocket(stdin);
+
+				var program = run(answer, socket);
+
+				program.stdout.on('data', function(data) {
+					socket.emit('stdout', data);
+				});
+
+				program.stderr.on('data', function(data) {
+					socket.emit('stderr', data);
+				});
+
+				socket.on('stdin', function(data) {
+					program.stdin.write(data + '\n');
+				});
+
+				program.on('exit', function() {
+					var received = socket.output().stdout;
+					returnValues[returnValues.length] = (rough(received) === rough(stdout));
+					if(returnValues.length === levels[level].answers.length) {
+						var checker = returnValues.indexOf(false) < 0;
+						callback([checker]);
+					}
+				});
+			})(i);
+		}
 	}
 
-	inputFiltered = inputFiltered.join('input(');
+	else if(levels[level].type == 'cmdline') {
+		var correct = levels[level].answers;
+		answer = answer.split(',');
+		var result = [];
+		for(var i = 0; i < correct.length; i++) {
+			result[i] = correct[i] === answer[i];
+		}
 
-	answer = inputFiltered;
+		callback(result);
+	}
 
-	for(var i = 0; i < answers[level].length; i++) {
-		// program execution is asynchronus so returnValues[] counts number of functions
-		// that have returned, then after the last one is done we run the callback with
-		// the required result
-		(function(i) {
-			var stdin = answers[level][i].stdin;
-			var stdout = answers[level][i].stdout;
-
-			var socket = new pseudoSocket(stdin);
-
-			var program = run(answer, socket);
-
-			program.stdout.on('data', function(data) {
-				socket.emit('stdout', data);
-			});
-
-			program.stderr.on('data', function(data) {
-				socket.emit('stderr', data);
-			});
-
-			socket.on('stdin', function(data) {
-				program.stdin.write(data + '\n');
-			});
-
-			program.on('exit', function() {
-				var received = socket.output().stdout;
-				returnValues[returnValues.length] = (rough(received) === rough(stdout));
-				if(returnValues.length === answers[level].length) {
-					var checker = returnValues.indexOf(false) < 0;
-					callback(checker);
-				}
-			});
-		})(i);
+	else {
+		callback([false]);
 	}
 }
 
