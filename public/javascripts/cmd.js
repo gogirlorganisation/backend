@@ -112,3 +112,15 @@ socket.on('end', function(data) {
 	socket.emit('cmdline');
 });
 
+$(document).ready(function () {
+	var MastStory = function () {
+		$('[id^="p"]').each(function() {
+			$(this).addClass('hidden');
+		});
+		$('[id^="w"]').on('click', function() {
+			var n = $(this).attr('id').replace('w', '');
+			$('#p' + n).toggleClass('hidden');
+		});
+	};
+	MastStory();
+});
