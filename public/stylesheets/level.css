@@ -15,6 +15,15 @@ a {
   color: #fb7f9f;
 }
 
+span[id^='w'] {
+  color: rgb(255, 51, 85);
+  font-weight: bold;
+}
+
+span[id^='p'] {
+  font-style: italic;
+}
+
 div .nav {
   height: 3rem;
   position: fixed;
