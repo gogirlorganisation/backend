@@ -84,8 +84,10 @@ var checkCorrect = function(levels, level, answer, callback) {
 		answer = answer.split(',');
 		var result = [];
 		for(var i = 0; i < correct.length; i++) {
-			result[i] = correct[i] === answer[i];
+			result[i] = correct[i] === answer[i].trim();
+			if(result[i] == false) console.log(answer[i].trim(), correct[i]);
 		}
+
 
 		callback(result);
 	}
