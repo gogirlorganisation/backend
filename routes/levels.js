@@ -24,14 +24,8 @@ var answers = {
 		answers: ['8', '40', '3', '42', '2.0', '1.75', '1.75', '8.0', '9', '4.0', '2', '1', '0', '1', '2.2']
 	},
 	2: {
-		type: 'compiler',
-		answers: [
-			{
-				stdin: '',
-				stdout: '155 Main St, Delhi 84101, INDIA\n'
-			}
-		],
-		defaultValue: ' '
+		type: 'cmdline',
+		answers: []
 	},
 	3: {
 		type: 'compiler',
