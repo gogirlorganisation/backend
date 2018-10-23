@@ -64,12 +64,21 @@ $('form.submit').on('submit', function(e) {
 	});
 });
 
+function escapeHTML(unsafe) {
+	return unsafe
+		.replace(/&/g, "&amp;")
+		.replace(/</g, "&lt;")
+		.replace(/>/g, "&gt;")
+		.replace(/"/g, "&quot;")
+		.replace(/'/g, "&#039;");
+}
+
 function out(text) {
-	$('.stdout').html($('.stdout').text() + text);
+	$('.stdout').html($('.stdout').text() + escapeHTML(text));
 }
 
 function err(text) {
-	$('.stderr').html($('.stderr').text() + text);
+	$('.stderr').html($('.stderr').text() + escapeHTML(text));
 }
 
 $('form.compiler').on('submit', function(e) {

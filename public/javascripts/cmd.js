@@ -74,17 +74,24 @@ $('form.submit').on('submit', function(e) {
 	});
 });
 
-function out(text) {
-	$('.stdout').html($('.stdout').text() + text);
+function escapeHTML(unsafe) {
+	return unsafe
+		.replace(/&/g, "&amp;")
+		.replace(/</g, "&lt;")
+		.replace(/>/g, "&gt;")
+		.replace(/"/g, "&quot;")
+		.replace(/'/g, "&#039;");
 }
 
-function err(text) {
-	$('.stderr').html($('.stderr').text() + text);
+function out(text) {
+	$('.stdout').html($('.stdout').text() + escapeHTML(text));
 }
 
 var socket = io.connect('/');
 
-socket.emit('cmdline');
+var prefile = prefile || 'none';
+
+socket.emit('cmdline', prefile);
 
 $('.stdout').html('');
 $('.stderr').html('');
@@ -95,7 +102,7 @@ socket.on('stdout', function(data) {
 
 socket.on('stderr', function(data) {
 	console.log(data);
-	err(data);
+	out(data);
 });
 
 $('.stdin').on('keypress', function(e) {

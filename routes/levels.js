@@ -28,13 +28,8 @@ var answers = {
 		answers: []
 	},
 	3: {
-		type: 'compiler',
-		answers: [
-			{
-				stdin: '',
-				stdout: 'Float\nInteger\nString\nFloat\nString\n'
-			}
-		],
+		type: 'cmdline',
+		answers: []
 	},
 	4: {
 		type: 'compiler',

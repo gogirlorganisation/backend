@@ -28,11 +28,11 @@ io.on('connection', function(socket) {
 		}
 	});
 
-	socket.on('cmdline', function() {
+	socket.on('cmdline', function(prefile) {
 		if(!socketBeingUsed) {
 			socketBeingUsed = true;
 
-			var program = cmd(socket);
+			var program = cmd(socket, prefile);
 
 			program.stdout.on('data', function(data) {
 				socket.emit('stdout', data);
