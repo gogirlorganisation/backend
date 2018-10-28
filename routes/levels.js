@@ -32,46 +32,42 @@ var answers = {
 		answers: []
 	},
 	4: {
-		type: 'compiler',
-		answers: [
-			{
-				stdin: 'Kevin',
-				stdout: 'Welcome to the bakery,\nKevin\n'
-			},
-			{
-				stdin: 'Jake Peralta',
-				stdout: 'Welcome to the bakery,\nJake Peralta\n'
-			}
-		],
+		type: 'cmdline',
+		answers: [],
 	},
 	5: {
 		type: 'compiler',
 		answers: [
 			{
 				stdin: '',
-				stdout: '112.5\n'
+				stdout: '7\nHello World!'
 			}
 		],
 	},
 	6: {
-		type: 'compiler',
-		answers: [
-			{
-				stdin: 'Japnit',
-				stdout: 'Welcome to the bakery Japnit! What would you like to order today?\n'
-			},
-			{
-				stdin: 'Dhimant',
-				stdout: 'Welcome to the bakery Dhimant! What would you like to order today?\n'
-			}
-		],
+		type: 'cmdline',
+		answers: [],
 	},
 	7: {
 		type: 'compiler',
+		defaultValue: 
+'# this is a comment, everything in this line is ignored after this.\n\
+\n\
+bolts = 10\n\
+screws = 2000.0\n\
+heatSinks = 15\n\
+metalSheets = 1000.23\n\
+pens = 45\n\
+thisIsASentence = "hello world"\n\
+\n\
+# print the value and then the type of all the items assigned above\n\
+# keep that this is automated checking, so you need to print in the \n\
+# specific order as given above.\n\
+# Write code below this line:\n',
 		answers: [
 			{
 				stdin: '',
-				stdout: 'True\nFalse\nTrue\n'
+				stdout: '10\n2000.0\n15\n1000.23\n45\nhello world'
 			}
 		],
 	},
@@ -149,7 +145,7 @@ router.get('/:level', function(req, res) {
 
 		if(answers[req.params.level]) {
 			var nextLevel = parseInt(req.params.level) + 1;
-			var defaultValue = answers[req.params.level].defaultValue || '# Code here!';
+			var defaultValue = answers[req.params.level].defaultValue || '# Code here!\n';
 			res.render(answers[req.params.level].type, {
 				user: req.user.username,
 				nextLevel: nextLevel,

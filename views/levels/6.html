@@ -1,150 +1,18 @@
-<h1>String Operations</h1>
-<p>
-	We’ve been talking a lot about working with numbers, so now, we’ll be talking about what are the things you can do with strings!<br>
+<h1>Level 6</h1>
+<p>We have now learnt how to write basic programs and do a bit of math with Python. Congratulations you can now call yourself a programmer! But with that being said {{user}}, your journey is just getting started, it’s a long but exciting path ahead! Don’t worry programming isn’t all just math. It might have seemed so till now, but there’s much more to it than that. In the future we’d have people talking to computers for all we know! So, let’s get started with the human aspect for programming, we as the creators of computers want to be able to help people, all people, even non programmers; so did the creators of Python. They introduced something called Input and Output, where Input is what you give to a computer and the Output is something that the computer gives you in return. An example of this could be you moving your mouse (which is an input) and the cursor moving on the computer (which is an output).</p>
 
-	<h4>Concatenation</h4>
-	<br>
-	Earlier, we learnt about strings as collections of characters. Concatenation is a way of joining multiple strings together. You can easily add strings to build a complete sentence by using the addition operator - i.e. the ‘+’ sign. Crazy, right?
+<p>This is the following usage for input:</p>
 
-	<pre>
-word1 = "ginger"
-word2 = "bread"
-word3 = word1 + word2
-	</pre>
+<pre><code>>>> x = input()
+10</code></pre>
 
-	Now, word3 will read gingerbread. Thus, we have concatenated word1 and word2. <br> <br>
+<p>Here we are basically asking for a value and assigning it to x. So, after the first line runs you need to enter a number that gets assigned to x. Go ahead and try it out on the shell next to you!</p>
 
-	<b>Note:</b> Do not use this in your examination! We don’t want your English teacher to faint!
-<center><img src="/img/illustrations/gingerbreadguy.png" alt="Bakery" width="50%"></center>
+<p>Now that we know how to assign values that the user of our programmer has entered, we must also know how to call those values, i.e output.</p>
 
-</p>
+<pre><code>>>> print(x)
+10</code></pre>
 
-<h4>Uppercase and Lowercase</h4>
-<br>
-<p>
+<p>Here you are asking the computer to return the value stored in the variable x. This might seem a bit redundant for small programs in the shell but when we write bigger programs(like in the next level) you’d realise how useful they are.</p>
 
-	There is a handy feature in Python that helps convert the characters in a string to uppercase or lowercase. Let’s look at an example to show you how it works.
-
-	<pre>
-word1 = "GiNgEr"
-word1 = word1.upper()
-print(word1)
-print("BrEaD".lower())
-	</pre>
-
-	The output looks like this:<br>
-	GINGER<br>
-	bread<br>
-	<br>
-
-	You can see how adding .upper() or .lower() to a variable or to a string can change its case.
-
-</p>
-
-<h4> Length of Variables</h4>
-<p>
-
-What do you do if you want to know the length of a string? We know that the word ‘Hello’ contains 5 letters. <br> <br>
-
-Instead of counting each letter, we can let the computer do it for you. All you need to do is use a function called len(). <br>
-
-<pre>
-len("Eve likes to go shopping")
-</pre>
-
-Output: 24 <br> <br>
-
-<b>Note:</b> len() function counts spaces too!<br> <br>
-
-Did you notice something strange? 24 is not printed on the screen. That’s because you haven’t called the print function to do it for you! Go ahead and do it! <br> <br>
-
-You can use it with variables too! <br> <br>
-
-<pre>
-greetings = "Hello"
-Length_of_greeting = len(greetings)
-print(Length_of_greeting)
-</pre>
-
-
-Output: 5
-
-</p>
-
-<h4> Indexing </h4>
-
-<p>
-
-Eve wants to print the letter at the second index position in "HELLO". <br>
-Can you help her do that? For accessing specific letters in a string we have to write the following: <br>
-
-<pre>
-String[postion_of_the_letter]
-</pre>
-
-For example:<br>
-
-<pre>
-word = "HELLO"
-print(word[2]) # or just "HELLO"[2]
-</pre>
-
-The output is… <br>
-L <br> <br>
-
-That shocked you, didn’t it? Although L is the third letter in the word HELLO, it is in the <b>second index</b> position.<br> <br>
-
-Programmers are weird like that. They like to count from 0. Look at the image attached to get a better sense. Now think about which letter you would get if you printed the fourth index position.<br> <br>
-
-<img src="/img/illustrations/hello01234.png" alt="Bakery" width="100%">
-
-The answer is…<br>
-O<br>
-Yes! You did it! O is the fifth letter but has the fourth index position assigned to it.
-</p>
-
-<h4> Slicing </h4>
-
-<p>
-<pre>
-amazing_programmer = "Ada Lovelace" 
-</pre>
-
-Phew...that’s a <b> long </b> name! Eve wants to just print out the first name. How would she do that? <br> <br>
-To get a part of a string we need to write:<br>
-<pre>
-Variable_name[starting_index : ending_index]
-</pre>
-
-A is at index position 0 and the 2nd A is at index position 2. To print out "Ada", we need to write<br>
-
-<pre>
-print(amazing_programmer[0:3])
-</pre>
-
-You might be wondering why we used 0:3 instead of 0:2. That’s because the first index number is <a id="w1" href="#" onclick="return false;"><b>inclusive</b></a><span id="p1" class="hidden"> (includes that position)</span> and the last index number is <a id="w2" href="#" onclick="return false;"><b>exclusive</b></a><span id="p2" class="hidden"> (doesn’t include that position)</span>. In other words, the sliced string only includes characters up to the character before the ending index.<br> <br>
-
-Now, Eve wants to print out "Love". Can you try to do that for her?<br> <br>
-Done? Here’s the answer:<br>
-
-<pre>
-print(amazing_programmer[4:8])
-</pre>
-
-Wondering why it isn’t 3:8? That’s because we count a space " " as one position too! So, L comes at the 4th index position.<br> <br>
-
-Got it? Good!
-</p>
-<br><br>
-
-
-<h2>Question</h2>
-
-<p>
-
-	Eve wants to improve her previous greeting program! This time she wants to greet the user in a better way. Ask the user for their name and use your newly acquired string manipulation skills to greet them in the following way:<br><br>
-
-	"Welcome to the bakery Eve! What would you like to order today?"<br><br>
-
-	Hint: Use string concatenation!
-</p>
+<p>We don’t have any questions for this level, just feel free to experiment with what you just learnt.</p>
