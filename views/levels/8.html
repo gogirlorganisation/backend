@@ -1,75 +1,132 @@
-<h1>Control Flow- If and Else</h1>
+<h1>Level 8</h1>
 
-<h3>If</h3>
-<p>
-	Eve wants to bake a cake! Her mother told her that the cake needs to be in the oven for 25 minutes. So, <br><br>
+<p>While doing fancy maths is pretty cool, a computer can do much more than that. It can talk! You must have seen this before and we told you that this is called a string.</p>
 
-	if the timer is equal to 25 minutes:<br>
-	&emsp;&emsp;Eve needs to take out the cake!<br><br>
+<pre><code>thisIsASentence = "hello world"</code></pre>
 
-	If statements use conditionals to decide whether or not a certain block of code is executed. So, if the condition is true, then the statements are executed; The syntax looks like this:<br><br>
+<p>It is used store words and sentences in Python. You may think of it as a chain of letters, numbers or anything you can type on your keyboard, hence the name String as its a ‘string’ of <span id="w1">characters</span><span id="p1"> (most keys that you can see on your keyboard)</span>.</p>
 
-	<pre>
-timer = 25
-if timer == 25:
-  print("Eve took out the cake")
-	</pre>
+<h3>Basic Operations</h3>
+<p>You can also do some basic math on strings, this might seems a bit weird but remember, simple computers don’t know how to talk.</p>
 
-	In this case, since the condition is true, the output will be: Eve took out the cake<br><br>
+<pre><code>>>> a = "hello"
+>>> a + " world"
+hello world
+>>> a*5
+hellohellohellohellohello</code></pre>
 
-	However, if the value of timer is not 25 then the printing code won’t run.<br><br>
+<h3>Practice Question</h3>
 
-	<b>Note:</b> The white space before the print block indicates that the print is part of the if block. This is called <b>indentation</b> and is crucial in Python syntax. This can be keyed into your program by the Tab key on your keyboard.<br><br>
+<table>
+	<tr>
+		<th>Statement/Expression</th>
+		<th>Output</th>
+	</tr>
+	<tr>
+		<td>s[1]</td>
+		<td><input type="text" name="q1"></td>
+	</tr>
+	<tr>
+		<td>s[15]</td>
+		<td><input type="text" name="q2"></td>
+	</tr>
+	<tr>
+		<td>s[1:5]</td>
+		<td><input type="text" name="q3"></td>
+	</tr>
+	<tr>
+		<td>s[:5]</td>
+		<td><input type="text" name="q4"></td>
+	</tr>
+	<tr>
+		<td>s[5:] 'H' in s</td>
+		<td><input type="text" name="q5"></td>
+	</tr>
+	<tr>
+		<td>'x' in s  index('w')</td>
+		<td><input type="text" name="q6"></td>
+	</tr>
+	<tr>
+		<td>s.index('x')</td>
+		<td><input type="text" name="q7"></td>
+	</tr>
+	<tr>
+		<td>s.index('l', 5)</td>
+		<td><input type="text" name="q8"></td>
+	</tr>
+	<tr>
+		<td>s.find('e')</td>
+		<td><input type="text" name="q9"></td>
+	</tr>
+	<tr>
+		<td>s.find('x')</td>
+		<td><input type="text" name="q10"></td>
+	</tr>
+	<tr>
+		<td>s[:4:2]</td>
+		<td><input type="text" name="q11"></td>
+	</tr>
+	<tr>
+		<td>s[2:9:3]</td>
+		<td><input type="text" name="q12"></td>
+	</tr>
+	<tr>
+		<td>s[::-1]</td>
+		<td><input type="text" name="q13"></td>
+	</tr>
+	<tr>
+		<td>s:[10:2:-3]</td>
+		<td><input type="text" name="q14"></td>
+	</tr>
+	<tr>
+		<td>'' + 'lol'</td>
+		<td><input type="text" name="q15"></td>
+	</tr>
+	<tr>
+		<td>'' + '4 / 2'</td>
+		<td><input type="text" name="q16"></td>
+	</tr>
+	<tr>
+		<td>'' + 4 / 2 '' + str(4 / 2)</td>
+		<td><input type="text" name="q17"></td>
+	</tr>
+	<tr>
+		<td>'Truth ' + 'is ' + 'always ' + 'best'</td>
+		<td><input type="text" name="q18"></td>
+	</tr>
+	<tr>
+		<td>"Truth " + "is " + "best"</td>
+		<td><input type="text" name="q19"></td>
+	</tr>
+	<tr>
+		<td>"Truth " + ('is ' + "best")</td>
+		<td><input type="text" name="q20"></td>
+	</tr>
+	<tr>
+		<td>'A double quote: "'</td>
+		<td><input type="text" name="q21"></td>
+	</tr>
+	<tr>
+		<td>"A single quote: '"</td>
+		<td><input type="text" name="q22"></td>
+	</tr>
+	<tr>
+		<td>'A single quote: ''</td>
+		<td><input type="text" name="q23"></td>
+	</tr>
+</table>
 
-	<pre>
-timer = 15
-if timer == 25:
-  print("Eve don’t take out the cake")
-	</pre>
+<input type="submit">
 
-	In this case, there would be no output as the condition, timer == 25 , is not met.
+<!-- load prefile for level 8 into cmdline -->
+<script>
+	var prefile = 8;
+</script>
 
-</p>
-
-<h3>Else</h3>
-<p>
-
-	Else statements are used to execute a block of code when the condition for the if statement is False.<br><br>
-
-	if timer is equal to 25:<br>
-	&emsp;&emsp;Tell Eve to take the cake out<br>
-	else:<br>
-	&emsp;&emsp;Tell Eve not to take the cake out<br><br>
-
-	We can write it like this in Python:<br><br>
-
-	<pre>
-if timer == 25:
-  print("Take the cake out of the oven")
-else:
-  print("Leave the cake in the oven")
-	</pre>
-
-</p>
-
-<br><br>
-
-<h2>Question</h2>
-
-<p>
-
-	Eve is managing the counter today. She loves even numbers more than odd, so she has decided that she will give a free toffee to all the bill values which are <a id="w1" href="#" onclick="return false;"><b>even. </b></a><span id="p1" class="hidden">How to check if a number is even or not? Check the <a id="w2" href="#" onclick="return false;"><b>remainder </b></a><span id="p2" class="hidden">(Use '%') </span> it gives when divided by 2!</span> <br><br>
-
-	Declare a variable bill which takes in user input. If the customer is eligible for the toffee, print ‘Here is a free toffee! Have a nice day!’. Otherwise, print ‘Have a nice day!’<br><br>
-
-	For example, if the input is 155, the output should be "Have a nice day!"<br><br>
-
-	Now, enter an even value for the bill and see what it prints!<br><br>
-
-	<b>Note:</b> To input integer value you need to enclose the input function inside int()<br>
-	<pre>
-number = int(input("Enter a number: "))
-	</pre>
+<script>
+	
+alert('this level (level 8) is incomplete. please inform naman when you see this.');
+// incompleteness note: a lot of the answers raise errors, not sure how to accept those
 
 
-</p>
+</script>

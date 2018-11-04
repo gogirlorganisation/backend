@@ -20,7 +20,7 @@ var checkCorrect = function(levels, level, answer, callback) {
 
 	if(levels[level].type == 'compiler') {
 		// if no answers, it's correct
-		if(!levels[level].answer || levels[level].answer.length == 0) {
+		if(!levels[level].answers || levels[level].answers.length == 0) {
 			callback([true]);
 			return;
 		}

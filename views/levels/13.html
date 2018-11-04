@@ -1,36 +1,52 @@
-<h1>Functions</h1>
-	<p>Ever opened your book and seen tens of pages of the syllabus you have to read for a test? Don’t you wish there could be something more concise? That’s exactly what we want in a program – it should be as short and efficient as possible! Functions can simply defined as a method which gives an output given an input.</p>
+<h1>Level 13</h1>
+<p>Hey {{user}}! Our team is doing really well and we have recently recruited many others. Let me assign you with a small task. Your task will be to maintain a record in which all the names of people who are working on this project will be stored. You can make a function that will do this task. You will initially be starting with a record which will have some names but you will have to update the remaining. Also keep in mind we might have to transfer a few recruits to other departments as well so you also need to find a solution to remove such names from that record.</p>
 
-	<p>But what if you want to create a function for something that doesn’t have a predefined one? For this, there are <b>user-defined functions</b> which you (i.e the user) have to create. The first step is to define your function, give it a name and parameter: let’s talk about Mathematics, in Trigonometry you have  functions (sin x, cos x, tan x), now they do not make sense <b>at all</b> if a value for <b>x</b> isn’t given. Here x is our <b>parameter</b> and that’s exactly what we need in coding too!</p>
+<p>Let’s first learn something that will help you in this process. </p>
 
-	<p>So let’s define a function <i>add</i> that adds two numbers given as parameters:</p>
+<p>You have been working with variables that can hold a single value what if there was a way for any variable to hold more than one. Enter <em>lists.</em></p>
 
-<pre><code>def add(m, n):
-  return m + n
-  print add(123, 77)</code></pre>
+<p>List can be thought of as ‘file’ in real life where each page in the ‘file’ is like the data you store in list.
+In file you manually add all the pages similarly you need to explicitly tell what all data you want in your list.</p>
 
-	<p>Once you call the function (use the function in your program), the parameters provided within the brackets are used to carry it out(in this example, we carry out an addition function). The variable m will have the value of 123,  n of 77 and the function yields their sum.</p>
+<p>Let's work on an example now. On your shell type the following:</p>
 
-	<p>Note: That colon present after the bracket is important, do not forget to add it after defining a function, else there will be an error.</p>
+<pre><code>>>> list1 = [2,4,6,8]
+>>> list2 = [‘Dog’,‘Cat’,‘Fish’,‘Parrot’]</code></pre>
 
-	<p>We can create a function using strings too.</p>
-<pre><code>def statement(name):
-  print(name + “, you’re doing amazing sweetie”)</code></pre>
+<p>In the above example you created 2 lists. To create a list you need to add the various elements inside [] and then assign it to a variable.
+The first list you created is a list of even numbers less than 10. Next is a list of common pets.</p>
 
-	<p>Can you create a few functions on your own?</p>
+<p>You know how strings work. You can draw some parallel between strings and lists. Just like strings you can access a particular element using indexing and slice a few elements of the list.</p>
 
-	<p>Functions mainly help us shorten our program, letting us avoid writing the same statements over and over again. Can you imagine typing the same greeting for over 100 people Now that sounds horrid! So instead of doing that, we could use functions and further reduce the load by using loops (How? That’s for you to figure out!).</p>
+<pre><code>>>> list1[2]
+6
+>>> list2[2:]
+[‘Fish’,‘Parrot’]</code></pre>
 
-	<p>In Python, function is a group of related statements that perform a specific task. Functions help break our program into smaller and modular chunks. As our program grows larger and larger, functions make it more organized and manageable.</p>
+<p>You can also add elements to a list using append:</p>
 
-	<p>Furthermore, it avoids repetition and makes code reusable.</p>
+<pre><code>>>> list2.append(‘Rabbit’)
+>>> print(list2)
+[‘Dog’,‘Cat’,‘Fish’,‘Parrot’,‘Rabbit’]</code></pre>
 
-	<h2>Question</h2>
-	<p>
-		Eve loves prime numbers but she finds it really hard to determine if a number is prime or not. She wants to use her programming skills to determine is a number a prime or not. <br><br>
+<p>You can also delete elements from lists using the index or the element you want to delete.</p>
 
-		She comes up with a very basic condition, if the number of factors of a number are greater than  <a id="w1" href="#" onclick="return false;"><b>2</b></a><span id="p1" class="hidden"> (1 and the number itself)</span> then the number is not prime. Create a function prime() to help her out!<br> <br>
+<pre><code>>>> list1.pop(1)
+4
+>>> print(list1)
+[2,6,8]
+>>> list1.remove(6)
+>>> print(list1)
+[2,8]</code></pre>
 
-		Check if 169 is a prime, if it is print "prime" if not print "not prime".
+<p>Using <code>variableName.pop(index)</code> method to remove element at particular index and <code>variableName.remove(element)</code> method to delete the first occurence of the given element from the list.</p>
 
-	</p>
+<p>Now that you have a fair amount of understanding let's work on the problem I gave earlier.</p>
+
+<pre><code>#here listOfNames is a list where names are stored and newName is the name to be added.
+def addEmploy(listOfNames,newName):
+    listOfNames.append(newName)
+
+#now think of a function to remove a name again given 2 parameters list of names and name to be deleted.</code></pre>
+
+<input type="submit">

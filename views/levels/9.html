@@ -1,84 +1,31 @@
-<h1>And, Or, Not</h1>
-<p>
-	The keywords ‘and’, and ‘or’ are used to join together boolean expressions. The syntax is:<br><br>
+<h1>Level 9</h1>
 
-	if condition1 and/or condition2:<br>
-	&emsp;&emsp;Statements
-	<br><br>
-	The keyword ‘not’ just changes a True condition to False and vica versa.
+<p>I have a very long list of email ids of all my employees but I don’t have a database with all of their names. {{user}}! I need your help! If only there was a fast way to remove ‘@aeproject.co’ from every email ID.  Oh wait, there is! Something that I learnt back during my Introduction to CS class. It’s called slicing. Okay, imagine a pre-cut loaf of bread, the kind you get from the supermarket. Now imagine a letter written on the edge of each slice. The whole loaf together will form a word or a sentence, or dare I say it! A String! Just like that we can also count the number of slices from <span id="w1">0 onwards</span><span id="p1"> (0,1,2,3,4,5,6,7,8,9,10,11,12,13...)</span>. Just like the figure shown below, we can also assign numbers backwards.</p>
 
-</p>
+<img src="/img/illustrations/level8/indices.png">
 
-<h3>Or</h3>
-<p>
+<p>Use the following examples in the terminal to get a better idea about how they work.</p>
 
-A customer wants cakes worth either $7 or $20.<br><br>
+<p>Say, I want to get the letter `e` from the string, this is what I’m going to do:</p>
 
-<pre>
-if price == 7 or price== 20:
-  print("Buy this cake!")
-else:
-  print("Don't buy this cake!")
-</pre>
+<pre><code>x="Hello"
+x[1]</code></pre>
 
-Or statements returns True if even one condition is True. So, if the price is equal to 7 the condition (price == 7 or price== 20) will return True and "Buy this cake!" will be printed.
+<p>Now, that we know how to remove a letter, this is how we remove a <span id="w2">substring</span><span id="p2"> (a part of a string)</span>. Let’s try to take out `ll`.</p>
 
-</p>
+<pre><code>x="Hello"
+x[2:4]</code></pre>
 
-<h3>And</h3>
-<p>
+<p>You might be wondering why we used 2:4 instead of 2:3. That’s because the first index number is <span id="w3">inclusive</span><span id="p3"> (includes that position)</span> and the last index number is <span id="w4">exclusive</span><span id="p4"> (doesn’t include that position)</span>. In other words, the sliced string only includes characters up to the character before the ending index.</p>
 
-The customer realized this condition isn't very logical. Instead of selecting cakes at two drastically different price points, he now makes a range of values. If the cake is more than $7 and less than $20, he'll buy it. This way, he gets more options with the same amount of money!
-<br><br>
+<p>Now you’d ask how do we get rid of all letters after a point? It’s simple. Let’s say we need to get all letters after `e` in the string, this is how we’re going to do it:</p>
 
-<pre>
-if price > 7 and price < 20:
-  print("Buy this cake!")
-else:
-  print("Don't buy this cake!")
-</pre>
+<pre><code>x="Hello"
+x[1:]</code></pre>
 
+<p>And if we only want letters before `o`, we do the following:</p>
 
-And only returns True if both the statements are True. So, if the price is equal to 21 the condition (price == 7 or price== 20) will return False and "Don't buy this cake!" will be printed.
+<pre><code>x="Hello"
+x[:-1]</code></pre>
 
-</p>
-
-<h3>Not</h3>
-<p>
-
-Another customer walks in. This one want fancy cakes and won't buy anything below $25 <br>
-
-<pre>
-if not (price < 25):
-  print("You can buy this cake!")
-else:
-  print("Don't buy this cake!")
-</pre>
-
-The not keyword is used to flip the boolean value. If the condition is false, the boolean is true, and vice versa.<br>
-So, if the the price of the cake is less than 25 then the condition <pre>(price < 25)</pre> will return True but the condition <pre>not(price < 25) </pre> will return False thus the cutomer won't buy the cake and the else condition would run. <br> <br>
-
-A follow-up question: How would you rewrite this without using the 'not' keyword, but with a > operator? Try it out right now!
-
-</p>
-
-<br><br>
-
-<h2>Question</h2>
-
-<p>
-
-	Eve needs to be at the bakery from 12:00 to 20:00, and she has asked you to write a program for her friends to check if she’s free or not.<br>So, if her friends input 8, the output would be<br><br>
-	"Eve is free at 8" or "Eve is not free at 8"<br><br>
-	Print the output for 1pm (or 13:00, input would be 13)<br><br>
-
-	<a id="w1" href="#" onclick="return false;"><b>How to concatenate integers with strings?</b></a><span id="p1" class="hidden"> The input of the time is an integer, so to add it to a string we would need to first convert it to the string because you can't add a string and int together. 
-	<pre>
-date = int(input("Enter your birthdate! "))
-print("Your lucky number is " + str(date))
-	</pre>
-	Make sure you enclose the integer in str() before adding it to a string.
-	<span>
-	
-
-</p>
+<input type="submit">

@@ -1,0 +1,49 @@
+<h1>Level 18</h1>
+<p>Lets work with For loops in this level. For loop has a different syntax to be followed, it works with something called as iterator.</p>
+<p>Before diving into an example let me introduce you with a function called range.</p>
+<p>This function can take upto 3 parameters.</p>
+<pre><code>range(x,y,z)</code></pre>
+<p>It returns numbers that start from x and goes on till y excluding y and skips z numbers.</p>
+<p>For instance, range(0,10,3) would give 0,3,6,9</p>
+<p>If only single parameter is passed it return numbers from 0 to that number excluding the said parameter. For example, range(5) would give 0,1,2,3,4</p>
+
+<p>Taking an example of for loop now.</p>
+<pre><code>>>> for x in range(5):
+...     print(x)
+...     
+0
+1
+2
+3
+4
+>>> for x in range(0,50,5):
+...     print(x)
+...     
+0
+5
+10
+15
+20
+25
+30
+35
+40
+45</code></pre>
+
+<p>Here x is the iterator.</p>
+<p><b>Note:</b> for loops do not require any update statements.</p>
+<p>Now let’s try to solve the example which we took in the previous level using for loop.</p>
+<pre><code>def sumList(listSalaries):
+    sum = 0
+    for x in range(len(listSalaries)):
+        sum = sum + listSalaries[x]  
+    return sum</code></pre>
+
+
+<p>for loops also provides a more convenient way to solve such problems of iterating through a list of items.</p>
+<pre><code>def sumList(listSalaries):
+    sum = 0
+    for x in listSalaries:
+        sum = sum + x 
+    return sum</code></pre>
+<p>The iterator is assigned values from the list directly.</p>

@@ -72,71 +72,126 @@ thisIsASentence = "hello world"\n\
 		],
 	},
 	8: {
-		type: 'compiler',
-		answers: [
-			{
-				stdin: '42',
-				stdout: 'Here is a free toffee! Have a nice day!\n'
-			},
-			{
-				stdin: '43',
-				stdout: 'Have a nice day!\n'
-			}
-		],
+		type: 'cmdline',
+		answers: [],
 	},
 	9: {
-		type: 'compiler',
-		answers: [
-			{
-				stdin: '11',
-				stdout: 'Eve is free at 11\n'
-			},
-			{
-				type: 'compiler',
-				stdin: '23',
-				stdout: 'Eve is free at 23\n'
-			},
-			{
-				stdin: '14',
-				stdout: 'Eve is not free at 14\n'
-			}
-		],
+		type: 'cmdline',
+		answers: [],
 	},
 	10: {
 		type: 'compiler',
 		answers: [
 			{
-				stdin: '',
-				stdout: 'Flour\n'
+				stdin: 'ada@aeproject.co',
+				stdout: 'ada'
+			},
+			{
+				stdin: 'japnit@aeproject.co',
+				stdout: 'japnit'
+			},
+			{
+				stdin: 'webmaster@aeproject.co',
+				stdout: 'webmaster'
 			}
 		],
 	},
 	11: {
 		type: 'compiler',
-		answers: [
-			{
-				stdin: '',
-				stdout: '96\n'
-			}
-		],
+		answers: [],
 	},
 	12: {
 		type: 'compiler',
+		defaultValue:
+'#edit code from here:\n\
+def multiply(a,b):\n\
+  return(a*b)\n\
+\n\
+def divide():\n\
+\n\
+def remainder():\n\
+\n\
+def addition():\n\
+\n\
+def subtraction():\n\
+\n\n\n\n\
+#don’t edit code below this\n\
+num1 = int(input())\n\
+num2 = int(input())\n\
+print(multiply(num1, num2))\n\
+print(divide(num1, num2))\n\
+print(remainder(num1, num2))\n\
+print(addition(num1, num2))\n\
+print(subtraction(num1, num2))',
 		answers: [
 			{
-				stdin: '',
-				stdout: 'Dark Chocolate\nVanilla Cupcakes\n'
+				stdin: '30\n20\n',
+				stdout: '600\n1.5\n10\n50\n10'
+			},
+			{
+				stdin: '5000\n20\n',
+				stdout: '100000\n250.0\n0\n5020\n4980'
 			}
 		],
 	},
 	13: {
+		type: 'cmdline',
+		answers: [],
+	},
+	14: {
+		type: 'cmdline',
+		answers: []
+	},
+	15: {
 		type: 'compiler',
 		answers: [
 			{
-				stdin: '',
-				stdout: 'not prime\n'
+				stdin: '\n',
+				stdout: 'what company do you prefer from Apple, Samsung and Google? If you don’t like any, press enter.\nYou get no phone. :/'
+			},
+			{
+				stdin: 'Google\n',
+				stdout: 'what company do you prefer from Apple, Samsung and Google? If you don’t like any, press enter.\nYou get a Google Pixel'
+			},
+			{
+				stdin: 'Samsung\n',
+				stdout: 'what company do you prefer from Apple, Samsung and Google? If you don’t like any, press enter.\nYou get a Galaxy S8'
+			},
+			{
+				stdin: 'Apple',
+				stdout: 'what company do you prefer from Apple, Samsung and Google? If you don’t like any, press enter.\nYou get an iPhone'
+			}
+		]
+	},
+	16: {
+		type: 'compiler',
+		answers: [
+			{
+				stdin: '352500\n11\n',
+				stdout: '5'
+			},
+			{
+				stdin: '2965000\n42\n',
+				stdout: '42'
+			},
+			{
+				stdin: '4864500\n30\n',
+				stdout: '30'
 			}
 		],
+		defaultValue:
+'surplusMoney = input()\n\
+emptyDesks = input()\n\
+salaryOfProgrammer = 70500\n\n\n\
+#write code from here:\n\n\n'
+	},
+	17: {
+		type: 'cmdline',
+		answers: []
+	},
+	18: {
+		type: 'cmdline',
+		answers: []
 	}
 };
 

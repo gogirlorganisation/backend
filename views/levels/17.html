@@ -1,0 +1,44 @@
+<h1>Level 17</h1>
+
+<p>Oh hey! We are given a task by our HR Department to solve I am sure you will be able to handle this. We need to make a function that will accept a list of salaries of employees and return the sum of all the entries in the list.</p>
+
+<p>To solve such problems where a task is being repeated over and over again, or <span id="w1">iterate</span><span id="p1"> (perform a task repeatedly)</span> we’ll learn the concept of Loops.</p>
+
+<p>Let's understand how loops work in general: </p>
+
+<img src="/img/levels/level17/while.png">
+
+<p>In the figure we can see the task being repeated over and over again until the condition True and it exits loop if the condition is False.</p>
+<p>So now that you know how loops work. Let’s implement this in Python. We use While and For for this. We’ll be covering While in this Level.</p>
+
+<p>Type the following in the shell:
+<pre><code>>>> i=5
+>>> while i>0 :
+...     print(i)
+...     i = i - 1
+...
+5
+4
+3
+2
+1</code></pre>
+
+<p>In the above code variable i is assigned the value 5 in the first statement. Next we use while [condition]: here the condition is i>0</p>
+<p>Next comes the statements that are to be executed repeatedly. </p>
+<p>Again here just like if-else you use a tab to separate the block of code under the while loop. Print statement prints the variable i and the next updates the variable.</p>
+<p>Keep in Mind: For every while loop you need to have a statement which updates the variable that is used in the condition which in this case is i.</p>
+<strong>#if question is updated. Change the following section.</strong>
+<script>alert('#if question is updated. Change the following section.')</script>
+<p>Coming back to the question we wished to solve. Here you will need to use the concepts of list, functions and loops together.</p>
+
+<pre><code>def sumList(listSalaries):
+    sum = 0
+    i = 0
+    while (i&lt;len(listSalaries)):
+        sum = sum + listSalaries[i] 
+        i = i + 1
+    return sum</pre></code>
+
+<p>The function takes the list as a parameter, Variable sum is initialized with 0 value. Variable i is also initialized with 0. Next is the while loop with the condition that will check that value of i will be less than length of the list. The next two line comprises of the while loop statements. sum is assigned the sum of its previous value with the current value that is accessed in the list. And the final line returns the sum.</p>
+
+<input type="submit">
