@@ -25,7 +25,7 @@ var answers = {
 	},
 	2: {
 		type: 'cmdline',
-		answers: []
+		answers: ['45']
 	},
 	3: {
 		type: 'cmdline',
