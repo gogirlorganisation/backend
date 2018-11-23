@@ -1,1 +1,2 @@
-s = 'Hello World!'
+s = 'Hello'
+b = 'World!'

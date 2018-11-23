@@ -29,11 +29,11 @@ var answers = {
 	},
 	3: {
 		type: 'cmdline',
-		answers: []
+		answers: ['integer', 'float', 'integer', 'float', 'integer', 'integer']
 	},
 	4: {
 		type: 'cmdline',
-		answers: [],
+		answers: ['49504'],
 	},
 	5: {
 		type: 'compiler',
@@ -73,7 +73,17 @@ thisIsASentence = "hello world"\n\
 	},
 	8: {
 		type: 'cmdline',
-		answers: [],
+		answers: [
+			'HelloHelloHello',
+			'HelloHelloHelloHelloHello',
+			'HelloWorld!HelloWorld!HelloWorld!HelloWorld!HelloWorld!',
+			'lol',
+			'4 / 2',
+			'???',
+			'Truth is always best',
+			'Truth is best',
+			'Truth is best'
+		],
 	},
 	9: {
 		type: 'cmdline',
