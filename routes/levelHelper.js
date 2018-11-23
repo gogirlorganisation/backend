@@ -2,6 +2,7 @@ var run = require('./compiler');
 var pseudoSocket = require('./pseudoSocket');
 var request = require('request');
 var levels = require('./answers');
+var trainingLevels = require('./trainingLevels');
 
 var rough = function(str) {
 	return str.trim().toLowerCase().replace(/[^a-z0-9.]/g, '');
@@ -9,6 +10,68 @@ var rough = function(str) {
 
 var regEscape = function(str) {
 	return str.replace(/([.?*+^$[\]\\(){}|-])/g, "\\$1");
+}
+
+var checkTrainingCorrect = function(level, answer, callback) {
+	var returnValues = [];
+
+	if(!trainingLevels[level] || trainingLevels[level].length == 0) {
+		callback(true);
+		return;
+	}
+
+	// filter: remove input prompts for checking
+	var inputFiltered = answer;
+
+	inputFiltered = inputFiltered.split('input(');
+
+	for(var i = 1; i < inputFiltered.length; i++) {
+		var str = inputFiltered[i];
+		str = str.split(')');
+		str.shift();
+		str = str.join(')');
+		str = ')' + str;
+		inputFiltered[i] = str;
+	}
+
+	inputFiltered = inputFiltered.join('input(');
+
+	answer = inputFiltered;
+
+	for(var i = 0; i < trainingLevels[level].length; i++) {
+		// program execution is asynchronus so returnValues[] counts number of functions
+		// that have returned, then after the last one is done we run the callback with
+		// the required result
+		(function(i) {
+			var stdin = trainingLevels[level][i].stdin;
+			var stdout = trainingLevels[level][i].stdout;
+
+			var socket = new pseudoSocket(stdin);
+
+			var program = run(answer, socket);
+
+			program.stdout.on('data', function(data) {
+				socket.emit('stdout', data);
+			});
+
+			program.stderr.on('data', function(data) {
+				socket.emit('stderr', data);
+			});
+
+			socket.on('stdin', function(data) {
+				program.stdin.write(data + '\n');
+			});
+
+			program.on('exit', function() {
+				var received = socket.output().stdout;
+				returnValues[returnValues.length] = (rough(received) === rough(stdout));
+				if(returnValues.length === trainingLevels[level].length) {
+					var checker = returnValues.indexOf(false) < 0;
+					callback(checker);
+				}
+			});
+		})(i);
+	}
 }
 
 var checkCorrect = function(level, answer, callback) {
@@ -122,6 +185,7 @@ var sendToAlset = function(params, res) {
 
 module.exports = {
 	checkCorrect: checkCorrect,
+	checkTrainingCorrect: checkTrainingCorrect,
 	sendToAlset: sendToAlset,
 	rough: rough,
 	regEscape: regEscape

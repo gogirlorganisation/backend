@@ -210,7 +210,6 @@ code.stdout, code.stderr {
 .question {
   width: 50%;
   background: #fff;
-  border-radius: 10px;
   overflow-x: hidden;
   padding: 0 30px 25px;
   box-shadow: 0 10px 35px 0px rgba(0, 0, 0, 0.1);
