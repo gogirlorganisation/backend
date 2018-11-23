@@ -1,6 +1,7 @@
 var run = require('./compiler');
 var pseudoSocket = require('./pseudoSocket');
 var request = require('request');
+var levels = require('./answers');
 
 var rough = function(str) {
 	return str.trim().toLowerCase().replace(/[^a-z0-9.]/g, '');
@@ -10,7 +11,7 @@ var regEscape = function(str) {
 	return str.replace(/([.?*+^$[\]\\(){}|-])/g, "\\$1");
 }
 
-var checkCorrect = function(levels, level, answer, callback) {
+var checkCorrect = function(level, answer, callback) {
 	var returnValues = [];
 
 	if(!levels[level]) {

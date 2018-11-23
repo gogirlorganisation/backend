@@ -30,7 +30,7 @@ router.get('/:level', function(req, res) {
 router.post('/:level', function(req, res, next) {
 	try {
 		if(req.isAuthenticated()) {
-			levelHelper.checkCorrect(answers, req.params.level, req.body.answer, function(isCorrect) {
+			levelHelper.checkCorrect(req.params.level, req.body.answer, function(isCorrect) {
 				if(isCorrect.indexOf(false) < 0) {
 					var win = function() { 
 						res.send({ message: 'win', correct: isCorrect });

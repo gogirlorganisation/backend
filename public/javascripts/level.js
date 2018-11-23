@@ -74,11 +74,11 @@ function escapeHTML(unsafe) {
 }
 
 function out(text) {
-	$('.stdout').html($('.stdout').text() + escapeHTML(text));
+	$('.stdout').html($('.stdout').html() + escapeHTML(text));
 }
 
 function err(text) {
-	$('.stderr').html($('.stderr').text() + escapeHTML(text));
+	$('.stdout').html($('.stdout').html() + '<em>' + escapeHTML(text) + '</em>');
 }
 
 $('form.compiler').on('submit', function(e) {
@@ -89,7 +89,6 @@ $('form.compiler').on('submit', function(e) {
 	var socket = io.connect('/');
 
 	$('.stdout').html('');
-	$('.stderr').html('');
 
 	socket.emit('code', $(this).find('textarea').val());
 

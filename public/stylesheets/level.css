@@ -26,15 +26,16 @@ span[id^='p'] {
 
 div .nav {
   height: 3rem;
-  position: fixed;
+  position: sticky;
   background: #ffffffec;
   top: 0;
   line-height: 3rem;
   display: flex;
   justify-content: space-between;
-  width: 360px;
+  width: 100%;
   top: 0;
-  left: 20px;
+  left: 0;
+  box-sizing: border-box;
 }
 
 div .nav > a {
@@ -74,6 +75,52 @@ input {
   border-radius: 2.5px;
 }
 
+.question table td:nth-child(2) {
+  padding: 0;
+}
+
+.question table input {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: block;
+  border: 0;
+  border-color: inherit;
+  padding: 0.5rem 1rem;
+  font: inherit;
+  margin: 0;
+}
+
+input.correct {
+  border-color: rgba(46, 204, 113,1.0);
+  background: rgba(46, 204, 113,0.1);
+}
+
+input.incorrect {
+  border-color: rgba(231, 76, 60,1.0);
+  background: rgba(231, 76, 60,0.1);
+}
+
+input[type="submit"] {
+    margin: 1.5rem auto 0.5rem;
+    display: block;
+    font: inherit;
+    background-image: linear-gradient(-30deg, #f37 10%, #ff334485 90%);
+    color: white;
+    border: 0;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4rem;
+    background-size: 200% 100%;
+    background-position: right top;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+input[type="submit"]:hover {
+    background-position: left top;
+}
+
 textarea[name=code] {
   font-family: monospace;
   height: 250px !important;
@@ -84,6 +131,9 @@ textarea[name=code] {
 
 .CodeMirror {
   text-align: left;
+  box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.1);
+  border-radius: 0.5rem;
+  margin: 0.25rem;
 }
 
 textarea {
@@ -107,7 +157,6 @@ button:hover {
 }
 
 .output-container pre {
-  max-width: 50%;
   margin: 0.5rem 0.25rem;
   background: white;
   position: relative;
@@ -117,10 +166,8 @@ button:hover {
   display: flex;
   justify-content: stretch;
   align-items: stretch;
-}
-
-.output-container pre.cmdline {
-  max-width: 100%;
+  box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.1);
+  border-radius: 0.5rem;
 }
 
 code.stdout, code.stderr {
@@ -161,11 +208,11 @@ code.stdout, code.stderr {
 }
 
 .question {
-  width: 420px;
+  width: 50%;
   background: #fff;
   border-radius: 10px;
   overflow-x: hidden;
-  padding: 25px 30px;
+  padding: 0 30px 25px;
   box-shadow: 0 10px 35px 0px rgba(0, 0, 0, 0.1);
   text-align: left;
   box-sizing: border-box;
@@ -192,8 +239,13 @@ form p {
 
 input.stdin {
     text-align: left;
-    height: 3rem;
     font-size: 1rem;
+    font: inherit;
+    padding: 0.75rem 1.5rem;
+    border: 0;
+    margin: 0.75rem 0.25rem 0.25rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.1);
+    border-radius: 0.5rem;
 }
 
 /*[ Input ]*/
@@ -289,7 +341,10 @@ input.stdin {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding-top: 13px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
 }
 
 .form-in-button {
@@ -297,9 +352,10 @@ input.stdin {
   display: block;
   position: relative;
   z-index: 1;
-  border-radius: 25px;
   overflow: hidden;
   margin: 0 auto;
+  box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.1);
+  border-radius: 0.5rem;
 }
 
 .bgbutton {
@@ -341,12 +397,17 @@ input.stdin {
 }
 
 
-img.hidden {
+.eve-container img.hidden {
   display: none;
 }
 
 .eve-container {
   position: relative;
+}
+
+.eve-container img {
+  display: block;
+  margin: auto;
 }
 
 .bubble {
@@ -388,6 +449,7 @@ img.hidden {
 
 table {
     border-collapse: collapse;
+    width: 100%;
 }
 
 th {

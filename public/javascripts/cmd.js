@@ -30,6 +30,17 @@ var Person = function() {
 
 var Eve = new Person();
 
+$('form.submit input').each(function() {
+	if(!$(this).attr('placeholder')) {
+		$(this).attr('placeholder', 'Type an answer...');
+	}
+	$(this).attr('autocomplete', 'off');
+
+	$(this).on('keypress', function() {
+		$(this).removeClass('correct').removeClass('incorrect');
+	});
+});
+
 $('form.submit').on('submit', function(e) {
 	e.preventDefault();
 
@@ -66,6 +77,18 @@ $('form.submit').on('submit', function(e) {
 				location.href = '/login';
 			}
 			else alert(data.message);
+
+			if(data.correct) {
+				for(var i = 0; i < data.correct.length; i++) {
+					if(data.correct[i]) {
+						$(`input[name="q${ i + 1 }"]`).removeClass('incorrect').addClass('correct');
+					}
+
+					else {
+						$(`input[name="q${ i + 1 }"]`).removeClass('correct').addClass('incorrect');
+					}
+				}
+			}
 		},
 		error: function(xhr, err) {
 			alert('see console for error');
