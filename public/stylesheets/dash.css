@@ -11,6 +11,12 @@ html * {
 ::-moz-selection { background-color: rgba(255, 51, 85, .45); }
 ::selection { background-color: rgba(255, 51, 85, .45); }
 
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .nav {
   text-align: right;
   text-transform: uppercase;
@@ -67,6 +73,7 @@ body .timeline{
   background-color: #e9f0f5;
   text-align: left;
   overflow: hidden;
+  flex: 1;
 }
 
 a {
