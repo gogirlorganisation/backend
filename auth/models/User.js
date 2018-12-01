@@ -13,6 +13,8 @@ var schema = new Schema({
 	solvedLevels: Object,
 	solvedTrainingLevels: Object,
 	alsetUser: Boolean,
+	passwordResetToken: String,
+	passwordResetTime: Number
 });
 
 schema.plugin(findOrCreate);

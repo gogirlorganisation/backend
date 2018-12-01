@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+	<title>The Girl Code</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/forms.css">
+	<link rel="stylesheet" href="https://use.typekit.net/pme3yyf.css">
+</head>
+<body>
+	<div class="limiter">
+		<div class="container">
+			<div class="card">
+				<form class="formlogin" action="/users/password/reset" method="post">
+					<h1 class="formtitle">Password Reset</h1>
+
+					<div class="inputtype">
+						<input class="an-input" type="text" name="username">
+						<span class="focus-an-input" data-placeholder="Username"></span>
+					</div>
+
+					<div class="formbutton">
+						<div class="form-in-button">
+							<div class="bgbutton"></div>
+							<button class="loginbutton" type="submit">Send reset email</button>
+						</div>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+
+$('.an-input').each(function(){
+    $(this).on('blur', function(){
+        if($(this).val().trim() != "") {
+            $(this).addClass('hasvalue');
+        }
+        else {
+            $(this).removeClass('hasvalue');
+        }
+    })    
+});
+	
+var e = '{{status}}';
+
+if(e == 'blank') alert('Please enter your username.');
+if(e == 'fail') alert('Please enter a valid username.');
+if(e == 'expired') alert('This token has expired. Please generate a new one.');
+
+</script>
+</body>
+</html>

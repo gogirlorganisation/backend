@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var login = require('../auth/helper');
+var auth = require('../auth/helper');
 
 module.exports = function(passport) {
 	router.post('/signup', function(req, res, next) {
@@ -27,7 +27,7 @@ module.exports = function(passport) {
 
 	router.get('/setalsettest', function(req, res) {
 		// todo: remove this once proper implemenation of login is done
-		login.setAsAlsetUser(req.user.username, function(msg) {
+		auth.setAsAlsetUser(req.user.username, function(msg) {
 			res.send(msg);
 		})
 	});
@@ -70,7 +70,7 @@ module.exports = function(passport) {
 	router.post('/new', function(req, res) {
 		if(req.user && req.user.username === req.user.email) {
 			if(req.body.username) {
-				login.setUsername(req.user.username, req.body.username, function(err) {
+				auth.setUsername(req.user.username, req.body.username, function(err) {
 					res.send({
 						message: err || 'success'
 					});
@@ -85,6 +85,68 @@ module.exports = function(passport) {
 		else {
 			res.redirect('/');
 		}
+	});
+
+	router.get('/password/reset', function(req, res) {
+		res.render('pwreset', {
+			status: req.query.status || ''
+		});
+	});
+
+	router.post('/password/reset', function(req, res) {
+		var username = req.body.username;
+
+		if(!username) {
+			res.redirect('/users/password/reset?status=blank');
+			return;
+		}
+
+		auth.genResetToken(username, function(success) {
+			if(success) {
+				res.redirect('/users/password/change?username=' + username);
+			}
+
+			else {
+				res.redirect('/users/password/reset?status=fail');
+			}
+		});
+	});
+
+	router.get('/password/change', function(req, res) {
+		res.render('pwchange', {
+			username: req.query.username,
+			status: req.query.status || ''
+		});
+	});
+
+	router.post('/password/change', function(req, res) {
+		var username = req.body.username,
+			token = req.body.token,
+			password = req.body.password;
+
+		if(!username) {
+			res.redirect('/users/password/reset');
+			return;
+		}
+
+		if(!password || !token) {
+			res.redirect('/users/password/change?status=blank&username=' + username);
+			return;
+		}
+
+		auth.changePassword(username, token, password, function(status) {
+			if(status == 'success') {
+				res.redirect('/login?reset=success');
+			}
+
+			else if(status == 'expired') {
+				res.redirect('/users/password/reset?status=expired');
+			}
+
+			else {
+				res.redirect('/users/password/change?status=fail');
+			}
+		});
 	});
 
 	return router;

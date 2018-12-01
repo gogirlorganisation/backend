@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+	<title>The Girl Code</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/forms.css">
+	<link rel="stylesheet" href="https://use.typekit.net/pme3yyf.css">
+</head>
+<body>
+	<div class="limiter">
+		<div class="container">
+			<div class="card">
+				<form class="formlogin" action="/users/password/change" method="post">
+					<h1 class="formtitle">Password Change</h1>
+
+					<div class="inputtype">
+						<input class="an-input" type="text" name="token">
+						<span class="focus-an-input" data-placeholder="Reset token"></span>
+					</div>
+					<div class="inputtype">
+						<input class="an-input" type="password" name="password">
+						<span class="focus-an-input" data-placeholder="New password"></span>
+					</div>
+
+					<input type="hidden" name="username" value="{{username}}">
+
+					<div class="formbutton">
+						<div class="form-in-button">
+							<div class="bgbutton"></div>
+							<button class="loginbutton" type="submit">Change password</button>
+						</div>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+
+$('.an-input').each(function(){
+    $(this).on('blur', function(){
+        if($(this).val().trim() != "") {
+            $(this).addClass('hasvalue');
+        }
+        else {
+            $(this).removeClass('hasvalue');
+        }
+    })    
+});
+	
+var e = '{{status}}';
+
+if(e == 'blank') alert('Please fill all fields.');
+if(e == 'fail') alert('Please enter a valid username and token.');
+
+</script>
+</body>
+</html>
