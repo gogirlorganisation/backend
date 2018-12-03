@@ -5,7 +5,10 @@ Testcase consists of input string (stdin) and expected output (stdout).
 Every print() statement is followed by a newline (\n).
 Every input() to the program is followed by a newline as well.
 
-cmdline answer format: array of strings, answers[i] is the answer to textbox q_i_.
+cmdline answer format: 
+	array of:
+		- strings, answers[i] is the answer to textbox q_i_.
+		- array of strings, each string in answers[i] is a correct answer to q_i_.
 
 */
 
