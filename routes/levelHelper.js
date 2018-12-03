@@ -148,8 +148,8 @@ var checkCorrect = function(level, answer, callback) {
 		answer = answer.split(',');
 		var result = [];
 		for(var i = 0; i < correct.length; i++) {
-			result[i] = correct[i] === answer[i].trim();
-			if(typeof correct[i] === 'Array') result[i] = correct[i].indexOf(answer[i].trim()) >= 0;
+			if(Array.isArray(correct[i])) result[i] = correct[i].indexOf(answer[i].trim()) >= 0;
+			else result[i] = correct[i] === answer[i].trim();
 			if(result[i] == false) console.log(answer[i].trim(), correct[i]);
 		}
 
