@@ -24,11 +24,11 @@ module.exports = {
 	},
 	3: {
 		type: 'cmdline',
-		answers: ['integer', 'float', 'integer', 'float', 'integer', 'integer']
+		answers: ['int', 'float', 'int', 'float', 'int', 'int']
 	},
 	4: {
 		type: 'cmdline',
-		answers: ['49504'],
+		answers: ['122632.0'],
 	},
 	5: {
 		type: 'compiler',
@@ -46,23 +46,21 @@ module.exports = {
 	7: {
 		type: 'compiler',
 		defaultValue: 
-'# this is a comment, everything in this line is ignored after this.\n\
+'# this is a comment, everything in this line is ignored after the hash sign (#).\n\
 \n\
 bolts = 10\n\
 screws = 2000.0\n\
 heatSinks = 15\n\
-metalSheets = 1000.23\n\
-pens = 45\n\
 thisIsASentence = "hello world"\n\
 \n\
 # print the value and then the type of all the items assigned above\n\
-# keep that this is automated checking, so you need to print in the \n\
-# specific order as given above.\n\
+# keep in mind that this is automated checking, so you need to print\n\
+# in the specific order as given above.\n\
 # Write code below this line:\n',
 		answers: [
 			{
 				stdin: '',
-				stdout: '10\n2000.0\n15\n1000.23\n45\nhello world'
+				stdout: '10\n2000.0\n15\nhello world'
 			}
 		],
 	},

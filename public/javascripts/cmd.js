@@ -112,7 +112,7 @@ function out(text) {
 
 var socket = io.connect('/');
 
-var prefile = prefile || 'none';
+var prefile = prefile || 'blank';
 
 socket.emit('cmdline', prefile);
 
@@ -153,4 +153,10 @@ $(document).ready(function () {
 		});
 	};
 	MastStory();
+
+	if($('form.submit input[type="text"]').length == 0) {
+		$('.eve-container').remove();
+		$('form.submit').submit();
+		$('form.submit').find('input[type="submit"], button').remove();
+	}
 });
