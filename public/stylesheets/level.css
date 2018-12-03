@@ -208,7 +208,8 @@ code.stdout, code.stderr {
 }
 
 .question {
-  width: 50%;
+  width: 40%;
+  max-width: 32rem;
   background: #fff;
   overflow-x: hidden;
   padding: 0 30px 25px;
