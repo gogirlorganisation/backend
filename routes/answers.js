@@ -60,7 +60,7 @@ thisIsASentence = "hello world"\n\
 		answers: [
 			{
 				stdin: '',
-				stdout: '10\n2000.0\n15\nhello world'
+				stdout: '10\n2000.0\n15\nhello world\n<class \'int\'>\n<class \'float\'>\n<class \'int\'><class \'str\'>'
 			}
 		],
 	},
@@ -68,12 +68,10 @@ thisIsASentence = "hello world"\n\
 		type: 'cmdline',
 		answers: [
 			'HelloHelloHello',
-			'HelloHelloHelloHelloHello',
-			'HelloWorld!HelloWorld!HelloWorld!HelloWorld!HelloWorld!',
+			'HelloWorld!HelloWorld!',
 			'lol',
 			'4 / 2',
-			'???',
-			'Truth is always best',
+			['Truth is always best', '\'Truth is always best\''],
 			'Truth is best',
 			'Truth is best'
 		],
