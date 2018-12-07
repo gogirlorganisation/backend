@@ -36,7 +36,7 @@ router.get('/dashboard', function(req, res) {
 		else {
 			var levels = Object.keys(req.user.solvedLevels || {});
 
-			var i = 1;
+			var i = 0;
 
 			// find first level which isn't on the solved list
 			while(i <= levels.length && parseInt(levels[i-1]) === i) i++;
