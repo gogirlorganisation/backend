@@ -39,7 +39,7 @@
 
         nodemon bin/www
 
-6. Site will be at localhost:3000
+6. Site will be at localhost:62242
 
 Note: In order for Facebook and Google login to work on localhost, you will need to do the following:
 
