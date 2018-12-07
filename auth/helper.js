@@ -4,7 +4,7 @@ var nodemailer = require('nodemailer');
 var User = require('./models/User');
 var keys = require('./keys');
 
-var transport = nodemailer.createTransport(keys.email.login, keys.email.defaults);
+//var transport = nodemailer.createTransport(keys.email.login, keys.email.defaults);
 
 var genResetToken = function(username, callback) {
 	if(!username) {
@@ -25,9 +25,14 @@ var genResetToken = function(username, callback) {
 		user.passwordResetTime = Date.now() + (24 * 60 * 60 * 1000); // one day
 
 		user.save(function(err) {
+
 			if(err) callback(false);
 
 			else {
+				callback(true); return;
+			}
+
+			/*else {
 				transport.sendMail({
 					to: user.email,
 					subject: 'The Girl Code',
@@ -40,7 +45,7 @@ var genResetToken = function(username, callback) {
 
 					else callback(true);
 				});
-			}
+			}*/
 		});
 	});
 };
