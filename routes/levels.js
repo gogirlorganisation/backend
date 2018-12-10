@@ -8,11 +8,16 @@ router.get('/:level', function(req, res) {
 	if(req.isAuthenticated()) {
 
 		if(answers[req.params.level]) {
-			var nextLevel = parseInt(req.params.level) + 1;
+			var nextLevel = (parseInt(req.params.level) + 1).toString();
+			if(parseInt(req.params.level) > 0)
+				var prevLevel = (parseInt(req.params.level) - 1).toString();
+			else
+				var prevLevel = '';
 			var defaultValue = answers[req.params.level].defaultValue || '# Code here!\n';
 			res.render(answers[req.params.level].type, {
 				user: req.user.username,
 				nextLevel: nextLevel,
+				prevLevel: prevLevel,
 				partials: {
 					levelText: 'levels/' + req.params.level
 				},
