@@ -1,25 +1,30 @@
 <h1>Level 11</h1>
 
-<p>Hey {{user}}! In any project that you work on in life, each element of that project has a specific function. Be it building a supercomputer with a team, or the computer itself. Just like your function is to assist me in doing tasks, the RAM in the computer also helps in managing many open programs. Just like that, in anything that we see around us, has elements that perform certain functions.</p>
+<p>Hey {{user}}! Everything in life has a specific function, be it building a supercomputer with a team, or the computer itself. For example, your function is to assist me or the computer screen’s function is to display things. Just like that, there are certain elements of code which are present to perform a certain function.</p>
 
-<p>Something similar exists in programming. What you’ll be learning today are functions. Functions are a block of code that you can run again at any point of time in your program. Let’s look at an example to see how it works.</p>
+<p>Functions are a block of code that you can run again at any point of time in your program. Let’s look at an example to see how it works.</p>
 
 <pre><code>#sayHello is a function.
 def sayHello():
-    return(“hello world!”)
+    return("hello world!")
 
-print(“this is a line of text”)
+print("this is a line of text")
 print(sayHello())
-print(“this is another line of text”)
+print("this is another line of text")
 print(sayHello())</code></pre>
 
-<p>Let’s see what’s happening in this <span id="w1">code snippet</span><span id="p1"> (a small piece of code)</span>. First we are defining the function sayHello() which will be called again and again. That is why we write ‘def’ and then the name of the function, followed by ():. So a function is like a tiny program within the main program that when run returns some value.</p>
+<p>Let’s see what’s happening in this <span id="w1">code snippet</span><span id="p1"> (a small piece of code)</span>. The keyword <b>def</b> is used to define a function. It is followed by a function name which in this case is sayHello( ) . Every function must have an open and a close parenthesis ( ) . <span id="w2">You have encountered it before, do you remember?</span><span id="p2">(Remember the inbuilt functions print, input, and type, all had open and close parenthesis following them)</span> This is followed by a “:” as a part of the syntax. All functions return some value in this case “hello world”. The full syntax is:
+</p>
 
-<p>Once we run this program the first thing to be printed is “this is a line of text”. Then on the next line “hello world!” gets printed because we call the function sayHello() followed by “this is another line of text” and then finally “hello world!” since sayHello() is being called again.</p>
+<pre><code>def function_name():
+	return some_value
+</code></pre>
+
+<p>Once we run this program the first thing to be printed is “this is a line of text”. Then on the next line “hello world!” gets printed because we call the function sayHello( ) followed by “this is another line of text” and then finally “hello world!” since sayHello() is being called again.</p>
 
 <p>Now, this is useful as it can help reduce several lines in a program but it would be more interesting if we could give it some input and it’ll return a unique output for every input. We can do that! Let’s take the addition example we used before.</p>
 
-<pre><code>def addNum(a, b)
+<pre><code>def addNum(a, b):
     return(a+b)
 
 print(addNum(5,2))</code></pre>
