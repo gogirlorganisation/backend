@@ -18,6 +18,7 @@ a {
 span[id^='w'] {
   color: rgb(255, 51, 85);
   font-weight: bold;
+  cursor: pointer;
 }
 
 span[id^='p'] {
