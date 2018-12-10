@@ -16,10 +16,11 @@
 <body>
 	<div class="question">
 		<div class="nav">
-			<a href='/dashboard' style="padding-right: 7rem;">&larr; Back to the dashboard</a>
+			<a href='/levels/{{prevLevel}}' style="padding-right: 7rem;">{{#prevLevel}}&larr; Previous{{/prevLevel}}</a>
 			<a href='/levels/{{nextLevel}}'>Next &rarr;</a>
 		</div>
 		<br>
+		<span class="breadcrumbs"><a href="/dashboard">Dashboard</a> ❯</span>
 		<form method="post" class="submit">
 			{{> levelText}}
 		</form>
