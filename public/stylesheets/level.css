@@ -168,12 +168,15 @@ button:hover {
   align-items: stretch;
   box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.1);
   border-radius: 0.5rem;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 code.stdout, code.stderr {
     display: block;
     overflow-x: auto;
     flex: 1;
+    white-space: pre-wrap;
 }
 
 .output-container pre:before {
