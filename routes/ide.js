@@ -12,6 +12,8 @@ io.on('connection', function(socket) {
 		if(!socketBeingUsed) {
 			socketBeingUsed = true;
 
+			console.log(content);
+
 			var program = run(content, socket);
 
 			program.stdout.on('data', function(data) {

@@ -181,8 +181,8 @@ print(subtraction(num1, num2))',
 			}
 		],
 		defaultValue:
-'surplusMoney = input()\n\
-emptyDesks = input()\n\
+'surplusMoney = int(input())\n\
+emptyDesks = int(input())\n\
 salaryOfProgrammer = 70500\n\n\n\
 #write code from here:\n\n\n'
 	},

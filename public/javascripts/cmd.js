@@ -111,6 +111,7 @@ function escapeHTML(unsafe) {
 
 function out(text) {
 	$('.stdout').html($('.stdout').text() + escapeHTML(text));
+	$('.stdout')[0].scrollTop = $('.stdout')[0].scrollHeight;
 }
 
 var socket = io.connect('/');

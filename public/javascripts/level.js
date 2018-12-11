@@ -40,6 +40,7 @@ $('form.submit').on('submit', function(e) {
 			answer: $('form.compiler textarea').val()
 		},
 		success: function(data) {
+			$('form.compiler button').prop('disabled', false);
 			if(data.message == 'win') {
 				Eve.say('Correct answer,<br>well done!');
 				//Eve.happy();
@@ -58,6 +59,7 @@ $('form.submit').on('submit', function(e) {
 			else alert(data.message);
 		},
 		error: function(xhr, err) {
+			$('form.compiler button').prop('disabled', false);
 			alert('see console for error');
 			console.log(err);     
 		}
@@ -81,7 +83,15 @@ function err(text) {
 	$('.stdout').html($('.stdout').html() + '<em>' + escapeHTML(text) + '</em>');
 }
 
-$('form.compiler').on('submit', function(e) {
+$('form.compiler button.submit').on('click', function(e) {
+	e.preventDefault();
+
+	$('form.compiler button').prop('disabled', true);
+
+	$('form.submit').submit();
+});
+
+$('form.compiler button.run').on('click', function(e) {
 	e.preventDefault();
 
 	$('form.compiler button').prop('disabled', true);
@@ -90,7 +100,7 @@ $('form.compiler').on('submit', function(e) {
 
 	$('.stdout').html('');
 
-	socket.emit('code', $(this).find('textarea').val());
+	socket.emit('code', $('form.compiler').find('textarea').val());
 
 	socket.on('stdout', function(data) {
 		out(data);
@@ -115,7 +125,6 @@ $('form.compiler').on('submit', function(e) {
 		err(data);
 		$('.stdin').off('keypress');
 		socket.disconnect();
-		$('form.submit').submit();
 		$('form.compiler button').prop('disabled', false);
 	});
 });

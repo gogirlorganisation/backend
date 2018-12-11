@@ -409,7 +409,7 @@ input.stdin {
   display: -ms-flexbox;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   padding-top: 15px;
   padding-bottom: 10px;
   margin-left: 0.25rem;
@@ -417,12 +417,12 @@ input.stdin {
 }
 
 .form-in-button {
-  width: 100%;
+  width: calc(50% - 0.5rem);
   display: block;
   position: relative;
   z-index: 1;
   overflow: hidden;
-  margin: 0 auto;
+  margin: 0;
   box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.1);
   border-radius: 0.5rem;
 }
