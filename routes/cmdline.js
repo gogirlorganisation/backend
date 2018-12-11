@@ -2,12 +2,12 @@ var proc = require('child_process');
 var fs = require('fs');
 
 var procName = './faketty.sh';
-var procOpts = 'python3 -i';
+var procOpts = 'python3 -i -I';
 
-if(process.env.NODE_ENV === 'production') {
+/*if(process.env.NODE_ENV === 'production') {
 	procName = 'firejail';
 	procOpts = '--profile=sandbox/tgc.profile ./faketty.sh ' + procOpts;
-}
+}*/
 
 
 module.exports = function(socket, prefile) {

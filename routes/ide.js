@@ -39,7 +39,8 @@ io.on('connection', function(socket) {
 			});
 
 			socket.on('stdin', function(data) {
-				program.stdin.write(data + '\n');
+				if(data.indexOf('import') < 0)
+					program.stdin.write(data + '\n');
 			});
 		}
 	})
