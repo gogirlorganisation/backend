@@ -34,7 +34,7 @@ module.exports = function(socket, prefile) {
 	child.stderr.setEncoding('utf8');
 
 	child.stdin.on('error', function(e) {
-		debug(e.stack);
+		console.log(e.stack);
 	});
 
 	child.on('exit', function(exitCode) {
