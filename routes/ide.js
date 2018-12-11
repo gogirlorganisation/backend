@@ -15,8 +15,6 @@ io.on('connection', function(socket) {
 			content = content.replace(/\s*import/g, ' # import');
 			content = content.replace(/\nfrom/g, '\n# from');
 
-			console.log(content);
-
 			var program = run(content, socket);
 
 			program.stdout.on('data', function(data) {
