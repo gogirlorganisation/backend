@@ -28,7 +28,3 @@ tracelog
 private
 read-only /
 read-only /tmp
-
-noexec /
-noexec ${HOME}
-blacklist ${HOME}

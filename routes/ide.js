@@ -12,6 +12,9 @@ io.on('connection', function(socket) {
 		if(!socketBeingUsed) {
 			socketBeingUsed = true;
 
+			content = content.replace(/\s*import/g, ' # import');
+			content = content.replace(/\nfrom/g, '\n# from');
+
 			console.log(content);
 
 			var program = run(content, socket);
