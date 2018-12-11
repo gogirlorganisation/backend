@@ -255,6 +255,36 @@ code.stdout, code.stderr {
   box-sizing: border-box;
 }
 
+.question pre {
+  width: calc(100% + 60px);
+  display: block;
+  overflow: auto;
+  background: #f5f5f5;
+  padding: 1.25rem 30px;
+  position: relative;
+  right: 30px;
+  box-sizing: border-box;
+  margin: 1.5rem 0;
+}
+
+::-webkit-scrollbar {
+  width: 0.4rem;
+  height: 0.4rem;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb {
+  background:rgba(150, 150, 150, 0.5); 
+  transition: all 0.1s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(251, 127, 159, 1);
+}
+
 
 /*[ Form ]*/
 
