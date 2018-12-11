@@ -31,7 +31,7 @@ module.exports = {
 	},
 	4: {
 		type: 'cmdline',
-		answers: ['122632.0'],
+		answers: [['6747.0', '6747']],
 	},
 	5: {
 		type: 'compiler',
@@ -56,9 +56,6 @@ screws = 2000.0\n\
 heatSinks = 15\n\
 thisIsASentence = "hello world"\n\
 \n\
-# print the value and then the type of all the items assigned above\n\
-# keep in mind that this is automated checking, so you need to print\n\
-# in the specific order as given above.\n\
 # Write code below this line:\n',
 		answers: [
 			{
@@ -70,13 +67,13 @@ thisIsASentence = "hello world"\n\
 	8: {
 		type: 'cmdline',
 		answers: [
-			'HelloHelloHello',
-			'HelloWorld!HelloWorld!',
-			'lol',
-			'4 / 2',
-			['Truth is always best', '\'Truth is always best\''],
-			'Truth is best',
-			'Truth is best'
+			['HelloHelloHello', '\'HelloHelloHello\'', '"HelloHelloHello"'],
+			['HelloWorld!HelloWorld!', '\'HelloWorld!HelloWorld!\'', '\"HelloWorld!HelloWorld!\"'],
+			['lol', "'lol'", '"lol"'],
+			['4 / 2', "'4 / 2'", '"4 / 2"'],
+			['Truth is always best', '\'Truth is always best\'', '\"Truth is always best\"'],
+			['Truth is best', "'Truth is best'", '"Truth is best"'],
+			['Truth is best', "'Truth is best'", '"Truth is best"']
 		],
 	},
 	9: {

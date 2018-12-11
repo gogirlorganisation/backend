@@ -102,7 +102,7 @@ div.coding form  textarea[name=code] {
   width: 450%;
 }
 
-input {
+input, textarea {
   outline: none;
   border: 1px solid #ccc;
   border-radius: 2.5px;
@@ -112,7 +112,7 @@ input {
   padding: 0;
 }
 
-.question table input {
+.question table input, .question table textarea {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
@@ -122,14 +122,15 @@ input {
   padding: 0.5rem 1rem;
   font: inherit;
   margin: 0;
+  resize: none;
 }
 
-input.correct {
+input.correct, textarea.correct {
   border-color: rgba(46, 204, 113,1.0);
   background: rgba(46, 204, 113,0.1);
 }
 
-input.incorrect {
+input.incorrect, textarea.incorrect {
   border-color: rgba(231, 76, 60,1.0);
   background: rgba(231, 76, 60,0.1);
 }

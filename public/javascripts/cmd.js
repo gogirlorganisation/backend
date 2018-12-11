@@ -30,11 +30,14 @@ var Person = function() {
 
 var Eve = new Person();
 
-$('form.submit input').each(function() {
+$('form.submit input, form.submit textarea').each(function() {
 	if(!$(this).attr('placeholder')) {
 		$(this).attr('placeholder', 'Type an answer...');
 	}
-	$(this).attr('autocomplete', 'off');
+	if($(this).is('textarea'))
+		$(this).attr('autocomplete', 'nope');
+	else
+		$(this).attr('autocomplete', 'off');
 
 	$(this).on('keypress', function() {
 		$(this).removeClass('correct').removeClass('incorrect');
@@ -46,7 +49,7 @@ $('form.submit').on('submit', function(e) {
 
 	var answers = [];
 
-	$('form.submit input').each(function() {
+	$('form.submit input, form.submit textarea').each(function() {
 		if($(this).attr('name') && $(this).attr('name')[0] == 'q') {
 			var n = $(this).attr('name').substr(1);
 
@@ -81,11 +84,11 @@ $('form.submit').on('submit', function(e) {
 			if(data.correct) {
 				for(var i = 0; i < data.correct.length; i++) {
 					if(data.correct[i]) {
-						$(`input[name="q${ i + 1 }"]`).removeClass('incorrect').addClass('correct');
+						$(`[name="q${ i + 1 }"]`).removeClass('incorrect').addClass('correct');
 					}
 
 					else {
-						$(`input[name="q${ i + 1 }"]`).removeClass('correct').addClass('incorrect');
+						$(`[name="q${ i + 1 }"]`).removeClass('correct').addClass('incorrect');
 					}
 				}
 			}
