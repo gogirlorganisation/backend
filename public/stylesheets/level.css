@@ -33,10 +33,12 @@ div .nav {
   line-height: 3rem;
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: calc(100% + 60px);
   top: 0;
-  left: 0;
+  margin-left: -30px;
   box-sizing: border-box;
+  z-index: 42;
+  padding: 0 30px;
 }
 
 div .nav > a {
