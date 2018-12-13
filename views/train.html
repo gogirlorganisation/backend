@@ -16,10 +16,11 @@
 <body>
 	<div class="question">
 		<div class="nav">
-			<a href='/training' style="padding-right: 7rem;">&larr; Back to the dashboard</a>
-			<a href='/train/{{nextLevel}}'>Next &rarr;</a>
+			<a href='/levels/{{prevLevel}}' style="padding-right: 7rem;">{{#prevLevel}}&larr; Previous{{/prevLevel}}</a>
+			<a href='/levels/{{nextLevel}}'>Next &rarr;</a>
 		</div>
-		<br><br>
+		<br>
+		<span class="breadcrumbs"><a href="/dashboard">Dashboard</a> ❯</span>
 		<form method="post" class="submit">
 			{{> levelText}}
 		</form>
@@ -35,7 +36,11 @@
 				<div class="formbutton">
 					<div class="form-in-button">
 						<div class="bgbutton"></div>
-						<button class="loginbutton">Compile</button>
+						<button class="loginbutton run">Run</button>
+					</div>
+					<div class="form-in-button">
+						<div class="bgbutton"></div>
+						<button class="loginbutton submit">Submit</button>
 					</div>
 				</div>
 				<div class="output-container">
