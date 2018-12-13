@@ -24,24 +24,32 @@ module.exports = function(socket, prefile) {
 	}
 	
 
-	var child = proc.spawn(procName, options, {
-		shell: false,
-		detatched: true
-	});
+	try {
+		var child = proc.spawn(procName, options, {
+			shell: false
+		});
 
-	child.stdout.setEncoding('utf8');
+		child.stdout.setEncoding('utf8');
 
-	child.stderr.setEncoding('utf8');
+		child.stderr.setEncoding('utf8');
 
-	child.stdin.on('error', function(e) {
-		console.log(e.stack);
-	});
+		child.stdin.on('error', function(e) {
+			console.log(e.stack);
+		});
 
-	child.on('exit', function(exitCode) {
-		if(!child.killed)
-			gracefulExit = true;
-		if(socket) socket.emit('end', 'Program exited with code ' + exitCode);
-	});
+		child.on('exit', function(exitCode) {
+			console.log('child exited', Date.now());
+			if(!child.killed)
+				gracefulExit = true;
+			if(socket) socket.emit('end', 'Program exited with code ' + exitCode);
+		});
 
-	return child;
+		return child;
+	}
+
+	catch(e) {
+		console.log(e);
+
+		return false;
+	}
 }

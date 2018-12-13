@@ -30,31 +30,38 @@ sys.modules[os] = None\n\n';*/
 
 	var gracefulExit = false;
 
-	var child = proc.spawn(procName, options, {
-		shell: true,
-		detatched: true
-	});
+	try {
+		var child = proc.spawn(procName, options, {
+			shell: true
+		});
 
-	child.stdout.setEncoding('utf8');
+		child.stdout.setEncoding('utf8');
 
-	child.stderr.setEncoding('utf8');
+		child.stderr.setEncoding('utf8');
 
-	child.stdin.on('error', function(e) {
-		debug(e.stack);
-	})
+		child.stdin.on('error', function(e) {
+			debug(e.stack);
+		})
 
-	setTimeout(function() {
-		if(!gracefulExit && !child.killed)
-			child.kill('SIGKILL');
-	}, 300 * 1000);
+		setTimeout(function() {
+			if(!gracefulExit && !child.killed)
+				child.kill('SIGKILL');
+		}, 300 * 1000);
 
-	child.on('exit', function(exitCode) {
-		if(!child.killed)
-			gracefulExit = true;
-		if(socket) socket.emit('end', 'Program exited with code ' + exitCode);
-		fs.unlinkSync(filePath + '.py');
-	});
+		child.on('exit', function(exitCode) {
+			if(!child.killed)
+				gracefulExit = true;
+			if(socket) socket.emit('end', 'Program exited with code ' + exitCode);
+			fs.unlinkSync(filePath + '.py');
+		});
 
 
-	return child;
+		return child;
+	}
+
+	catch(e) {
+		console.log(e);
+
+		return false;
+	}
 };

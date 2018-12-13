@@ -17,17 +17,23 @@ io.on('connection', function(socket) {
 
 			var program = run(content, socket);
 
-			program.stdout.on('data', function(data) {
-				socket.emit('stdout', data);
-			});
+			if(program) {
+				program.stdout.on('data', function(data) {
+					socket.emit('stdout', data);
+				});
 
-			program.stderr.on('data', function(data) {
-				socket.emit('stderr', data);
-			});
+				program.stderr.on('data', function(data) {
+					socket.emit('stderr', data);
+				});
 
-			socket.on('stdin', function(data) {
-				program.stdin.write(data + '\n');
-			});
+				socket.on('stdin', function(data) {
+					program.stdin.write(data + '\n');
+				});
+			}
+
+			else {
+				socket.emit('end', 'Could not start program instance.');
+			}
 		}
 	});
 
@@ -37,14 +43,20 @@ io.on('connection', function(socket) {
 
 			var program = cmd(socket, prefile);
 
-			program.stdout.on('data', function(data) {
-				socket.emit('stdout', data);
-			});
+			if(program) {
+				program.stdout.on('data', function(data) {
+					socket.emit('stdout', data);
+				});
 
-			socket.on('stdin', function(data) {
-				if(data.indexOf('import') < 0)
-					program.stdin.write(data + '\n');
-			});
+				socket.on('stdin', function(data) {
+					if(data.indexOf('import') < 0)
+						program.stdin.write(data + '\n');
+				});
+			}
+
+			else {
+				socket.emit('end', 'Could not start terminal instance.');
+			}
 		}
 	})
 });

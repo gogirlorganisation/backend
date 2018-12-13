@@ -93,7 +93,7 @@ router.post('/:level', function(req, res, next) {
 				else {
 					res.send({ message: 'lose', correct: isCorrect });
 
-					if(req.user.alsetUser) {
+					/*if(req.user.alsetUser) {
 						var params = {
 							user: req.user.username,
 							level: req.params.level,
@@ -105,7 +105,7 @@ router.post('/:level', function(req, res, next) {
 							params.answer = req.body.answer;
 
 						levelHelper.sendToAlset(params);
-					}
+					}*/
 				}
 			});
 		} else {
