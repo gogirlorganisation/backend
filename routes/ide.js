@@ -47,22 +47,35 @@ io.on('connection', function(socket) {
 
 			var program = cmd(socket, prefile);
 
+			var stdin = function(data) {
+				if(data.indexOf('import') < 0)
+					program.stdin.write(data + '\n');
+			};
+
+			var disconnect = function() {
+				program.kill('SIGKILL');
+				socketBeingUsed = false;
+			};
+
 			if(program) {
 				program.stdout.on('data', function(data) {
 					socket.emit('stdout', data);
 				});
 
-				socket.on('stdin', function(data) {
-					if(data.indexOf('import') < 0)
-						program.stdin.write(data + '\n');
-				});
+				socket.on('stdin', stdin);
 
-				socket.on('disconnect', function() {
-					program.kill('SIGKILL');
+				socket.on('disconnect', disconnect);
+
+				program.on('exit', function(code) {
+					socketBeingUsed = false;
+					socket.removeListener('stdin', stdin);
+					socket.removeListener('disconnect', disconnect);
+					socket.emit('end', 'Program exited with code ' + code);
 				});
 			}
 
 			else {
+				socketBeingUsed = false;
 				socket.emit('end', 'Could not start terminal instance.');
 			}
 		}

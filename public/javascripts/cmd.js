@@ -114,7 +114,7 @@ function out(text) {
 	$('.stdout')[0].scrollTop = $('.stdout')[0].scrollHeight;
 }
 
-var socket = io.connect('/');
+var socket = io.connect('/', { 'sync disconnect on unload': true });
 
 var prefile = prefile || 'blank';
 
@@ -142,8 +142,8 @@ $('.stdin').on('keypress', function(e) {
 });
 
 socket.on('end', function(data) {
-	err(data);
-	socket.emit('cmdline');
+	out(data + '\n');
+	socket.emit('cmdline', prefile);
 });
 
 $(document).ready(function () {

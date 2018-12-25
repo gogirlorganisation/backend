@@ -37,13 +37,6 @@ module.exports = function(socket, prefile) {
 			console.log(e.stack);
 		});
 
-		child.on('exit', function(exitCode) {
-			console.log('child exited', Date.now());
-			if(!child.killed)
-				gracefulExit = true;
-			if(socket) socket.emit('end', 'Program exited with code ' + exitCode);
-		});
-
 		return child;
 	}
 

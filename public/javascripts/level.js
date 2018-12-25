@@ -96,7 +96,7 @@ $('form.compiler button.run').on('click', function(e) {
 
 	$('form.compiler button').prop('disabled', true);
 
-	var socket = io.connect('/');
+	var socket = io.connect('/', { 'sync disconnect on unload': true });
 
 	$('.stdout').html('');
 
