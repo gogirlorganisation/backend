@@ -29,6 +29,10 @@ io.on('connection', function(socket) {
 				socket.on('stdin', function(data) {
 					program.stdin.write(data + '\n');
 				});
+
+				socket.on('disconnect', function() {
+					program.kill('SIGKILL');
+				});
 			}
 
 			else {
@@ -51,6 +55,10 @@ io.on('connection', function(socket) {
 				socket.on('stdin', function(data) {
 					if(data.indexOf('import') < 0)
 						program.stdin.write(data + '\n');
+				});
+
+				socket.on('disconnect', function() {
+					program.kill('SIGKILL');
 				});
 			}
 
