@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var answers = require('./answers');
 
 router.get('/', function(req, res) {
 	res.redirect('/login');
@@ -41,11 +42,24 @@ router.get('/dashboard', function(req, res) {
 			// find first level which isn't on the solved list
 			while(i <= levels.length && parseInt(levels[i-1]) === i) i++;
 
+			var solvedColors = {};
+
+			for(var i = 0; i < Object.keys(answers).length; i++) {
+				if(levels.indexOf(i.toString()) >= 0) {
+					solvedColors['l' + i] = 'pink';
+				}
+
+				else {
+					solvedColors['l' + i] = 'grey';
+				}
+			}
+
 			res.render('dash', {
 				user: req.user.displayName || req.user.username,
 				points: Math.floor(req.user.points),
 				nextLevel: i,
-				levels: levels
+				levels: levels,
+				solvedColors: solvedColors
 			});
 		}
 	} else {
