@@ -1,9 +1,78 @@
 <h1>Level 12</h1>
+<p>Computers which you think are smart are actually not, even the AEP! We’re the largest commercial super computer but at the end of the day, just like every other computer it cannot comprehend languages like us. They can only understand a special language called Binary. Binary only has two digits a 1 and a 0. However it is very powerful anything you tell a computer to do is converted to this language and only then it can understand what it has to do and thus for any computer we are working with Binary is their go to language. These computers only understand 1s and 0s. </p>
 
-<p>A programmer just quit. He was making a calculator software for our Supercomputer. Can you help complete the code by adding the following functions:</p>
+<p>In Python, we can think of these 1s and 0s as True and False where 1 is True and 0 is False. Thus with these we can form what is called as Boolean Expressions. Let's work on a few examples.</p>
 
-<pre><code>multiply()
-divide()
-remainder()
-addition()
-subtraction()</code></pre>
+<p>In the shell go ahead type the following:</p>
+
+<pre><code>>>> 4 < 5
+True
+>>> 5 < 4
+False
+>>> 5 == 5
+True
+>>> not False
+True</code></pre>
+
+<p>Apart from the ones we used we can use <=, >=, != as well.
+In Python you can join two boolean expression using and and or. 
+Before taking any other example, carefully look at the following tables.</p>
+
+<p>For <em>and:</em></p>
+
+<table>
+	<tr>
+		<th>Expression</th>
+		<th>Result</th>
+	</tr>
+	<tr>
+		<td>True and True</td>
+		<td>True</td>
+	</tr>
+	<tr>
+		<td>True and False</td>
+		<td>False</td>
+	</tr>
+	<tr>
+		<td>False and True</td>
+		<td>False</td>
+	</tr>
+	<tr>
+		<td>False and False</td>
+		<td>False</td>
+	</tr>
+</table>
+
+<p>For <em>or:</em></p>
+
+<table>
+	<tr>
+		<th>Expression</th>
+		<th>Result</th>
+	</tr>
+	<tr>
+		<td>True or True</td>
+		<td>True</td>
+	</tr>
+	<tr>
+		<td>True or False</td>
+		<td>True</td>
+	</tr>
+	<tr>
+		<td>False or True</td>
+		<td>True</td>
+	</tr>
+	<tr>
+		<td>False or False</td>
+		<td>False</td>
+	</tr>
+</table>
+
+<p>Keeping these in mind we can form complex expression for evaluation.</p>
+
+<p>Let's go to the shell.</p>
+
+<pre><code>>>> True or (False and True)
+True
+>>> not False or (False and True) and True
+True</code></pre>

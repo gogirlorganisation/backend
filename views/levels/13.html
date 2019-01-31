@@ -1,49 +1,43 @@
 <h1>Level 13</h1>
-<p>Hey {{user}}! Our team is doing really well and we have recently recruited many others. Let me assign you with a small task. Your task will be to maintain a record in which all the names of people who are working on this project will be stored. You can make a function that will do this task. You will initially be starting with a record which will have some names but you will have to update the remaining. Also keep in mind we might have to transfer a few recruits to other departments as well so you also need to find a solution to remove such names from that record.</p>
+<p>Our team is growing fast, really fast {{user}}! But there are some problems with growing so fast, one we need to know if we have enough money in the bank to hire more people, two we need to know if we have enough space in our office for employees to work. The HR team will contact you soon to run some computations to check if we can hire more people but before we do, I think the following tool will be really useful for you. That is, <strong>if</strong> you pay attention. ;)</p>
 
-<p>Let’s first learn something that will help you in this process. </p>
+<p>This is probably the most powerful computational tool, it’s called an If statement. If statements use <span id="w1">Boolean expressions</span><span id="p1"> (True and False, covered in the level before this)</span> to decide whether or not a certain block of code will run. So, if the condition is `True`, then the block will run; here’s an example:</p>
 
-<p>You have been working with variables that can hold a single value what if there was a way for any variable to hold more than one. Let me introduce you to lists. Yes, it is exactly like your mom’s grocery list, a sequence of items. </p>
 
-<p>Let's work on an example now. On your shell type the following:</p>
+<pre><code>numberToCheck = 2
+if numberToCheck%2 == 0:
+    print("number is even")
+else:
+    print("number is odd")</code></pre>
 
-<pre><code>>>> list1 = [2,4,6,8]
->>> list2 = [‘Dog’,‘Cat’,‘Fish’,‘Parrot’]</code></pre>
+<p>In this case a number is being assigned to the variable `numberToCheck` and when `numberToCheck` is divided by 2 we are checking if the remainder is 0, if it is 0 then it’ll print "number is even", else it’ll print "number is odd."</p>
 
-<p>In the above example you created 2 lists. To create a list you need to add the various elements inside [] and then assign it to a variable.
-The first list you created is a list of even numbers less than 10. Next is a list of common pets.</p>
+<p>Now, let’s create a simple survey, I want to write an interactive program to check with my employees which tech companies they prefer and based on that we’d gift them a new phone. We have 3 possible options from our service providers: Apple iPhones, Samsung Galaxy s8 and Google Pixel. If they don’t like any company they may enter nothing and get no phone.</p>
 
-<p>You know how strings work. You can draw some parallel between strings and lists. Just like strings you can access a particular element using indexing and slice a few elements of the list.</p>
+<pre><code>print("what company do you prefer from Apple, Samsung and Google? If you don’t like any, press enter.")
+phoneCompany = input()
+if phoneCompany == "Apple":
+    print("You get an iPhone!")
+elif phoneCompany == "Samsung":
+    print("You get a Galaxy s8!")
+elif phoneCompany == "Google":
+    print("You get a Google Pixel!")
+else:
+    print("You get no phone. :/")</code></pre>
 
-<pre><code>>>> list1[2]
-6
->>> list2[2:]
-[‘Fish’,‘Parrot’]</code></pre>
+<p>Over here we see a new statement, it’s called elif. elif is basically a shorter version of an else statement inside of which is an if statement. Without elif our code won’t be very readable, here’s the same program but instead of elif we only use if-else statements.</p>
 
-<p>You can also add elements to a list using append:</p>
+<pre><code>print("what company do you prefer from Apple, Samsung and Google? If you don’t like any, press enter.")
+phoneCompany = input()
+if phoneCompany == "Apple":
+    print("You get an iPhone!")
+else:
+    if phoneCompany == "Samsung":
+        print("You get a Galaxy S8!")
+    else:
+        if phoneCompany == "Google":
+            print("You get a Google Pixel!")
+        else:
+           print("You get no phone. :/")</code></pre>
 
-<pre><code>>>> list2.append(‘Rabbit’)
->>> print(list2)
-[‘Dog’,‘Cat’,‘Fish’,‘Parrot’,‘Rabbit’]</code></pre>
-
-<p>You can also delete elements from lists using the index or the element you want to delete.</p>
-
-<pre><code>>>> list1.pop(1)
-4
->>> print(list1)
-[2,6,8]
->>> list1.remove(6)
->>> print(list1)
-[2,8]</code></pre>
-
-<p>Using <code>variableName.pop(index)</code> method to remove element at particular index and <code>variableName.remove(element)</code> method to delete the first occurence of the given element from the list.</p>
-
-<p>Now that you have a fair amount of understanding let's work on the problem I gave earlier.</p>
-
-<pre><code>#here listOfNames is a list where names are stored and newName is the name to be added.
-def addEmploy(listOfNames,newName):
-    listOfNames.append(newName)
-
-#now think of a function to remove a name again given 2 parameters list of names and name to be deleted.</code></pre>
-
-<input type="submit">
+<p>As we can see, elif is a lifesaver! Copy and paste both the code blocks to see how they run, and try it out!</p>

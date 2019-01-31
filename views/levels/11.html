@@ -1,32 +1,49 @@
 <h1>Level 11</h1>
+<p>Hey {{user}}! Our team is doing really well and we have recently recruited many others. Let me assign you with a small task. Your task will be to maintain a record in which all the names of people who are working on this project will be stored. You can make a function that will do this task. You will initially be starting with a record which will have some names but you will have to update the remaining. Also keep in mind we might have to transfer a few recruits to other departments as well so you also need to find a solution to remove such names from that record.</p>
 
-<p>Hey {{user}}! Everything in life has a specific function. For example, your function is to assist me and the computer screen’s function is to display things. Just like that, there are certain elements of code which are present to perform a certain function.</p>
+<p>Let’s first learn something that will help you in this process. </p>
 
-<p>Functions are a block of code that you can run again at any point of time in your program. Let’s look at an example to see how it works.</p>
+<p>You have been working with variables that can hold a single value what if there was a way for any variable to hold more than one. Let me introduce you to lists. Yes, it is exactly like your mom’s grocery list, a sequence of items. </p>
 
-<pre><code>#sayHello is a function.
-def sayHello():
-    return("hello world!")
+<p>Let's work on an example now. On your shell type the following:</p>
 
-print("this is a line of text")
-print(sayHello())
-print("this is another line of text")
-print(sayHello())</code></pre>
+<pre><code>>>> list1 = [2,4,6,8]
+>>> list2 = [‘Dog’,‘Cat’,‘Fish’,‘Parrot’]</code></pre>
 
-<p>Let’s see what’s happening in this <span id="w1">code snippet</span><span id="p1"> (a small piece of code)</span>. The keyword <b>def</b> is used to define a function. It is followed by a function name which in this case is "sayHello( )" . Every function must have an open and a close parenthesis ( ) . <span id="w2">You have encountered it before, do you remember?</span><span id="p2">(Remember the inbuilt functions print, input, and type, all had open and close parentheses following them)</span> This is followed by a “:” as a part of the syntax. All functions return some value in this case “hello world”. The full syntax is:
-</p>
+<p>In the above example you created 2 lists. To create a list you need to add the various elements inside [] and then assign it to a variable.
+The first list you created is a list of even numbers less than 10. Next is a list of common pets.</p>
 
-<pre><code>def function_name():
-	return some_value
-</code></pre>
+<p>You know how strings work. You can draw some parallel between strings and lists. Just like strings you can access a particular element using indexing and slice a few elements of the list.</p>
 
-<p>Once we run this program the first thing to be printed is “this is a line of text”. Then on the next line “hello world!” gets printed because we call the function sayHello( ) followed by “this is another line of text” and then finally “hello world!” since sayHello() is being called again.</p>
+<pre><code>>>> list1[2]
+6
+>>> list2[2:]
+[‘Fish’,‘Parrot’]</code></pre>
 
-<p>Now, this is useful as it can help reduce several lines in a program but it would be more interesting if we could give it some input and it’ll return a unique output for every input. We can do that! Let’s take the addition example we used before.</p>
+<p>You can also add elements to a list using append:</p>
 
-<pre><code>def addNum(a, b):
-    return(a+b)
+<pre><code>>>> list2.append(‘Rabbit’)
+>>> print(list2)
+[‘Dog’,‘Cat’,‘Fish’,‘Parrot’,‘Rabbit’]</code></pre>
 
-print(addNum(5,2))</code></pre>
+<p>You can also delete elements from lists using the index or the element you want to delete.</p>
 
-<p>Here we defining a function called addNum which takes two inputs a and b. Later we are calling addNum and giving it inputs of 5 and 2. So when we call the function, a and b will be 5 and 2, respectively. Hence the output of will be 7.</p>
+<pre><code>>>> list1.pop(1)
+4
+>>> print(list1)
+[2,6,8]
+>>> list1.remove(6)
+>>> print(list1)
+[2,8]</code></pre>
+
+<p>Using <code>variableName.pop(index)</code> method to remove element at particular index and <code>variableName.remove(element)</code> method to delete the first occurence of the given element from the list.</p>
+
+<p>Now that you have a fair amount of understanding let's work on the problem I gave earlier.</p>
+
+<pre><code>#here listOfNames is a list where names are stored and newName is the name to be added.
+def addEmploy(listOfNames,newName):
+    listOfNames.append(newName)
+
+#now think of a function to remove a name again given 2 parameters list of names and name to be deleted.</code></pre>
+
+<input type="submit">

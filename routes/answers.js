@@ -98,10 +98,61 @@ thisIsASentence = "hello world"\n\
 		],
 	},
 	11: {
-		type: 'compiler',
+		type: 'cmdline',
 		answers: [],
 	},
 	12: {
+		type: 'cmdline',
+		answers: []
+	},
+	13: {
+		type: 'compiler',
+		answers: [
+			{
+				stdin: '\n',
+				stdout: 'what company do you prefer from Apple, Samsung and Google? If you don’t like any, press enter.\nYou get no phone. :/'
+			},
+			{
+				stdin: 'Google\n',
+				stdout: 'what company do you prefer from Apple, Samsung and Google? If you don’t like any, press enter.\nYou get a Google Pixel'
+			},
+			{
+				stdin: 'Samsung\n',
+				stdout: 'what company do you prefer from Apple, Samsung and Google? If you don’t like any, press enter.\nYou get a Galaxy S8'
+			},
+			{
+				stdin: 'Apple',
+				stdout: 'what company do you prefer from Apple, Samsung and Google? If you don’t like any, press enter.\nYou get an iPhone'
+			}
+		]
+	},
+	14: {
+		type: 'compiler',
+		answers: [
+			{
+				stdin: '352500\n11\n',
+				stdout: '5'
+			},
+			{
+				stdin: '2965000\n42\n',
+				stdout: '42'
+			},
+			{
+				stdin: '4864500\n30\n',
+				stdout: '30'
+			}
+		],
+		defaultValue:
+'surplusMoney = int(input())\n\
+emptyDesks = int(input())\n\
+salaryOfProgrammer = 70500\n\n\n\
+#write code from here:\n\n\n'
+	},
+	15: {
+		type: 'compiler',
+		answers: [],
+	},
+	16: {
 		type: 'compiler',
 		defaultValue:
 '#edit code from here:\n\
@@ -134,57 +185,6 @@ print(subtraction(num1, num2))',
 				stdout: '100000\n250.0\n0\n5020\n4980'
 			}
 		],
-	},
-	13: {
-		type: 'cmdline',
-		answers: [],
-	},
-	14: {
-		type: 'cmdline',
-		answers: []
-	},
-	15: {
-		type: 'compiler',
-		answers: [
-			{
-				stdin: '\n',
-				stdout: 'what company do you prefer from Apple, Samsung and Google? If you don’t like any, press enter.\nYou get no phone. :/'
-			},
-			{
-				stdin: 'Google\n',
-				stdout: 'what company do you prefer from Apple, Samsung and Google? If you don’t like any, press enter.\nYou get a Google Pixel'
-			},
-			{
-				stdin: 'Samsung\n',
-				stdout: 'what company do you prefer from Apple, Samsung and Google? If you don’t like any, press enter.\nYou get a Galaxy S8'
-			},
-			{
-				stdin: 'Apple',
-				stdout: 'what company do you prefer from Apple, Samsung and Google? If you don’t like any, press enter.\nYou get an iPhone'
-			}
-		]
-	},
-	16: {
-		type: 'compiler',
-		answers: [
-			{
-				stdin: '352500\n11\n',
-				stdout: '5'
-			},
-			{
-				stdin: '2965000\n42\n',
-				stdout: '42'
-			},
-			{
-				stdin: '4864500\n30\n',
-				stdout: '30'
-			}
-		],
-		defaultValue:
-'surplusMoney = int(input())\n\
-emptyDesks = int(input())\n\
-salaryOfProgrammer = 70500\n\n\n\
-#write code from here:\n\n\n'
 	},
 	17: {
 		type: 'cmdline',

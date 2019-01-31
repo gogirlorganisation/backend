@@ -1,43 +1,32 @@
 <h1>Level 15</h1>
-<p>Our team is growing fast, really fast {{user}}! But there are some problems with growing so fast, one we need to know if we have enough money in the bank to hire more people, two we need to know if we have enough space in our office for employees to work. The HR team will contact you soon to run some computations to check if we can hire more people but before we do, I think the following tool will be really useful for you. That is, <strong>if</strong> you pay attention. ;)</p>
 
-<p>This is probably the most powerful computational tool, it’s called an If statement. If statements use <span id="w1">Boolean expressions</span><span id="p1"> (True and False, covered in the level before this)</span> to decide whether or not a certain block of code will run. So, if the condition is `True`, then the block will run; here’s an example:</p>
+<p>Hey {{user}}! Everything in life has a specific function. For example, your function is to assist me and the computer screen’s function is to display things. Just like that, there are certain elements of code which are present to perform a certain function.</p>
 
+<p>Functions are a block of code that you can run again at any point of time in your program. Let’s look at an example to see how it works.</p>
 
-<pre><code>numberToCheck = 2
-if numberToCheck%2 == 0:
-    print("number is even")
-else:
-    print("number is odd")</code></pre>
+<pre><code>#sayHello is a function.
+def sayHello():
+    return("hello world!")
 
-<p>In this case a number is being assigned to the variable `numberToCheck` and when `numberToCheck` is divided by 2 we are checking if the remainder is 0, if it is 0 then it’ll print "number is even", else it’ll print "number is odd."</p>
+print("this is a line of text")
+print(sayHello())
+print("this is another line of text")
+print(sayHello())</code></pre>
 
-<p>Now, let’s create a simple survey, I want to write an interactive program to check with my employees which tech companies they prefer and based on that we’d gift them a new phone. We have 3 possible options from our service providers: Apple iPhones, Samsung Galaxy s8 and Google Pixel. If they don’t like any company they may enter nothing and get no phone.</p>
+<p>Let’s see what’s happening in this <span id="w1">code snippet</span><span id="p1"> (a small piece of code)</span>. The keyword <b>def</b> is used to define a function. It is followed by a function name which in this case is "sayHello( )" . Every function must have an open and a close parenthesis ( ) . <span id="w2">You have encountered it before, do you remember?</span><span id="p2">(Remember the inbuilt functions print, input, and type, all had open and close parentheses following them)</span> This is followed by a “:” as a part of the syntax. All functions return some value in this case “hello world”. The full syntax is:
+</p>
 
-<pre><code>print("what company do you prefer from Apple, Samsung and Google? If you don’t like any, press enter.")
-phoneCompany = input()
-if phoneCompany == "Apple":
-    print("You get an iPhone!")
-elif phoneCompany == "Samsung":
-    print("You get a Galaxy s8!")
-elif phoneCompany == "Google":
-    print("You get a Google Pixel!")
-else:
-    print("You get no phone. :/")</code></pre>
+<pre><code>def function_name():
+	return some_value
+</code></pre>
 
-<p>Over here we see a new statement, it’s called elif. elif is basically a shorter version of an else statement inside of which is an if statement. Without elif our code won’t be very readable, here’s the same program but instead of elif we only use if-else statements.</p>
+<p>Once we run this program the first thing to be printed is “this is a line of text”. Then on the next line “hello world!” gets printed because we call the function sayHello( ) followed by “this is another line of text” and then finally “hello world!” since sayHello() is being called again.</p>
 
-<pre><code>print("what company do you prefer from Apple, Samsung and Google? If you don’t like any, press enter.")
-phoneCompany = input()
-if phoneCompany == "Apple":
-    print("You get an iPhone!")
-else:
-    if phoneCompany == "Samsung":
-        print("You get a Galaxy S8!")
-    else:
-        if phoneCompany == "Google":
-            print("You get a Google Pixel!")
-        else:
-           print("You get no phone. :/")</code></pre>
+<p>Now, this is useful as it can help reduce several lines in a program but it would be more interesting if we could give it some input and it’ll return a unique output for every input. We can do that! Let’s take the addition example we used before.</p>
 
-<p>As we can see, elif is a lifesaver! Copy and paste both the code blocks to see how they run, and try it out!</p>
+<pre><code>def addNum(a, b):
+    return(a+b)
+
+print(addNum(5,2))</code></pre>
+
+<p>Here we defining a function called addNum which takes two inputs a and b. Later we are calling addNum and giving it inputs of 5 and 2. So when we call the function, a and b will be 5 and 2, respectively. Hence the output of will be 7.</p>
