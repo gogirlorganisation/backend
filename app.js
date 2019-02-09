@@ -44,7 +44,7 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
-mongoose.connect(auth.url);
+mongoose.connect(auth.url, { useNewUrlParser: true });
 
 // uncomment after placing your favicon in /public
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
