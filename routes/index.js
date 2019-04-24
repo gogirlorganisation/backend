@@ -37,10 +37,15 @@ router.get('/dashboard', function(req, res) {
 		else {
 			var levels = Object.keys(req.user.solvedLevels || {});
 
-			var i = 0;
+			var firstUnsolvedLevel, i = 0;
 
-			// find first level which isn't on the solved list
-			while(i <= levels.length && parseInt(levels[i-1]) === i) i++;
+			while(
+				i < levels.length && 							// loop through all levels
+				parseInt(levels[i]) === i && 					// check if level attempted
+				req.user.solvedLevels[levels[i]] === true		// check if level solved correctly
+			) i++;
+
+			firstUnsolvedLevel = i;
 
 			var solvedColors = {};
 
@@ -57,7 +62,7 @@ router.get('/dashboard', function(req, res) {
 			res.render('dash', {
 				user: req.user.displayName || req.user.username,
 				points: Math.floor(req.user.points),
-				nextLevel: i,
+				nextLevel: firstUnsolvedLevel,
 				levels: levels,
 				solvedColors: solvedColors
 			});
