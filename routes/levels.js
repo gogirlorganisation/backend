@@ -18,6 +18,7 @@ router.get('/:level', function(req, res) {
 				user: req.user.username,
 				nextLevel: nextLevel,
 				prevLevel: prevLevel,
+				currentLevel: req.params.level,
 				partials: {
 					levelText: 'levels/' + req.params.level
 				},

@@ -17,7 +17,7 @@
 	<div class="question">
 		<div class="nav">
 			<a href='/levels/{{prevLevel}}' style="padding-right: 7rem;">{{#prevLevel}}&larr; Previous{{/prevLevel}}</a>
-			<a href='/levels/{{nextLevel}}'>Next &rarr;</a>
+			<a href='/levels/{{nextLevel}}' class="next-link">Next &rarr;</a>
 		</div>
 		<br>
 		<span class="breadcrumbs"><a href="/dashboard">Dashboard</a> ❯</span>
@@ -54,6 +54,12 @@
 
 <script src="/socket.io/socket.io.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+	
+const username = '{{user}}', level = '{{currentLevel}}';
+
+</script>
+<script src="/javascripts/formshow.js"></script>
 <script src="/javascripts/level.js"></script>
 <script src="/mode/python/python.js"></script>
 <script src="/javascripts/compiler.js"></script>
