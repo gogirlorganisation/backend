@@ -60,7 +60,7 @@ thisIsASentence = "hello world"\n\
 		answers: [
 			{
 				stdin: '',
-				stdout: '10\n2000.0\n15\nhello world\n<class \'int\'>\n<class \'float\'>\n<class \'int\'><class \'str\'>'
+				stdout: '<class \'int\'>\n<class \'float\'>\n<class \'int\'><class \'str\'>'
 			}
 		],
 	},
