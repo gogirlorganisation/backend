@@ -1,4 +1,4 @@
-const loadForm = true;
+const loadForm = false;
 
 function getFormURL(username, level) {
 	username = encodeURIComponent(username);
@@ -7,10 +7,12 @@ function getFormURL(username, level) {
 }
 
 $('a.next-link').on('click', function(e) {
-	e.preventDefault();
-	var link = $(this);
-	window.open(getFormURL(username, level), '_blank');
-	setTimeout(function() {
-		location.href = link.attr('href');
-	}, 1000);
+	if(loadForm) {
+		e.preventDefault();
+		var link = $(this);
+		window.open(getFormURL(username, level), '_blank');
+		setTimeout(function() {
+			location.href = link.attr('href');
+		}, 1000);
+	}
 });
