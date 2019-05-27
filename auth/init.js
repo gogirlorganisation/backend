@@ -4,33 +4,32 @@ var signup = require('./signup');
 var google = require('./google');
 var facebook = require('./facebook');
 
-
 // todo: add condition for production
 
 // db url
-var server_uri = 'mongodb://localhost/thegirlcode';
+var server_uri = 'mongodb://mongo:27017/thegirlcode';
 
 // express session key
 var secret_key = 'tellmeoladyshallicomeshalliringthebell';
 
 module.exports = function(passport) {
-	passport.serializeUser(function(user, done) {
-		done(null, user._id);
-	});
-	 
-	passport.deserializeUser(function(id, done) {
-		User.findById(id, function(err, user) {
-			done(err, user);
-		});
-	});
+  passport.serializeUser(function(user, done) {
+    done(null, user._id);
+  });
 
-	login(passport);
-	signup(passport);
-	google(passport);
-	facebook(passport);
+  passport.deserializeUser(function(id, done) {
+    User.findById(id, function(err, user) {
+      done(err, user);
+    });
+  });
 
-	return {
-		url: server_uri,
-		key: secret_key
-	};
+  login(passport);
+  signup(passport);
+  google(passport);
+  facebook(passport);
+
+  return {
+    url: server_uri,
+    key: secret_key
+  };
 };
