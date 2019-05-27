@@ -38,3 +38,6 @@ __pycache__
 
 # private keys are private
 auth/keys.js
+
+# Keep database stuff private
+.mongo
