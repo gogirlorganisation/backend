@@ -13,23 +13,23 @@ var server_uri = 'mongodb://mongo:27017/thegirlcode';
 var secret_key = 'tellmeoladyshallicomeshalliringthebell';
 
 module.exports = function(passport) {
-  passport.serializeUser(function(user, done) {
-    done(null, user._id);
-  });
+	passport.serializeUser(function(user, done) {
+		done(null, user._id);
+	});
 
-  passport.deserializeUser(function(id, done) {
-    User.findById(id, function(err, user) {
-      done(err, user);
-    });
-  });
+	passport.deserializeUser(function(id, done) {
+		User.findById(id, function(err, user) {
+			done(err, user);
+		});
+	});
 
-  login(passport);
-  signup(passport);
-  google(passport);
-  facebook(passport);
+	login(passport);
+	signup(passport);
+	google(passport);
+	facebook(passport);
 
-  return {
-    url: server_uri,
-    key: secret_key
-  };
+	return {
+		url: server_uri,
+		key: secret_key
+	};
 };
