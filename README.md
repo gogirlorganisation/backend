@@ -17,10 +17,10 @@ git clone https://github.com/thegirlcode/backend.git
 
 ```js
 module.exports = {
-  googleID: 'googleSignInID',
-  googleSecret: 'googleSignInSecret',
-  facebookID: 'facebookSignInID',
-  facebookSecret: 'facebookSignInSecret'
+	googleID: 'googleSignInID',
+	googleSecret: 'googleSignInSecret',
+	facebookID: 'facebookSignInID',
+	facebookSecret: 'facebookSignInSecret'
 };
 ```
 
@@ -42,7 +42,7 @@ You need to wait a few seconds for the mongodb daemon to start and then you can 
 docker-compose up web
 ```
 
-6. Site will be at localhost:65344
+6. Site will be at localhost:62442
 
 Note: In order for Facebook and Google login to work on localhost, you will need to do the following:
 
@@ -53,6 +53,6 @@ Note: In order for Facebook and Google login to work on localhost, you will need
 
 3. Use nginx to serve the self-signed certificate: https://stackoverflow.com/a/25857318
 
-Or any other method of serving localhost:3000 as https://localhost. Site will be live at latter URL.
+Or any other method of serving localhost:62442 as https://localhost. Site will be live at latter URL.
 
 7. You'll need to use nginx and certbot to create an SSL certificate and serve site over https://domain for production as Google and Facebook login will not work without it.

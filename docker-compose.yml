@@ -3,14 +3,14 @@ services:
   web:
     container_name: thegirlcode-backend
     environment:
-      PORT: 65344
+      PORT: 62442
       NODE_ENV: production
     restart: always
     build: .
     depends_on:
       - mongo
     ports:
-      - '65344:65344'
+      - '62442:62442'
     links:
       - mongo
   mongo:
