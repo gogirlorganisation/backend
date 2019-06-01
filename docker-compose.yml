@@ -1,0 +1,22 @@
+version: '2'
+services:
+  web:
+    container_name: thegirlcode-backend
+    environment:
+      PORT: 62442
+      NODE_ENV: production
+    restart: always
+    build: .
+    depends_on:
+      - mongo
+    ports:
+      - '62442:62442'
+    links:
+      - mongo
+  mongo:
+    container_name: thegirlcode-mongo
+    image: mongo
+    volumes:
+      - ./.mongo:/data/db
+    ports:
+      - '27017:27017'

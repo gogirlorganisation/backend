@@ -10,18 +10,18 @@ var procName = 'python3';
 var procOpts = '-u -I';
 var directory = './';
 
-if(process.env.NODE_ENV === 'production') {
-	procName = 'firejail';
-	procOpts = '--profile=sandbox/tgc.profile python3 ' + procOpts;
-	directory = '/tmp/';
-}
+// if(process.env.NODE_ENV === 'production') {
+// 	procName = 'firejail';
+// 	procOpts = '--profile=sandbox/tgc.profile python3 ' + procOpts;
+// 	directory = '/tmp/';
+// }
 
 module.exports = function(code, socket) {
 	var fileName = rand() + '_' + Date.now();
 	var filePath = directory + fileName;
 	fs.writeFileSync(filePath + '.py', code);
 
-/*	code +=
+	/*	code +=
 'import sys\n\
 sys.modules[os] = None\n\n';*/
 
@@ -41,25 +41,20 @@ sys.modules[os] = None\n\n';*/
 
 		child.stdin.on('error', function(e) {
 			debug(e.stack);
-		})
+		});
 
 		setTimeout(function() {
-			if(!gracefulExit && !child.killed)
-				child.kill('SIGKILL');
+			if (!gracefulExit && !child.killed) child.kill('SIGKILL');
 		}, 300 * 1000);
 
 		child.on('exit', function(exitCode) {
-			if(!child.killed)
-				gracefulExit = true;
-			if(socket) socket.emit('end', 'Program exited with code ' + exitCode);
+			if (!child.killed) gracefulExit = true;
+			if (socket) socket.emit('end', 'Program exited with code ' + exitCode);
 			fs.unlinkSync(filePath + '.py');
 		});
 
-
 		return child;
-	}
-
-	catch(e) {
+	} catch (e) {
 		console.log(e);
 
 		return false;

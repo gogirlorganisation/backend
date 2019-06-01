@@ -38,3 +38,9 @@ __pycache__
 
 # private keys are private
 auth/keys.js
+
+# Keep database stuff private
+.mongo
+
+# Keep your config on your machine
+.vscode

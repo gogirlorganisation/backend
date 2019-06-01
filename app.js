@@ -31,16 +31,18 @@ app.engine('html', cons.mustache);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
 
-app.use(session({
-	secret: auth.key, 
-	saveUninitialized: true,
-	resave: true,
-	store: new MongoStore({
-		url: auth.url,
-		ttl: 24 * 60 * 60,
-		touchAfter: 5 * 60
+app.use(
+	session({
+		secret: auth.key,
+		saveUninitialized: true,
+		resave: true,
+		store: new MongoStore({
+			url: auth.url,
+			ttl: 24 * 60 * 60,
+			touchAfter: 5 * 60
+		})
 	})
-}));
+);
 
 app.use(passport.initialize());
 app.use(passport.session());
