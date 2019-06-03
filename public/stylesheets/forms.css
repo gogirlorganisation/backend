@@ -280,3 +280,19 @@ img.facebook-signin-logo {
     opacity: 1;
   }
 }
+
+p {
+    text-align: center;
+    font-size: 0.8rem;
+    margin-top: -0.75rem;
+    margin-bottom: 2rem;
+    color: #999;
+}
+
+p a {
+    color: #909090;
+}
+
+p a:hover {
+    color: #777;
+}
