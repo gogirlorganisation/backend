@@ -64,7 +64,8 @@ router.get('/dashboard', function(req, res) {
 				points: Math.floor(req.user.points),
 				nextLevel: firstUnsolvedLevel,
 				levels: levels,
-				solvedColors: solvedColors
+				solvedColors: solvedColors,
+				message: req.query.message || ''
 			});
 		}
 	} else {

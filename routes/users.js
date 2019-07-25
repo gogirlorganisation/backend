@@ -25,11 +25,20 @@ module.exports = function(passport) {
 		})(req, res, next);
 	});
 
-	router.get('/setalsettest', function(req, res) {
-		// todo: remove this once proper implemenation of login is done
-		auth.setAsAlsetUser(req.user.username, function(msg) {
-			res.send(msg);
-		})
+	router.get('/setalsetuser', function(req, res) {
+		auth.setAsAlsetUser(req.user.username, function(result) {
+			var message = '';
+
+			if(result === 'success') {
+				message = 'You have been successfully set as an ALSET user.';
+			}
+
+			else {
+				message = 'There was a problem with setting you as an ALSET user:\n\n' + result;
+			}
+
+			res.redirect('/dashboard?message=' + encodeURIComponent(message));
+		});
 	});
 
 	router.all('/logout', function(req, res, next) {
