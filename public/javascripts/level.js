@@ -1,17 +1,55 @@
+var Person = function() {
+	var sad = $('.sad-eve'),
+		happy = $('.happy-eve');
+
+	this.happy = function() {
+		sad.addClass('hidden');
+		happy.removeClass('hidden');
+	};
+
+	this.sad = function() {
+		sad.removeClass('hidden');
+		happy.addClass('hidden');
+	};
+
+	this.say = function(str) {
+		var x = $('<div>');
+		x.html(str);
+		x.addClass('bubble');
+		x.insertBefore('.happy-eve');
+		setTimeout(function() {
+			x.fadeOut(300, function() {
+				x.remove();
+			});
+		}, 5500);
+		$('.question').animate({
+			scrollTop: happy.offset.top
+		}, 400);
+	}
+};
+
+var Eve = new Person();
+
 $('form.submit').on('submit', function(e) {
 	e.preventDefault();
 
 	$.ajax({
 		url: location.href,
 		type: $(this).attr('method'),
-		data: $(this).serialize(),
+		data: {
+			answer: $('form.compiler textarea').val()
+		},
 		success: function(data) {
 			if(data.message == 'win') {
-				alert('correct answer!');
-				location.href = '/dashboard';
+				Eve.say('Correct answer,<br>well done!');
+				//Eve.happy();
 			}
 			else if(data.message == 'lose') {
-				alert('incorrect answer!');
+				Eve.say('Incorrect answer,<br>try again!');
+				/*Eve.sad();
+				setTimeout(function() {
+					Eve.happy();
+				}, 5000);*/
 			}
 			else if(data.message == 'logout') {
 				alert('please log in again');
@@ -37,6 +75,8 @@ function err(text) {
 $('form.compiler').on('submit', function(e) {
 	e.preventDefault();
 
+	$('form.compiler button').prop('disabled', true);
+
 	var socket = io.connect('/');
 
 	$('.stdout').html('');
@@ -49,6 +89,7 @@ $('form.compiler').on('submit', function(e) {
 	});
 
 	socket.on('stderr', function(data) {
+		console.log(data);
 		err(data);
 	});
 
@@ -66,5 +107,7 @@ $('form.compiler').on('submit', function(e) {
 		err(data);
 		$('.stdin').off('keypress');
 		socket.disconnect();
+		$('form.submit').submit();
+		$('form.compiler button').prop('disabled', false);
 	});
 });

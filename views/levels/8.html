@@ -1,0 +1,75 @@
+<h1>Control Flow- If and Else</h1>
+
+<h3>If</h3>
+<p>
+	Eve wants to bake a cake! Her mother told her that the cake needs to be in the oven for 25 minutes. So, <br><br>
+
+	if the timer is equal to 25 minutes:<br>
+	&emsp;&emsp;Eve needs to take out the cake!<br><br>
+
+	If statements use conditionals to decide whether or not a certain block of code is executed. So, if the condition is true, then the statements are executed; The syntax looks like this:<br><br>
+
+	<pre>
+timer = 25
+if timer == 25:
+  print("Eve took out the cake")
+	</pre>
+
+	In this case, since the condition is true, the output will be: Eve took out the cake<br><br>
+
+	However, if the value of timer is not 25 then the printing code won’t run.<br><br>
+
+	<b>Note:</b> The white space before the print block indicates that the print is part of the if block. This is called <b>indentation</b> and is crucial in Python syntax. This can be keyed into your program by the Tab key on your keyboard.<br><br>
+
+	<pre>
+timer = 15
+if timer == 25:
+  print("Eve don’t take out the cake")
+	</pre>
+
+	In this case, there would be no output as the condition, timer == 25 , is not met.
+
+</p>
+
+<h3>Else</h3>
+<p>
+
+	Else statements are used to execute a block of code when the condition for the if statement is False.<br><br>
+
+	if timer is equal to 25:<br>
+	&emsp;&emsp;Tell Eve to take the cake out<br>
+	else:<br>
+	&emsp;&emsp;Tell Eve not to take the cake out<br><br>
+
+	We can write it like this in Python:<br><br>
+
+	<pre>
+if timer == 25:
+  print("Take the cake out of the oven")
+else:
+  print("Leave the cake in the oven")
+	</pre>
+
+</p>
+
+<br><br>
+
+<h2>Question</h2>
+
+<p>
+
+	Eve is managing the counter today. She loves even numbers more than odd, so she has decided that she will give a free toffee to all the bill values which are <a id="w1" href="#" onclick="return false;"><b>even. </b></a><span id="p1" class="hidden">How to check if a number is even or not? Check the <a id="w2" href="#" onclick="return false;"><b>remainder </b></a><span id="p2" class="hidden">(Use '%') </span> it gives when divided by 2!</span> <br><br>
+
+	Declare a variable bill which takes in user input. If the customer is eligible for the toffee, print ‘Here is a free toffee! Have a nice day!’. Otherwise, print ‘Have a nice day!’<br><br>
+
+	For example, if the input is 155, the output should be "Have a nice day!"<br><br>
+
+	Now, enter an even value for the bill and see what it prints!<br><br>
+
+	<b>Note:</b> To input integer value you need to enclose the input function inside int()<br>
+	<pre>
+number = int(input("Enter a number: "))
+	</pre>
+
+
+</p>

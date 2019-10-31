@@ -7,8 +7,43 @@ body, html {
   background-color: #f2f2f2;
 }
 
+::-moz-selection { background-color: rgba(255, 51, 85, .45); }
+::selection { background-color: rgba(255, 51, 85, .45); }
+
+a {
+  text-decoration: none;
+  color: #fb7f9f;
+}
+
+div .nav {
+  height: 3rem;
+  position: fixed;
+  background: #ffffffec;
+  top: 0;
+  line-height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  width: 360px;
+  top: 0;
+  left: 20px;
+}
+
+div .nav > a {
+  padding: 0 !important;
+}
+
 h1,h2,h3,h4,h5,h6 {
   margin: 0px;
+}
+body .hidden {
+  visibility: hidden;
+  display: none;
+}
+
+form.compiler {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 div.coding {
@@ -16,6 +51,7 @@ div.coding {
   display: flex;
   flex-direction: column;
   padding: 1rem;
+  max-width: calc(100% - 420px);
 }
 
 div.coding form  textarea[name=code] {
@@ -25,8 +61,10 @@ div.coding form  textarea[name=code] {
 
 input {
   outline: none;
-  border: none;
+  border: 1px solid #ccc;
+  border-radius: 2.5px;
 }
+
 textarea[name=code] {
   font-family: monospace;
   height: 250px !important;
@@ -54,6 +92,39 @@ button:hover {
   cursor: pointer;
 }
 
+.output-container {
+  flex: 1;
+  display: flex;
+}
+
+.output-container pre {
+  max-width: 50%;
+  margin: 0.5rem 0.25rem;
+  background: white;
+  position: relative;
+  text-align: left;
+  padding: 0.75rem;
+  flex: 1;
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+}
+
+code.stdout, code.stderr {
+    display: block;
+    overflow-x: auto;
+    flex: 1;
+}
+
+.output-container pre:before {
+  content: attr(data-heading);
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  box-shadow: 0 0 0.2rem rgba(0,0,0,0.2);
+  padding: 0.25rem 0.5rem;
+  background: rgba(255,255,255,0.8);
+}
 
 /*[ login ]*/
 
@@ -77,13 +148,14 @@ button:hover {
 }
 
 .question {
-  width: 300px;
+  width: 420px;
   background: #fff;
   border-radius: 10px;
-  overflow: hidden;
-  padding: 25px 50px;
+  overflow-x: hidden;
+  padding: 25px 30px;
   box-shadow: 0 10px 35px 0px rgba(0, 0, 0, 0.1);
   text-align: left;
+  box-sizing: border-box;
 }
 
 
@@ -93,13 +165,22 @@ button:hover {
   width: 100%;
 }
 
-.formtitle {
+h1, h2 {
   display: block;
-  font-size: 70px;
+  font-size: 42px;
   color: #333333;
   line-height: 1.2;
-  text-align: center;
-  margin-bottom: 45px;
+  margin-bottom: 14px;
+}
+
+form p {
+  line-height: 1.5;
+}
+
+input.stdin {
+    text-align: left;
+    height: 3rem;
+    font-size: 1rem;
 }
 
 /*[ Input ]*/
@@ -225,7 +306,9 @@ button:hover {
 
 .loginbutton {
   color: #fff;
-  font-size: 12px;
+  font-family: Europa;
+  font-weight: 600;
+  font-size: 14px;
   line-height: 1.2;
   text-transform: uppercase;
   display: -webkit-box;
@@ -245,6 +328,36 @@ button:hover {
 }
 
 
+img.hidden {
+  display: none;
+}
+
+.eve-container {
+  position: relative;
+}
+
+.bubble {
+  position: absolute;
+  top: 50px;
+  left: 55%;
+  max-width: 45%;
+  padding: 0.75rem;
+  box-sizing: border-box;
+  border-radius: 0.33rem;
+  filter: drop-shadow(0.1rem 0.15rem 0.2rem rgba(0,0,0,0.2));
+  background: white;
+}
+
+.bubble:before {
+  position: absolute;
+  bottom: -0.45rem;
+  left: 0;
+  border: 0.5rem solid white;
+  content: '';
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+}
+
 /*[ Responsive ]*/
 
 @media (max-width: 576px) {
@@ -258,4 +371,18 @@ button:hover {
     visibility: visible;
     opacity: 1;
   }
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th {
+    color: #fb718d;
+}
+
+th, td {
+    border: 2px solid #fb718d;
+    padding: 0.5rem 1rem;
+    text-align: center;
 }

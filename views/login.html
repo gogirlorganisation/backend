@@ -3,8 +3,10 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>The Girl Code Backend</title>
+	<link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+	<title>The Girl Code</title>
 	<link rel="stylesheet" type="text/css" href="/stylesheets/forms.css">
+	<link rel="stylesheet" href="https://use.typekit.net/pme3yyf.css">
 </head>
 <body>
 	<div class="limiter">
@@ -31,6 +33,22 @@
 						</div>
 					</div>
 
+					<div class="formbutton">
+						<div class="form-in-button google-signin">
+							<div class="bgbutton"></div>
+							<img src="/img/g-logo.png" class="google-signin-logo">
+							<a class="loginbutton" href="/users/google">Login with Google</a>
+						</div>
+					</div>
+
+					<div class="formbutton">
+						<div class="form-in-button facebook-signin">
+							<div class="bgbutton"></div>
+							<img src="/img/f-logo.png" class="facebook-signin-logo">
+							<a class="loginbutton" href="/users/facebook">Login with Facebook</a>
+						</div>
+					</div>
+
 				</form>
 			</div>
 		</div>
@@ -38,6 +56,12 @@
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="/javascripts/login.js"></script>
+<script>
+	
+var e = '{{error}}';
 
+if(e) alert(e);
+
+</script>
 </body>
 </html>

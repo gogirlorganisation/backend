@@ -1,0 +1,84 @@
+<h1>And, Or, Not</h1>
+<p>
+	The keywords ‘and’, and ‘or’ are used to join together boolean expressions. The syntax is:<br><br>
+
+	if condition1 and/or condition2:<br>
+	&emsp;&emsp;Statements
+	<br><br>
+	The keyword ‘not’ just changes a True condition to False and vica versa.
+
+</p>
+
+<h3>Or</h3>
+<p>
+
+A customer wants cakes worth either $7 or $20.<br><br>
+
+<pre>
+if price == 7 or price== 20:
+  print("Buy this cake!")
+else:
+  print("Don't buy this cake!")
+</pre>
+
+Or statements returns True if even one condition is True. So, if the price is equal to 7 the condition (price == 7 or price== 20) will return True and "Buy this cake!" will be printed.
+
+</p>
+
+<h3>And</h3>
+<p>
+
+The customer realized this condition isn't very logical. Instead of selecting cakes at two drastically different price points, he now makes a range of values. If the cake is more than $7 and less than $20, he'll buy it. This way, he gets more options with the same amount of money!
+<br><br>
+
+<pre>
+if price > 7 and price < 20:
+  print("Buy this cake!")
+else:
+  print("Don't buy this cake!")
+</pre>
+
+
+And only returns True if both the statements are True. So, if the price is equal to 21 the condition (price == 7 or price== 20) will return False and "Don't buy this cake!" will be printed.
+
+</p>
+
+<h3>Not</h3>
+<p>
+
+Another customer walks in. This one want fancy cakes and won't buy anything below $25 <br>
+
+<pre>
+if not (price < 25):
+  print("You can buy this cake!")
+else:
+  print("Don't buy this cake!")
+</pre>
+
+The not keyword is used to flip the boolean value. If the condition is false, the boolean is true, and vice versa.<br>
+So, if the the price of the cake is less than 25 then the condition <pre>(price < 25)</pre> will return True but the condition <pre>not(price < 25) </pre> will return False thus the cutomer won't buy the cake and the else condition would run. <br> <br>
+
+A follow-up question: How would you rewrite this without using the 'not' keyword, but with a > operator? Try it out right now!
+
+</p>
+
+<br><br>
+
+<h2>Question</h2>
+
+<p>
+
+	Eve needs to be at the bakery from 12:00 to 20:00, and she has asked you to write a program for her friends to check if she’s free or not.<br>So, if her friends input 8, the output would be<br><br>
+	"Eve is free at 8" or "Eve is not free at 8"<br><br>
+	Print the output for 1pm (or 13:00, input would be 13)<br><br>
+
+	<a id="w1" href="#" onclick="return false;"><b>How to concatenate integers with strings?</b></a><span id="p1" class="hidden"> The input of the time is an integer, so to add it to a string we would need to first convert it to the string because you can't add a string and int together. 
+	<pre>
+date = int(input("Enter your birthdate! "))
+print("Your lucky number is " + str(date))
+	</pre>
+	Make sure you enclose the integer in str() before adding it to a string.
+	<span>
+	
+
+</p>

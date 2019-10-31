@@ -7,6 +7,9 @@ body, html {
   background-color: #f2f2f2
 }
 
+::-moz-selection { background-color: rgba(255, 51, 85, .45); }
+::selection { background-color: rgba(255, 51, 85, .45); }
+
 h1,h2,h3,h4,h5,h6 {
   margin: 0px;
 }
@@ -220,6 +223,46 @@ button:hover {
 
 .form-in-button:hover .bgbutton {
   left: 0;
+}
+
+.form-in-button {
+  box-shadow: 0 0.1rem 0.3rem rgba(0,0,0,0.1);
+}
+
+.google-signin .bgbutton {
+  background: white;
+}
+
+.google-signin .loginbutton {
+  color: #555;
+  text-decoration: none;
+}
+
+img.google-signin-logo {
+  position: absolute;
+  height: 1.25rem;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  left: 1.25rem;
+}
+
+.facebook-signin .bgbutton {
+  background: #3B5998;
+}
+
+.facebook-signin .loginbutton {
+  color: white;
+  text-decoration: none;
+}
+
+img.facebook-signin-logo {
+  position: absolute;
+  height: 1.25rem;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  left: 1.25rem;
 }
 
 
