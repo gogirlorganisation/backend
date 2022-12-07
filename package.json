@@ -12,7 +12,7 @@
     "consolidate": "^0.15.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
-    "express": "^4.16.3",
+    "express": "^4.17.3",
     "express-session": "^1.15.6",
     "mongoose": "^5.4.11",
     "mongoose-findorcreate": "^3.0.0",
